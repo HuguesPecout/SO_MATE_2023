@@ -1,24 +1,32 @@
 ---
-title: "Untitled"
-format: revealjs
-editor: visual
+title: "Représentation graphiques avec R"
+subtitle: "Aperçu des différentes fonctionnalités de visualisation graphqiue"
+img: images/entete.png
+# date: 
+author: Hugues Pecout (CNRS, UMR Géographie-Cités)
+institute: "JA SO-MATE 2023, Limoges"
+lang: fr
+editor: source
+format:
+  revealjs: 
+    template-partials:
+      - title-slide.html
+    theme: [dark, styles.scss]
+    logo: images/logo_hp.png
+    footer: "JA SO-MATE 2023 - Représentations graphiques avec R"
+    scrollable: TRUE
+    smaller: TRUE
+    overview: TRUE
+    chalkboard: FALSE
+    transition: fade
+    transition-speed: fast
+    menu: TRUE
+    css: style.css
+    pointer:
+      pointerSize: 20
+      color: 'red4'
+revealjs-plugins:
+  - pointer
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
-
-## Bullets
-
-When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
+## 
