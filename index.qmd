@@ -29,4 +29,114 @@ revealjs-plugins:
   - pointer
 ---
 
-## 
+## De Excel à R
+
+
+## Historique 
+
+## 1995 - plot R-base
+
+plot() et associée
+
+## 2001 - Lattice
+
+New API
+Easy small multiples
+
+## 2007 - ggplot2
+
+Revolution...
+
+## ggplot2 extensions
+
+exts.ggplot2.tidyverse.org
+
+## Customization et Art graphique
+
+Cedric Scherer - X-Men Characters
+Tania Shapiro - Best selling Authors
+
+
+# Palettes de couleur
+
+
+# Visualisation thématique
+
+## Analyse de réseau
+
+networkD3
+
+## Analyse de séquence
+
+
+## Scatterplot3D
+
+## rgl
+
+## heatmap
+
+superheat
+ComplexHeatmap
+
+## Textuelle
+
+wordcloud
+
+## Slope graphs
+
+CGPfunctions
+
+## Circular plot
+
+https://jokergoo.github.io/circlize_book/book/
+
+## Survival
+
+Survival plots
+
+## Visualisation spatiale 
+
+## Intéractivité (javascript link)
+
+htmlwidgets.org
+
+## leaflet
+
+## rbokeh
+
+## rCharts
+
+## highcharter
+
+## Shiny
+
+## Autre (plotly et cie)
+
+Plotly > ggplot2 > Plotly.js > D3.js > Javascript
+
+echarts4r 
+
+robservable
+
+# Export
+
+## Classique
+
+## notebook
+
+## shiny
+
+
+# Ressource
+
+## R graph galley
+
+## R charts
+
+## Rzine
+
+## ggplot2 official
+
+https://www.data-imaginist.com/screens/
+
+
