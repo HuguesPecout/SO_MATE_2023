@@ -1,6 +1,6 @@
 ---
 title: "Représentation graphiques avec R"
-subtitle: "Aperçu des différentes fonctionnalités de visualisation graphqiue"
+subtitle: "Tour d'horizon des fonctionnalités de visualisation graphique"
 img: images/entete.png
 # date: 
 author: Hugues Pecout (CNRS, UMR Géographie-Cités)
@@ -12,7 +12,7 @@ format:
     template-partials:
       - title-slide.html
     theme: [dark, styles.scss]
-    logo: images/logo_hp.png
+    logo: images/logo_mate_shs_0.png
     footer: "JA SO-MATE 2023 - Représentations graphiques avec R"
     scrollable: TRUE
     smaller: TRUE
