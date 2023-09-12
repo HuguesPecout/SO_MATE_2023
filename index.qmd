@@ -116,7 +116,7 @@ revealjs-plugins:
 
 # [Graphiques avec R]{.bigtwo}
 
-## [Historique]{.bigone}
+## [Fonctions graphiques R-base]{.bigone}
 
 [La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. **Au centre de l'ecosystème graphique du R-base : la fonction** [**`plot()`**](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot)]{.bigbis}
 
@@ -262,20 +262,20 @@ hist(cars$speed)
 ```{r}
 #| echo: true
 #| out.width: 100%
-stripchart(cars$speed)
+stripchart(cars$speed, method = "stack")
 ```
 :::
 
-[Diagramme en points de Cleveland]{.orange .codeL} 
+[Diagrammes en épine]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| echo: true
 #| out.width: 100%
-dotchart(cars$speed)
-
+spineplot(agegp ~ ncases, data = esoph)
 ```
 :::
+
 
 :::
 
@@ -291,13 +291,32 @@ boxplot(cars$speed)
 ```
 :::
 
-[Boîte à moustache]{.orange .codeL}
+[Diagramme en points de Cleveland]{.orange .codeL} 
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| echo: true
 #| out.width: 100%
-pie(cars$dist)
+dotchart(cars$speed)
+
+```
+:::
+
+
+[Camembert]{.orange .codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+# Create data for the graph.
+tab <- data.frame(
+          name = c("A", "B", "C"),
+          value = c(19,53, 88)
+         )
+
+# Plot the chart.
+pie(tab$value, tab$name)
 ```
 :::
 
@@ -305,24 +324,54 @@ pie(cars$dist)
 
 ::: {.column width="33%"}
 
-[1 variable quantitative]{.orange .codeL} - [Nuage de points ordonnés]{.codeL}
+[Diagramme à barres]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| echo: true
 #| out.width: 100%
-plot(cars$speed)
+barplot(table(esoph$agegp))
 ```
 :::
+
+
+
+[Expression mathématique]{.orange .codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+curve(expr = x^3)
+```
+:::
+
+
+
+
+
+[Nuage de points - toutes les variables]{.orange .codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+pairs(iris)
+```
 :::
 
 
 :::
 
 
+:::
+
+## [Les fonctions R-base de mise en page]{.bigone}
 
 
-## 2001 - Lattice
+## [Fenêtre graphique]{.bigone}
+
+## [2001 - Lattice]{.bigone}
 
 New API Easy small multiples
 

@@ -479,8 +479,8 @@
 <h1><span class="bigtwo">Graphiques avec R</span></h1>
 
 </section>
-<section id="historique" class="slide level2">
-<h2><span class="bigone">Historique</span></h2>
+<section id="fonctions-graphiques-r-base" class="slide level2">
+<h2><span class="bigone">Fonctions graphiques R-base</span></h2>
 <p><span class="bigbis">La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. <strong>Au centre de l’ecosystème graphique du R-base : la fonction</strong> <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot"><strong><code>plot()</code></strong></a></span></p>
 <div class="codeXXL" style="margin-top:30px;">
 <div class="cell">
@@ -612,16 +612,16 @@
 <p><span class="orange codeL">Diagrammes de dispersion</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">stripchart</span>(cars<span class="sc">$</span>speed)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">stripchart</span>(cars<span class="sc">$</span>speed, <span class="at">method =</span> <span class="st">"stack"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div>
-<p><span class="orange codeL">Diagramme en points de Cleveland</span></p>
+<p><span class="orange codeL">Diagrammes en épine</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">dotchart</span>(cars<span class="sc">$</span>speed)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">spineplot</span>(agegp <span class="sc">~</span> ncases, <span class="at">data =</span> esoph)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%"></p>
 </div>
@@ -637,30 +637,70 @@
 </div>
 </div>
 </div>
-<p><span class="orange codeL">Boîte à moustache</span></p>
+<p><span class="orange codeL">Diagramme en points de Cleveland</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">pie</span>(cars<span class="sc">$</span>dist)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">dotchart</span>(cars<span class="sc">$</span>speed)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:33%;">
-<p><span class="orange codeL">1 variable quantitative</span> - <span class="codeL">Nuage de points ordonnés</span></p>
+<p><span class="orange codeL">Camembert</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>tab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-3"><a href="#cb14-3"></a>          <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4"></a>          <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">53</span>, <span class="dv">88</span>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a>         )</span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Plot the chart.</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="fu">pie</span>(tab<span class="sc">$</span>value, tab<span class="sc">$</span>name)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<p><span class="orange codeL">Diagramme à barres</span></p>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(esoph<span class="sc">$</span>agegp))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+<p><span class="orange codeL">Expression mathématique</span></p>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">curve</span>(<span class="at">expr =</span> x<span class="sc">^</span><span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+<p><span class="orange codeL">Nuage de points - toutes les variables</span></p>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">pairs</span>(iris)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+<section id="les-fonctions-r-base-de-mise-en-page" class="slide level2">
+<h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
+</section>
+<section id="fenêtre-graphique" class="slide level2">
+<h2><span class="bigone">Fenêtre graphique</span></h2>
+</section>
 <section id="lattice" class="slide level2">
-<h2>2001 - Lattice</h2>
+<h2><span class="bigone">2001 - Lattice</span></h2>
 <p>New API Easy small multiples</p>
 </section>
 <section id="ggplot2" class="slide level2">
