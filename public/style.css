@@ -1,30 +1,36 @@
 
 .title { 
-  font-size: 130%;
+  font-size: 220%;
   font-weight: bold;
-  color: #209578;
+  color: #e4b93e;
 }
 
 .subtitle { 
-  font-size: 100%; 
+  font-size: 150%; 
   font-weight: bold;
   color: #E2E2E2;
 }
 
 .img { 
-  width: 50%;
+  width: 60%;
 }
 
 .institute { 
-  font-size: 50%;
+  font-size: 70%;
   color: #d8d9d8;
   font-style: italic;
 }
 
+.bigone{
+  font-size: 160%;
+}
 
+.bigtwo{
+  font-size: 140%;
+}
 
 .author { 
-  font-size: 55%;
+  font-size: 80%;
   color: #d8d9d8;
 }
 
@@ -35,7 +41,7 @@
 }
 
 .smaller{
-  font-size:50px;
+  font-size:200%;
 }
 
 .xsmallgrey{
@@ -99,14 +105,14 @@
   margin-top: 80px;
   margin-bottom: 40px;
   text-align:center;
-  color: #209578;
+  color: #e4b93e;
 }
 
 .bigreen{
   font-size: 80%;
   text-align:center;
   margin-top:20px;
-  color: #209578;
+  color: #e4b93e;
 }
 
 .bigrey2{
@@ -118,23 +124,19 @@
 
 .bigorange{
   font-size: 30px;
-  color: #209578;
+  color: #e4b93e;
 }
 
 .elementR{
-  color: #209578;
+  color: #e4b93e;
 }
 
 
 
 .orange{
-  color: #f7a41f;
+  color: #e4b93e;
 }
 
-.txt4{
-  font-size: 80%;
-  color: #f7a41f;
-}
 
 
 
@@ -277,6 +279,15 @@ text-align:center;
   line-height: 1;
 }
 
+
+.txt4{
+  font-size: 55%;
+}
+
+
+
+
+
 .div3{
 margin-top: 40px;
 }
@@ -294,4 +305,8 @@ margin-bottom: 100px;
 
 .codeXL  { /*Change made here*/
   font-size: 160% !important;
+}
+
+.codeXXL  { /*Change made here*/
+  font-size: 190% !important;
 }

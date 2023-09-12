@@ -1,10 +1,11 @@
 ---
-title: "Représentation graphiques avec R"
-subtitle: "Tour d'horizon des fonctionnalités de visualisation graphique"
+title: "Visualisation de données avec R"
+subtitle: "Tour d'horizon des fonctionnalités de représentation graphique"
 img: images/entete.png
 # date: 
 author: Hugues Pecout (CNRS, UMR Géographie-Cités)
-institute: "JA SO-MATE 2023, Limoges"
+institute: "Journée annuelle SO-MATE 2023, Limoges"
+affiliation: <img src="images/cnrs.png" width="60" style="margin-right:320px;"/><img src="images/somate.png" width="260" style="margin-right:320px;"/><img src="images/geocite.jpeg" width="60" />
 lang: fr
 editor: source
 format:
@@ -13,7 +14,7 @@ format:
       - title-slide.html
     theme: [dark, styles.scss]
     logo: images/logo_mate_shs_0.png
-    footer: "JA SO-MATE 2023 - Représentations graphiques avec R"
+    footer: "Journée annuelle SO-MATE 2023 - Représentations graphiques avec R"
     scrollable: TRUE
     smaller: TRUE
     overview: TRUE
@@ -29,19 +30,301 @@ revealjs-plugins:
   - pointer
 ---
 
-## De Excel à R
+# [Outils de représentation de données]{.bigtwo}
+
+## [Graphiques avec Excel]{.bigone}
+
+::: columns
+::: {.column width="25%"}
+
+::: {style="font-size:145%;"} 
+✅ **Rapide**   
+✅ **Facile**    
+
+\
+
+::: {.txt2}
+
+**Fonctionnalités disponibles :**
+
+❌ Graphiques par défault    
+❌ Types de graphiques    
+❌ Interactivité        
+
+\
+
+**Gestion des données :**
+
+❌ Manipulation des données         
+❌ Statistiques             
+❌ Données volumineuses      
+
+\
+
+**Reproductibilité :**
+
+❌ Automatisation du pipeline   
+❌ Collaboration         
+❌ Versioning
+:::
+:::
+:::
+
+::: {.column width="75%"}
+::: {style="margin-top:30px;margin-bottom:15px;font-size:160%;"}
+**Mais la représentation graphiques avec Excel connaît des limites...**
+:::
+
+![](images/excel.png)
+
+::: {.center style="font-size:80%;"}
+[https://excelcharts.com/](https://excelcharts.com/)
+:::
+:::
+:::
+
+## [Graphiques avec des outils dédiés]{.bigone}
+
+[Des **fonctionnalités avancées** et des **sorties graphiques très élégantes**, mais des **logiciels payants**.]{style="font-size:130%;margin-top:10px"}
+
+::: {style="margin-top:-10px;"}
+[Bon outils si on ne pratique pas R régulièrement, mais **limité notamment en matière de reproductibilité**.]{style="font-size:130%;"}
+:::
+
+::: columns
+::: {.column width="20%"}
+![](images/power-bi_logo.png){width=80% style="margin-top:10px;"} 
+![](images/Tableau-Logo.png){width=80% style="margin-top:-15px;"}    
+![](images/ClickView-logo-1.png){width=80% style="margin-top:-15px;"} 
+![](images/flourish.jpg){width=80% style="margin-top:20px;"}    
+![](images/datawrapper.png){width=80% style="margin-top:20px;"}
+![](images/Adobe_Illustrator.png){width=45% style="margin-top:20px;"}  
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="75%"}
+
+![](images/power-bi.png){width=90%}
+
+:::
+
+:::
 
 
-## Historique 
+# [Graphiques avec R]{.bigtwo}
 
-## 1995 - plot R-base
+## [Historique]{.bigone}
 
-plot() et associée
+[La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. **Au centre de l'ecosystème graphique du R-base : la fonction** [**`plot()`**](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot)]{.bigbis}
+
+::: {.codeXXL style="margin-top:30px;"}
+```{r}
+#| echo: true
+#| out.width: 85%
+plot(x = 1, y = 1)
+```
+:::
+
+## [plot()]{.bigone}
+
+[**Une fonction générique très pratique pour l'exploration, qui s'adapte aux différents types des données.**]{.bigtwo}
+
+::: columns
+::: {.column width="50%"}
+
+[1 variable quantitative]{.orange .codeL} - [Nuage de points ordonnés]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(cars$speed)
+```
+:::
+
+[2 variables quantitatives]{.orange .codeL} - [Nuage de points]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(speed ~ dist, data = cars)
+```
+:::
+
+
+[1 variable quanti vs 1 variable quali]{.orange .codeL}  - [Boîte à moustache]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(ncases ~ agegp, data = esoph)
+```
+:::
+
+:::
+
+
+::: {.column width="50%"} 
+
+[1 variable qualitative]{.orange .codeL} - [Diagramme en barre]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(esoph$agegp)
+
+```
+::: 
+
+[2 variables qualitatives]{.orange .codeL} - [Graphique en mosaic]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+
+plot(alcgp ~ agegp, data = esoph)
+```
+
+:::
+
+[1 variable quali vs 1 variable quanti]{.orange .codeL} - [Spine plot]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(agegp ~ ncases, data = esoph)
+```
+:::
+:::
+:::
+
+[Un tableau de données complet]{.orange .codeL} - [Un seul type de graphique]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(iris)
+```
+:::
+
+
+## [Autres fonctions graphiques R-base]{.bigone}
+
+::: {.bigbis}
+-   `hist()` : histogramme de distribution 
+-   `stripchart()` : diagrammes de dispersion
+-   `dotchart()` : diagramme en points de Cleveland
+-   `boxplot()` : diagramme en boîte
+-   `qqnorm()` : diagramme quantile-quantile théorique normal
+-   `qqplot()` : diagramme quantile-quantile empirique
+-   `barplot()` : diagramme à barres
+-   `pie()` : diagramme en secteurs
+-   `mosaicplot()` : diagramme en mosaïque
+-   `spineplot()` : diagrammes en épine (entre l'histogramme et le mosaic plot)
+-   `curve()` : Représentation d'une expression mathématique
+-   `matplot()` : Dispersions de toutes le variables d'un tableau (un graphique)
+-   `pairs()` : Matrice de nuage de point pour l'ensemble des variables d'un tableau
+-   etc....
+:::
+
+::: {.bigone}
+:::{.callout-note }
+En fonction du type de variable, la fonction `plot()` renvoie vers les fonctions `barplot()`,  `spineplot()`, `stripchart()`, `boxplot()`, `curve()`, `pairs()`...
+:::
+:::
+
+::: columns
+
+::: {.column width="33%"}
+
+[Histogramme de distribution]{.orange .codeL} 
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+hist(cars$speed)
+```
+:::
+
+[Diagrammes de dispersion]{.orange .codeL} 
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+stripchart(cars$speed)
+```
+:::
+
+[Diagramme en points de Cleveland]{.orange .codeL} 
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+dotchart(cars$speed)
+
+```
+:::
+
+:::
+
+::: {.column width="33%"}
+
+[Boîte à moustache]{.orange .codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+boxplot(cars$speed)
+```
+:::
+
+[Boîte à moustache]{.orange .codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+pie(cars$dist)
+```
+:::
+
+:::
+
+::: {.column width="33%"}
+
+[1 variable quantitative]{.orange .codeL} - [Nuage de points ordonnés]{.codeL}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+plot(cars$speed)
+```
+:::
+:::
+
+
+:::
+
+
+
 
 ## 2001 - Lattice
 
-New API
-Easy small multiples
+New API Easy small multiples
 
 ## 2007 - ggplot2
 
@@ -53,12 +336,9 @@ exts.ggplot2.tidyverse.org
 
 ## Customization et Art graphique
 
-Cedric Scherer - X-Men Characters
-Tania Shapiro - Best selling Authors
-
+Cedric Scherer - X-Men Characters Tania Shapiro - Best selling Authors
 
 # Palettes de couleur
-
 
 # Visualisation thématique
 
@@ -68,15 +348,13 @@ networkD3
 
 ## Analyse de séquence
 
-
 ## Scatterplot3D
 
 ## rgl
 
 ## heatmap
 
-superheat
-ComplexHeatmap
+superheat ComplexHeatmap
 
 ## Textuelle
 
@@ -94,7 +372,7 @@ https://jokergoo.github.io/circlize_book/book/
 
 Survival plots
 
-## Visualisation spatiale 
+## Visualisation spatiale
 
 ## Intéractivité (javascript link)
 
@@ -112,9 +390,9 @@ htmlwidgets.org
 
 ## Autre (plotly et cie)
 
-Plotly > ggplot2 > Plotly.js > D3.js > Javascript
+Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
 
-echarts4r 
+echarts4r
 
 robservable
 
@@ -125,7 +403,6 @@ robservable
 ## notebook
 
 ## shiny
-
 
 # Ressource
 
@@ -138,5 +415,3 @@ robservable
 ## ggplot2 official
 
 https://www.data-imaginist.com/screens/
-
-
