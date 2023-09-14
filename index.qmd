@@ -116,7 +116,7 @@ revealjs-plugins:
 
 # [Graphiques avec R]{.bigtwo}
 
-## [Fonctions graphiques R-base]{.bigone}
+## [Fonctions graphiques R-base (1995)]{.bigone}
 
 [La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. **Au centre de l'ecosystème graphique du R-base : la fonction** [**`plot()`**](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot)]{.bigbis}
 
@@ -346,10 +346,6 @@ curve(expr = x^3)
 ```
 :::
 
-
-
-
-
 [Nuage de points - toutes les variables]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
@@ -360,24 +356,252 @@ pairs(iris)
 ```
 :::
 
+:::
 
 :::
 
+## [Les arguments des fonctions graphiques]{.bigone}
 
+[Une multitude d'arguments permettent de paramétrer la mise en page d'un graphique.]{.bigtwo}
+
+```{r}
+x <- seq(-pi, pi, 0.1)
+y <- sin(x)
+```
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+
+plot(y ~ x, 
+  type = "o", # type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...
+  col = "red", # couleur, tapez `colours()` pour la liste complète
+  pch = 20, # type de symboles, un chiffre entre 0 et 25, tapez `?points`
+  cex = 1.1, # taille des symboles
+  lty = 1, # type de lignes, un chiffre entre 1 et 6
+  lwd = 1.4, # taille de lignes
+  xlim = c(-2.5, 2.5), # limites de l'axe des x
+  ylim = c(-1.5, 1.5), # limites de l'axe des y)
+  xlab = "La variable x", # titre pour l'axe des x
+  ylab = "Le sinus  de x", # titre pour l'axe des y
+  main = "La fonction sinus entre -pi et pi" # titre général pour le graphique
+) 
+```
 :::
 
 ## [Les fonctions R-base de mise en page]{.bigone}
 
+[Plusieurs fonctions permettent d'ajouter des éléments sur un graphique existant.]{.bigtwo}
 
-## [Fenêtre graphique]{.bigone}
 
-## [2001 - Lattice]{.bigone}
+::: {.bigbis}
+-   `legend()` : légende
+-   `title()` : titre
+-   `density()` : courbe de densité à noyau
+-   `points()` : point
+-   `rug()` : représentation *stripchart* le long de l'axe des x
+-   `lines()` : segments de droites reliant des points
+-   `matlines()` : segments de droites reliant des points (utiliser avec `matplot()`)
+-   `abline()` : droites traversant toute la zone graphique
+-   `text()` : texte dans la zone graphique
+-   `mtext()` : texte dans la marge
+-   etc...
+:::
 
-New API Easy small multiples
+::: {.codeXL style="margin-top:30px;"}
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
 
-## 2007 - ggplot2
+plot(y ~ x, 
+  type = "o", # type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...
+  col = "red", # couleur, tapez `colours()` pour la liste complète
+  pch = 20, # type de symboles, un chiffre entre 0 et 25, tapez `?points`
+  cex = 1.1, # taille des symboles
+  lty = 1, # type de lignes, un chiffre entre 1 et 6
+  lwd = 1.4, # taille de lignes
+  xlim = c(-2.5, 2.5), # limites de l'axe des x
+  ylim = c(-1.5, 1.5), # limites de l'axe des y)
+  xlab = "La variable x", # titre pour l'axe des x
+  ylab = "Le sinus  de x") # titre pour l'axe des y) 
 
-Revolution...
+# Ajout d'un TITRE
+title("Titre de mon graphique", 
+      cex.main = 1.2,  
+      font.main= 4, 
+      col.main= "red4")
+
+# Ajout d'une LEGENDE
+legend(x = 0.9, # Emplacement de la légende (coin haut gauche)
+       y = -1.1, # Emplacement de la légende (coin haut gauche)
+       legend = "Fonction sinus entre -pi et pi", 
+       bg = "lightgoldenrod",
+       col = "red",
+       pch = 20,
+       cex = 0.7, # Taille de lé lagende
+       lty = 1, 
+       lwd = 1.4)
+
+# Ajout d'une LIGNE (horizontale)
+abline(h = 0, # Coupe l'axe des y à cette valeur 
+       lty = 2, # Type de ligne
+       lwd = 0.5, # épaisseur
+       col = "grey50")
+
+# Ajout d'un POINT
+points(x = -0, 
+       y = 0, 
+       col = "red4", 
+       pch = 20,# Type de symbol
+       cex = 4)
+
+# Ajout de TEXTE
+text("x = 0 = y", # Texte à afficher
+     x = 0.4, # Emplacement du texte (centre)
+     y = -0.16, # Emplacement du texte (centre)  
+     col = "red4")     
+
+# Ajout de TEXTE dans la marge
+mtext(text = "Source : données complétement fictives", # Texte à afficher
+     side = 4, # Emplacement (1 = bottom, 2 = left, 3 = top...)
+     cex = 0.9, # Taille de la police
+     col = "grey")  
+
+ 
+```
+:::
+
+## [Gestion de la fenêtre graphique]{.bigone}
+
+[**Deux fonctions permettent de gérer les paramètres de la fenêtre graphique.**]{.bigtwo}
+
+[I. `par()` pour définir ou interroger les paramètres de la fenêtre graphique.]{.bigtwo}
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
+par(bg = "royalblue1", # Couleur de fond
+    col= "white",      # couleur du graphique
+    mfrow = c(2,2),    # Fenêtre découper en deux lignes / deux colonnes (4 graphiques)
+    mar = c(5,5,5,5))  # Gestion des marges pour chaque graphique (B,L,T,R)
+
+plot(x = log(1:10), y = 10:1, main = "plot 1")
+plot(x = exp(1:10), y = log(1:10), main = "plot 2")
+plot(x = sin(1:10), y = 1:10, main = "plot 3")
+plot(x = 1:10, y = exp(1:10), main = "plot 4")
+
+```
+:::
+
+
+[II. `layout()` propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.]{.bigtwo}
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+matrix(c(4, 3, 3, 1, 2, 2, 1, 2, 2), 3, 3)
+```
+:::
+
+[Avec la matrice ci-dessus, la fenêtre graphique sera paramétrée pour contenir trois graphiques. Le graphique 1 occupera toute la première ligne. le graphique 2 occupera les deux dernières lignes de la première colonne, et le 3e sera situé dans les deux dernières lignes de la dernière colonne.]{.bigbis}
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
+# Découpage de la fenêtre graphique
+layout(mat = matrix(c(4, 3, 3, 1, 2, 2, 1, 2, 2), 3, 3))
+
+hist(co2, main = "co2")
+plot(co2)
+boxplot(co2, axes = FALSE)
+qqnorm(co2, main = "")
+
+```
+:::
+
+## [Limites des fonctions graphiques R-base]{.bigone}
+
+\
+
+::: {.bigtwo}
+Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun de fonctions présente tout de même quelques limites. Ces fonctions sont très simples d'utilisation, mais sont à finalement à privilégier dans un contexte d'exploration des données car :
+
+- **Limiter en matière de types de représentations graphique**
+- **Propose une syntaxe peu générique**
+- **Un graphique + éléments de mise en pag ne peuvent pas être stockés dans un seul objet**
+- **Le rendu graphique restera toujours assez rudimentaire...**  
+
+\
+
+Mais pas de panique, il existe tout une gamme de package qui offre une palette importante de fonctionnalités pour la production de graphiques très élégants, en seulement quelque lignes de code... 
+:::
+
+# [Tour d'horizon des packages de représentation graphique]{.bigtwo}
+
+## [Lattice (2001)]{.bigone}
+
+[Le package `lattice` vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.]{.bigtwo} 
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+library(lattice)
+attach(mtcars)
+
+# create factors with value labels
+gear.f<-factor(gear,levels=c(3,4,5),
+  labels=c("3gears","4gears","5gears"))
+cyl.f <-factor(cyl,levels=c(4,6,8),
+  labels=c("4cyl","6cyl","8cyl"))
+
+# kernel density plots by factor level (alternate layout)
+densityplot(~mpg|cyl.f,
+   main="Density Plot by Numer of Cylinders",
+   xlab="Miles per Gallon",
+   layout=c(1,3))
+
+
+# boxplots for each combination of two factors
+bwplot(cyl.f~mpg|gear.f, 
+       ylab="Cylinders", xlab="Miles per Gallon",
+       main="Mileage by Cylinders and Gears",
+       layout=c(1,3))
+
+# 3d scatterplot by factor level
+cloud(mpg~wt*qsec|cyl.f,
+   main="3D Scatterplot by Cylinders")
+```
+:::
+
+[L'une de ses principales caractéristiques est la prise en charge de la création de graphiques en treillis, qui permettent d'afficher des variables ou des relations entre variables, conditionnées par une ou plusieurs autres variables.]{.bigtwo} 
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+# scatterplots for each combination of two factors
+xyplot(mpg~wt|cyl.f*gear.f,
+   main="Scatterplots by Cylinders and Gears",
+   ylab="Miles per Gallon", xlab="Car Weight")
+```
+:::
+  
+[Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.]{.bigtwo} 
+  
+## [La révolution ggplot2 (2007)]{.bigone}
+
+3 points forts
+
+- Graphique élégants
+- Grammar of graphic
+- Type de représentation étendue
 
 ## ggplot2 extensions
 

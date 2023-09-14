@@ -479,8 +479,8 @@
 <h1><span class="bigtwo">Graphiques avec R</span></h1>
 
 </section>
-<section id="fonctions-graphiques-r-base" class="slide level2">
-<h2><span class="bigone">Fonctions graphiques R-base</span></h2>
+<section id="fonctions-graphiques-r-base-1995" class="slide level2">
+<h2><span class="bigone">Fonctions graphiques R-base (1995)</span></h2>
 <p><span class="bigbis">La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. <strong>Au centre de l’ecosystème graphique du R-base : la fonction</strong> <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot"><strong><code>plot()</code></strong></a></span></p>
 <div class="codeXXL" style="margin-top:30px;">
 <div class="cell">
@@ -693,19 +693,253 @@
 </div>
 </div>
 </section>
+<section id="les-arguments-des-fonctions-graphiques" class="slide level2">
+<h2><span class="bigone">Les arguments des fonctions graphiques</span></h2>
+<p><span class="bigtwo">Une multitude d’arguments permettent de paramétrer la mise en page d’un graphique.</span></p>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="at">type =</span> <span class="st">"o"</span>, <span class="co"># type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">col =</span> <span class="st">"red"</span>, <span class="co"># couleur, tapez `colours()` pour la liste complète</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="at">pch =</span> <span class="dv">20</span>, <span class="co"># type de symboles, un chiffre entre 0 et 25, tapez `?points`</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="co"># taille des symboles</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="at">lty =</span> <span class="dv">1</span>, <span class="co"># type de lignes, un chiffre entre 1 et 6</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="at">lwd =</span> <span class="fl">1.4</span>, <span class="co"># taille de lignes</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>), <span class="co"># limites de l'axe des x</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>  <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>), <span class="co"># limites de l'axe des y)</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a>  <span class="at">xlab =</span> <span class="st">"La variable x"</span>, <span class="co"># titre pour l'axe des x</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a>  <span class="at">ylab =</span> <span class="st">"Le sinus  de x"</span>, <span class="co"># titre pour l'axe des y</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>  <span class="at">main =</span> <span class="st">"La fonction sinus entre -pi et pi"</span> <span class="co"># titre général pour le graphique</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</section>
 <section id="les-fonctions-r-base-de-mise-en-page" class="slide level2">
 <h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
+<p><span class="bigtwo">Plusieurs fonctions permettent d’ajouter des éléments sur un graphique existant.</span></p>
+<div class="bigbis">
+<ul>
+<li><code>legend()</code> : légende</li>
+<li><code>title()</code> : titre</li>
+<li><code>density()</code> : courbe de densité à noyau</li>
+<li><code>points()</code> : point</li>
+<li><code>rug()</code> : représentation <em>stripchart</em> le long de l’axe des x</li>
+<li><code>lines()</code> : segments de droites reliant des points</li>
+<li><code>matlines()</code> : segments de droites reliant des points (utiliser avec <code>matplot()</code>)</li>
+<li><code>abline()</code> : droites traversant toute la zone graphique</li>
+<li><code>text()</code> : texte dans la zone graphique</li>
+<li><code>mtext()</code> : texte dans la marge</li>
+<li>etc…</li>
+</ul>
+</div>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">type =</span> <span class="st">"o"</span>, <span class="co"># type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">col =</span> <span class="st">"red"</span>, <span class="co"># couleur, tapez `colours()` pour la liste complète</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">pch =</span> <span class="dv">20</span>, <span class="co"># type de symboles, un chiffre entre 0 et 25, tapez `?points`</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="co"># taille des symboles</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="at">lty =</span> <span class="dv">1</span>, <span class="co"># type de lignes, un chiffre entre 1 et 6</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>  <span class="at">lwd =</span> <span class="fl">1.4</span>, <span class="co"># taille de lignes</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>  <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>), <span class="co"># limites de l'axe des x</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>  <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>), <span class="co"># limites de l'axe des y)</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>  <span class="at">xlab =</span> <span class="st">"La variable x"</span>, <span class="co"># titre pour l'axe des x</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>  <span class="at">ylab =</span> <span class="st">"Le sinus  de x"</span>) <span class="co"># titre pour l'axe des y) </span></span>
+<span id="cb19-12"><a href="#cb19-12"></a></span>
+<span id="cb19-13"><a href="#cb19-13"></a><span class="co"># Ajout d'un TITRE</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a><span class="fu">title</span>(<span class="st">"Titre de mon graphique"</span>, </span>
+<span id="cb19-15"><a href="#cb19-15"></a>      <span class="at">cex.main =</span> <span class="fl">1.2</span>,  </span>
+<span id="cb19-16"><a href="#cb19-16"></a>      <span class="at">font.main=</span> <span class="dv">4</span>, </span>
+<span id="cb19-17"><a href="#cb19-17"></a>      <span class="at">col.main=</span> <span class="st">"red4"</span>)</span>
+<span id="cb19-18"><a href="#cb19-18"></a></span>
+<span id="cb19-19"><a href="#cb19-19"></a><span class="co"># Ajout d'une LEGENDE</span></span>
+<span id="cb19-20"><a href="#cb19-20"></a><span class="fu">legend</span>(<span class="at">x =</span> <span class="fl">0.9</span>, <span class="co"># Emplacement de la légende (coin haut gauche)</span></span>
+<span id="cb19-21"><a href="#cb19-21"></a>       <span class="at">y =</span> <span class="sc">-</span><span class="fl">1.1</span>, <span class="co"># Emplacement de la légende (coin haut gauche)</span></span>
+<span id="cb19-22"><a href="#cb19-22"></a>       <span class="at">legend =</span> <span class="st">"Fonction sinus entre -pi et pi"</span>, </span>
+<span id="cb19-23"><a href="#cb19-23"></a>       <span class="at">bg =</span> <span class="st">"lightgoldenrod"</span>,</span>
+<span id="cb19-24"><a href="#cb19-24"></a>       <span class="at">col =</span> <span class="st">"red"</span>,</span>
+<span id="cb19-25"><a href="#cb19-25"></a>       <span class="at">pch =</span> <span class="dv">20</span>,</span>
+<span id="cb19-26"><a href="#cb19-26"></a>       <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="co"># Taille de lé lagende</span></span>
+<span id="cb19-27"><a href="#cb19-27"></a>       <span class="at">lty =</span> <span class="dv">1</span>, </span>
+<span id="cb19-28"><a href="#cb19-28"></a>       <span class="at">lwd =</span> <span class="fl">1.4</span>)</span>
+<span id="cb19-29"><a href="#cb19-29"></a></span>
+<span id="cb19-30"><a href="#cb19-30"></a><span class="co"># Ajout d'une LIGNE (horizontale)</span></span>
+<span id="cb19-31"><a href="#cb19-31"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="co"># Coupe l'axe des y à cette valeur </span></span>
+<span id="cb19-32"><a href="#cb19-32"></a>       <span class="at">lty =</span> <span class="dv">2</span>, <span class="co"># Type de ligne</span></span>
+<span id="cb19-33"><a href="#cb19-33"></a>       <span class="at">lwd =</span> <span class="fl">0.5</span>, <span class="co"># épaisseur</span></span>
+<span id="cb19-34"><a href="#cb19-34"></a>       <span class="at">col =</span> <span class="st">"grey50"</span>)</span>
+<span id="cb19-35"><a href="#cb19-35"></a></span>
+<span id="cb19-36"><a href="#cb19-36"></a><span class="co"># Ajout d'un POINT</span></span>
+<span id="cb19-37"><a href="#cb19-37"></a><span class="fu">points</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">0</span>, </span>
+<span id="cb19-38"><a href="#cb19-38"></a>       <span class="at">y =</span> <span class="dv">0</span>, </span>
+<span id="cb19-39"><a href="#cb19-39"></a>       <span class="at">col =</span> <span class="st">"red4"</span>, </span>
+<span id="cb19-40"><a href="#cb19-40"></a>       <span class="at">pch =</span> <span class="dv">20</span>,<span class="co"># Type de symbol</span></span>
+<span id="cb19-41"><a href="#cb19-41"></a>       <span class="at">cex =</span> <span class="dv">4</span>)</span>
+<span id="cb19-42"><a href="#cb19-42"></a></span>
+<span id="cb19-43"><a href="#cb19-43"></a><span class="co"># Ajout de TEXTE</span></span>
+<span id="cb19-44"><a href="#cb19-44"></a><span class="fu">text</span>(<span class="st">"x = 0 = y"</span>, <span class="co"># Texte à afficher</span></span>
+<span id="cb19-45"><a href="#cb19-45"></a>     <span class="at">x =</span> <span class="fl">0.4</span>, <span class="co"># Emplacement du texte (centre)</span></span>
+<span id="cb19-46"><a href="#cb19-46"></a>     <span class="at">y =</span> <span class="sc">-</span><span class="fl">0.16</span>, <span class="co"># Emplacement du texte (centre)  </span></span>
+<span id="cb19-47"><a href="#cb19-47"></a>     <span class="at">col =</span> <span class="st">"red4"</span>)     </span>
+<span id="cb19-48"><a href="#cb19-48"></a></span>
+<span id="cb19-49"><a href="#cb19-49"></a><span class="co"># Ajout de TEXTE dans la marge</span></span>
+<span id="cb19-50"><a href="#cb19-50"></a><span class="fu">mtext</span>(<span class="at">text =</span> <span class="st">"Source : données complétement fictives"</span>, <span class="co"># Texte à afficher</span></span>
+<span id="cb19-51"><a href="#cb19-51"></a>     <span class="at">side =</span> <span class="dv">4</span>, <span class="co"># Emplacement (1 = bottom, 2 = left, 3 = top...)</span></span>
+<span id="cb19-52"><a href="#cb19-52"></a>     <span class="at">cex =</span> <span class="fl">0.9</span>, <span class="co"># Taille de la police</span></span>
+<span id="cb19-53"><a href="#cb19-53"></a>     <span class="at">col =</span> <span class="st">"grey"</span>)  </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="fenêtre-graphique" class="slide level2">
-<h2><span class="bigone">Fenêtre graphique</span></h2>
+<section id="gestion-de-la-fenêtre-graphique" class="slide level2">
+<h2><span class="bigone">Gestion de la fenêtre graphique</span></h2>
+<p><span class="bigtwo"><strong>Deux fonctions permettent de gérer les paramètres de la fenêtre graphique.</strong></span></p>
+<p><span class="bigtwo">I. <code>par()</code> pour définir ou interroger les paramètres de la fenêtre graphique.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>, <span class="co"># Couleur de fond</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>    <span class="at">col=</span> <span class="st">"white"</span>,      <span class="co"># couleur du graphique</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),    <span class="co"># Fenêtre découper en deux lignes / deux colonnes (4 graphiques)</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>))  <span class="co"># Gestion des marges pour chaque graphique (B,L,T,R)</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a></span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">main =</span> <span class="st">"plot 1"</span>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 2"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">sin</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">"plot 3"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">y =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 4"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="bigtwo">II. <code>layout()</code> propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    4    1    1
+[2,]    3    2    2
+[3,]    3    2    2</code></pre>
+</div>
+</div>
+</div>
+<p><span class="bigbis">Avec la matrice ci-dessus, la fenêtre graphique sera paramétrée pour contenir trois graphiques. Le graphique 1 occupera toute la première ligne. le graphique 2 occupera les deux dernières lignes de la première colonne, et le 3e sera situé dans les deux dernières lignes de la dernière colonne.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Découpage de la fenêtre graphique</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">layout</span>(<span class="at">mat =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="fu">hist</span>(co2, <span class="at">main =</span> <span class="st">"co2"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="fu">plot</span>(co2)</span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="fu">boxplot</span>(co2, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">qqnorm</span>(co2, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="lattice" class="slide level2">
-<h2><span class="bigone">2001 - Lattice</span></h2>
-<p>New API Easy small multiples</p>
+<section id="limites-des-fonctions-graphiques-r-base" class="slide level2">
+<h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
+<p><br>
+</p>
+<div class="bigtwo">
+<p>Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun de fonctions présente tout de même quelques limites. Ces fonctions sont très simples d’utilisation, mais sont à finalement à privilégier dans un contexte d’exploration des données car :</p>
+<ul>
+<li><strong>Limiter en matière de types de représentations graphique</strong></li>
+<li><strong>Propose une syntaxe peu générique</strong></li>
+<li><strong>Un graphique + éléments de mise en pag ne peuvent pas être stockés dans un seul objet</strong></li>
+<li><strong>Le rendu graphique restera toujours assez rudimentaire…</strong></li>
+</ul>
+<p><br>
+</p>
+<p>Mais pas de panique, il existe tout une gamme de package qui offre une palette importante de fonctionnalités pour la production de graphiques très élégants, en seulement quelque lignes de code…</p>
+</div>
+</section></section>
+<section>
+<section id="tour-dhorizon-des-packages-de-représentation-graphique" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique</span></h1>
+
 </section>
-<section id="ggplot2" class="slide level2">
-<h2>2007 - ggplot2</h2>
-<p>Revolution…</p>
+<section id="lattice-2001" class="slide level2">
+<h2><span class="bigone">Lattice (2001)</span></h2>
+<p><span class="bigtwo">Le package <code>lattice</code> vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-3.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="bigtwo">L’une de ses principales caractéristiques est la prise en charge de la création de graphiques en treillis, qui permettent d’afficher des variables ou des relations entre variables, conditionnées par une ou plusieurs autres variables.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="bigtwo">Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.</span></p>
+</section>
+<section id="la-révolution-ggplot2-2007" class="slide level2">
+<h2><span class="bigone">La révolution ggplot2 (2007)</span></h2>
+<p>3 points forts</p>
+<ul>
+<li>Graphique élégants</li>
+<li>Grammar of graphic</li>
+<li>Type de représentation étendue</li>
+</ul>
 </section>
 <section id="ggplot2-extensions" class="slide level2">
 <h2>ggplot2 extensions</h2>
