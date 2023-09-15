@@ -23,6 +23,7 @@ format:
     transition-speed: fast
     menu: TRUE
     css: style.css
+    bibliography: biblio.bib
     pointer:
       pointerSize: 20
       color: 'red4'
@@ -599,19 +600,30 @@ xyplot(mpg~wt|cyl.f*gear.f,
 
 3 points forts
 
-- Graphique élégants
-- Grammar of graphic
-- Type de représentation étendue
+- Repose sur le concept de grammaire graphique (Leland Wilkinson)
+- Produit des graphiques élégants
+- Type de représentation graphique possible très étendue
+
 
 ## ggplot2 extensions
 
 exts.ggplot2.tidyverse.org
 
+
 ## Customization et Art graphique
 
 Cedric Scherer - X-Men Characters Tania Shapiro - Best selling Authors
 
+
++ Le nérlandais 
+
+
 # Palettes de couleur
+
+
+- paletteer (Hvitfeldt, 2021) propose 2587 palettes (!!!)
+- cols4all (Tennekes, 2023) propose une app shiny
+ 
 
 # Visualisation thématique
 
@@ -688,3 +700,6 @@ robservable
 ## ggplot2 official
 
 https://www.data-imaginist.com/screens/
+
+
+## Références bibliographiques
