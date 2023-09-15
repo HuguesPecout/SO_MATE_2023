@@ -596,14 +596,14 @@ xyplot(mpg~wt|cyl.f*gear.f,
   
 [Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.]{.bigtwo} 
   
-## [La révolution ggplot2 (2007)]{.bigone}
+## [ggplot2 (2007)]{.bigone}
 
-3 points forts
+[Une révolution !]{.bigtwo}
 
-- Repose sur le concept de grammaire graphique (Leland Wilkinson)
-- Produit des graphiques élégants
+- Repose sur le concept de La *Grammar of Graphics* Conceptualisée par Leland Wilkinson (2006 [1999])
 - Type de représentation graphique possible très étendue
 - Adapté au développement d'extensions
+- Produit des graphiques élégants
 
 ## ggplot2 extensions
 
