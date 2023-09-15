@@ -94,7 +94,26 @@
     code span.va { color: #00e0e0; } /* Variable */
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -939,25 +958,64 @@
 <li>Repose sur le concept de grammaire graphique (Leland Wilkinson)</li>
 <li>Produit des graphiques élégants</li>
 <li>Type de représentation graphique possible très étendue</li>
+<li>Adapté au développement d’extensions</li>
 </ul>
 </section>
 <section id="ggplot2-extensions" class="slide level2">
 <h2>ggplot2 extensions</h2>
 <p>exts.ggplot2.tidyverse.org</p>
+<p>128 extensions</p>
+<p>cartographie, animation, intérativité, type de représentation, application…</p>
+<p>Esquisse</p>
+
+<img data-src="images/extension_ggplot.png" class="r-stretch"></section>
+<section id="de-la-customization-avancée" class="slide level2">
+<h2>De la Customization avancée</h2>
+<p>X-Men Characters - Cedric Scherer</p>
+<div class="center">
+<p><img data-src="images/xmen.jpg"></p>
+</div>
+<p><br>
+</p>
+<p>Best selling Authors - Tania Shapiro</p>
+<div class="center">
+<p><img data-src="images/nyt.png"></p>
+</div>
 </section>
-<section id="customization-et-art-graphique" class="slide level2">
-<h2>Customization et Art graphique</h2>
-<p>Cedric Scherer - X-Men Characters Tania Shapiro - Best selling Authors</p>
-<ul>
-<li>Le nérlandais</li>
-</ul>
+<section id="à-lart-graphique-numérique" class="slide level2">
+<h2>à l’art graphique numérique</h2>
+<p>Thomas Lin Pedersen</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/art_1.png"><br>
+<img data-src="images/art_2.png"><br>
+<img data-src="images/art_3.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/art_4.png"><br>
+<img data-src="images/art_5.png"><br>
+<img data-src="images/art_6.png"> <!-- ![](images/art_7.png) --></p>
+</div>
+</div>
 </section></section>
 <section id="palettes-de-couleur" class="title-slide slide level1 center">
 <h1>Palettes de couleur</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>De nombreuses palettes sont directement disponibles dans R-base</strong> <img data-src="images/swatch-plot-1.svg" alt="hcl.colors()"></p>
+</div><div class="column" style="width:50%;">
+<p>Près de 70 (!) packages proposent des palettes…</p>
 <ul>
-<li>paletteer (Hvitfeldt, 2021) propose 2587 palettes (!!!)</li>
-<li>cols4all (Tennekes, 2023) propose une app shiny</li>
+<li><code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes</li>
+<li><code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span> propose une app shiny</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cols4all.png"></p>
+<figcaption><code>cols4all::c4a_gui()</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section>
@@ -1057,9 +1115,20 @@
 <section id="ggplot2-official" class="slide level2">
 <h2>ggplot2 official</h2>
 <p>https://www.data-imaginist.com/screens/</p>
+</section>
+<section id="références-bibliographiques" class="slide level2 smaller scrollable">
+<h2>Références bibliographiques</h2>
 
 <img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Journée annuelle SO-MATE 2023 - Représentations graphiques avec R</p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-R-paletteer" class="csl-entry" role="listitem">
+Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
+</div>
+<div id="ref-R-cols4all" class="csl-entry" role="listitem">
+Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
+</div>
 </div>
 </section></section>
     </div>

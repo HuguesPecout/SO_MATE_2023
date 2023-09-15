@@ -23,7 +23,7 @@ format:
     transition-speed: fast
     menu: TRUE
     css: style.css
-    bibliography: biblio.bib
+    bibliography: references.bib
     pointer:
       pointerSize: 20
       color: 'red4'
@@ -603,27 +603,79 @@ xyplot(mpg~wt|cyl.f*gear.f,
 - Repose sur le concept de grammaire graphique (Leland Wilkinson)
 - Produit des graphiques élégants
 - Type de représentation graphique possible très étendue
-
+- Adapté au développement d'extensions
 
 ## ggplot2 extensions
 
 exts.ggplot2.tidyverse.org
 
 
-## Customization et Art graphique
+128 extensions
 
-Cedric Scherer - X-Men Characters Tania Shapiro - Best selling Authors
+cartographie, animation, intérativité, type de représentation, application...
+
+Esquisse
 
 
-+ Le nérlandais 
+![](images/extension_ggplot.png)
+
+## De la Customization avancée
+
+X-Men Characters - Cedric Scherer
+
+::: {.center}
+![](images/xmen.jpg)
+:::
+
+\
+
+Best selling Authors - Tania Shapiro
+
+::: {.center}
+![](images/nyt.png)
+:::
+
+## à l'art graphique numérique
+
+Thomas Lin Pedersen 
+
+::: columns
+::: {.column width=50%}
+![](images/art_1.png)  
+![](images/art_2.png)  
+![](images/art_3.png)
+:::
+
+::: {.column width=50%}
+![](images/art_4.png)   
+![](images/art_5.png)  
+![](images/art_6.png)
+<!-- ![](images/art_7.png) -->
+
+:::
+:::
 
 
 # Palettes de couleur
 
+::: columns
+::: {.column width="50%"}
+**De nombreuses palettes sont directement disponibles dans R-base** 
+![`hcl.colors()`](images/swatch-plot-1.svg)
 
-- paletteer (Hvitfeldt, 2021) propose 2587 palettes (!!!)
-- cols4all (Tennekes, 2023) propose une app shiny
- 
+:::
+
+::: {.column width="50%"}
+
+Près de 70 (!) packages proposent des palettes...   
+
+- `paletteer` [@R-paletteer] propose 2587 palettes
+- `cols4all` [@R-cols4all] propose une app shiny
+
+![`cols4all::c4a_gui()`](images/cols4all.png)
+:::
+
+:::
 
 # Visualisation thématique
 
