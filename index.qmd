@@ -21,6 +21,7 @@ format:
     chalkboard: FALSE
     transition: fade
     transition-speed: fast
+    code-link: TRUE
     menu: TRUE
     css: style.css
     bibliography: references.bib
@@ -476,7 +477,7 @@ mtext(text = "Source : données complétement fictives", # Texte à afficher
 
 ## [Gestion de la fenêtre graphique]{.bigone}
 
-[**Deux fonctions permettent de gérer les paramètres de la fenêtre graphique.**]{.bigtwo}
+[**Trois fonctions permettent de gérer les paramètres de la fenêtre graphique.**]{.bigtwo}
 
 [I. `par()` pour définir ou interroger les paramètres de la fenêtre graphique.]{.bigtwo}
 
@@ -530,22 +531,63 @@ qqnorm(co2, main = "")
 ```
 :::
 
+
+[II. `dev.off()` ferme le graphique en cours et réinitialise par défault la fenêtre graphique.]{.bigtwo}
+
+::: {.codeXL style="margin-top:30px;"}   
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
+
+par(bg = "royalblue1") 
+
+plot(1,1)
+
+dev.off()
+
+```
+
+```{r eval = TRUE, fig.align='center'}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
+plot(1,1)
+
+```
+:::
+
+
 ## [Limites des fonctions graphiques R-base]{.bigone}
 
 \
 
-::: {.bigtwo}
-Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun de fonctions présente tout de même quelques limites. Ces fonctions sont très simples d'utilisation, mais sont à finalement à privilégier dans un contexte d'exploration des données car :
+::: {.bigone}
+Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun présente des limites. Ces fonctions sont très simples d'utilisation, mais sont à privilégier dans un contexte d'exploration des données car :
 
-- **Limiter en matière de types de représentations graphique**
-- **Propose une syntaxe peu générique**
-- **Un graphique + éléments de mise en pag ne peuvent pas être stockés dans un seul objet**
-- **Le rendu graphique restera toujours assez rudimentaire...**  
+- [**Les types de représentation graphique sont limitées**]{.elementR}
+- [**La syntaxe est peu générique**]{.elementR}
+- [**Un graphique + les éléments de mise en page ne peuvent pas être stockés dans un seul objet**]{.elementR}
+- [**Le rendu graphique restera toujours assez rudimentaire...** ]{.elementR} 
+
+:::
 
 \
 
-Mais pas de panique, il existe tout une gamme de package qui offre une palette importante de fonctionnalités pour la production de graphiques très élégants, en seulement quelque lignes de code... 
+::: {.fatxt}
+
+::: {.callout-important}
+## Les extensions graphiques
+Il existe de nombreux packages qui offrent une palette importante de fonctionnalités pour la production de graphiques spécifiques et élégants, en seulement quelques lignes de code...
+
 :::
+
+:::
+
+
+
 
 # [Tour d'horizon des packages de représentation graphique]{.bigtwo}
 
@@ -593,17 +635,190 @@ xyplot(mpg~wt|cyl.f*gear.f,
    ylab="Miles per Gallon", xlab="Car Weight")
 ```
 :::
-  
-[Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.]{.bigtwo} 
-  
-## [ggplot2 (2007)]{.bigone}
 
-[Une révolution !]{.bigtwo}
 
-- Repose sur le concept de La *Grammar of Graphics* Conceptualisée par Leland Wilkinson (2006 [1999])
-- Type de représentation graphique possible très étendue
-- Adapté au développement d'extensions
-- Produit des graphiques élégants
+::: {.fatxt} 
+
+::: {.callout-note}
+Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.
+:::
+
+:::
+  
+
+  
+## [ggplot2 (2007 - 2012)]{.bigone}
+
+
+::: {style="margin-top:20px;"}   
+[**le package `ggplot2` [@R-ggplot2] est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R**. Ce package :]{.bigtwo}
+:::
+
+::: {.bigtwo}
+
+- Repose sur le concept de La [*Grammar of Graphics*]{.elementR} [@wilkinson:1999:TGOG]
+- Produit des graphiques très élégants par défault
+- Est adapté au développement d'extensions
+- Ouvre la possibilité de construire des représentations graphiques très diverses et personnalisées.
+
+:::
+
+::: columns
+
+::: {.column width="25%" .center}   
+::: {.center}   
+
+![](images/ggplot2.png){width=80%}
+
+[**https://ggplot2.tidyverse.org/**](https://ggplot2.tidyverse.org/)
+:::   
+:::
+
+::: {.column width="75%"}
+
+::: {.center}
+```{r eval = TRUE, fig.align='center'}
+#| echo: false
+#| out.width: 75%
+
+library(packageRank)
+tabdownload <- cranDownloads(packages = "ggplot2", from = "2012", to = "2023")
+tabdown <- tabdownload$cranlogs.data
+maxcumuldown <- max(tabdownload$cranlogs.data$cumulative)
+
+library(ggplot2)
+library(ggthemes)
+ggplot(data = tabdown, mapping = aes(x = date, y = count)) +
+  geom_line() + 
+  geom_smooth() + 
+  ggtitle("ggplot2 download counts by day") + 
+  xlab("") +  ylim(0, 160000) +
+  ylab("") + theme_economist() + 
+  annotate(geom="text", x=as.Date("2014-06-01"), y=125000, label=paste0("Total = ", maxcumuldown, " !"), color="blue4", size = 5, fontface = "bold") + 
+  theme(plot.title = element_text(size=20))
+
+
+```
+:::
+
+:::
+
+:::
+
+## [ggplot2, au delà de R...]{.bigone}
+
+La syntaxe de la grammair graphics a été reprise dans plusieurs langages...
+
+## ggplot2 (R)
+
+::: columns
+:::: {.column width="30%"}
+
+```r
+
+library(ggplot2)
+
+ggplot(data = cars, mapping = aes(x = Horsepower, 
+                                  y = Miles_per_Gallon,
+                                  color = Origin)) +
+  geom_point()
+  
+```
+::::
+:::: {.column width="70%"}
+![](images/gg_ggplot2.png)
+::::
+:::
+
+::: attribution
+[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+:::
+
+
+
+## VegaLite (JavaScript)
+
+::: columns
+:::: {.column width="40%"}
+```js
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "data/cars.json"},
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "Horsepower",
+          "type": "quantitative"},
+    "y": {"field": "Miles_per_Gallon",
+          "type": "quantitative"},
+    "color": {"field": "Origin",
+              "type": "nominal"}
+  }
+}
+```
+::::
+:::: {.column width="60%"}
+![](images/gg_vegalite.svg){width="90%"}
+::::
+:::
+
+::: attribution
+[https://vega.github.io/vega-lite/](https://vega.github.io/vega-lite/)
+:::
+
+## Altair (Python)
+
+
+::: columns
+:::: {.column width="35%"}
+```python
+import altair as alt
+
+alt.Chart(cars).
+  mark_circle(size=60).
+  encode(x='Horsepower',
+         y='Miles_per_Gallon',
+         color='Origin')
+```
+::::
+:::: {.column width="65%"}
+![](images/gg_altair.png)
+::::
+:::
+
+::: attribution
+[https://altair-viz.github.io/](https://altair-viz.github.io/)
+:::
+
+## Observable Plot (js)
+
+::: columns
+:::: {.column width="30%"}
+
+```js
+Plot.plot({
+  grid: true,
+  color: {
+    legend: true
+  },
+  marks: [
+    Plot.dot(cars, {
+    x: "Horsepower",
+    y: "Miles_per_Gallon",
+    fill: "Origin"
+    })
+  ]
+})
+```
+::::
+:::: {.column width="70%"}
+![](images/gg_observable.png)
+::::
+:::
+
+::: attribution
+[https://github.com/observablehq/plot](https://github.com/observablehq/plot)
+:::
+
 
 ## ggplot2 extensions
 

@@ -7,17 +7,17 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.433">
-
-  <meta name="author" content="Hugues Pecout (CNRS, UMR Géographie-Cités)">
-  <title>Visualisation de données avec R</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
-  <style>
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+<meta name="author" content="Hugues Pecout (CNRS, UMR Géographie-Cités)">
+<title>Visualisation de données avec R</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -114,14 +114,14 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="style.css">
-  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+<link rel="stylesheet" href="style.css">
+<link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="index_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+<link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -318,7 +318,7 @@
   }
 
   </style>
-  <style type="text/css">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -411,53 +411,36 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
-
-
-
-
-  <p class="title">Visualisation de données avec R</p>
+<section id="title-slide" class="center"><p class="title">Visualisation de données avec R</p>
   <p class="subtitle">Tour d’horizon des fonctionnalités de représentation graphique</p>
 
-  <img class="img" src="images/entete.png">
-
-<br>
-
-  <p class="author">Hugues Pecout (CNRS, UMR Géographie-Cités)</p>
+  <img class="img" src="images/entete.png"><p class="author">Hugues Pecout (CNRS, UMR Géographie-Cités)</p>
   <p class="institute">Journée annuelle SO-MATE 2023, Limoges</p>
 
-<br>
+
 
   <p class="affiliation"><img src="images/cnrs.png" width="60" style="margin-right:320px;"><img src="images/somate.png" width="260" style="margin-right:320px;"><img src="images/geocite.jpeg" width="60"></p>
 
-</section>
-<section>
-<section id="outils-de-représentation-de-données" class="title-slide slide level1 center">
-<h1><span class="bigtwo">Outils de représentation de données</span></h1>
+</section><section><section id="outils-de-représentation-de-données" class="title-slide slide level1 center"><h1><span class="bigtwo">Outils de représentation de données</span></h1>
 
-</section>
-<section id="graphiques-avec-excel" class="slide level2">
-<h2><span class="bigone">Graphiques avec Excel</span></h2>
+</section><section id="graphiques-avec-excel" class="slide level2"><h2><span class="bigone">Graphiques avec Excel</span></h2>
 <div class="columns">
 <div class="column" style="width:25%;">
 <div style="font-size:145%;">
 <p>✅ <strong>Rapide</strong><br>
 ✅ <strong>Facile</strong></p>
-<p><br>
-</p>
+<p><br></p>
 <div class="txt2">
 <p><strong>Fonctionnalités disponibles :</strong></p>
 <p>❌ Graphiques par défault<br>
 ❌ Types de graphiques<br>
 ❌ Interactivité</p>
-<p><br>
-</p>
+<p><br></p>
 <p><strong>Gestion des données :</strong></p>
 <p>❌ Manipulation des données<br>
 ❌ Statistiques<br>
 ❌ Données volumineuses</p>
-<p><br>
-</p>
+<p><br></p>
 <p><strong>Reproductibilité :</strong></p>
 <p>❌ Automatisation du pipeline<br>
 ❌ Collaboration<br>
@@ -474,32 +457,23 @@
 </div>
 </div>
 </div>
-</section>
-<section id="graphiques-avec-des-outils-dédiés" class="slide level2">
-<h2><span class="bigone">Graphiques avec des outils dédiés</span></h2>
+</section><section id="graphiques-avec-des-outils-dédiés" class="slide level2"><h2><span class="bigone">Graphiques avec des outils dédiés</span></h2>
 <p><span style="font-size:130%;margin-top:10px">Des <strong>fonctionnalités avancées</strong> et des <strong>sorties graphiques très élégantes</strong>, mais des <strong>logiciels payants</strong>.</span></p>
 <div style="margin-top:-10px;">
 <p><span style="font-size:130%;">Bon outils si on ne pratique pas R régulièrement, mais <strong>limité notamment en matière de reproductibilité</strong>.</span></p>
 </div>
 <div class="columns">
 <div class="column" style="width:20%;">
-<p><img data-src="images/power-bi_logo.png" style="margin-top:10px;;width:80.0%"> <img data-src="images/Tableau-Logo.png" style="margin-top:-15px;;width:80.0%"><br>
-<img data-src="images/ClickView-logo-1.png" style="margin-top:-15px;;width:80.0%"> <img data-src="images/flourish.jpg" style="margin-top:20px;;width:80.0%"><br>
-<img data-src="images/datawrapper.png" style="margin-top:20px;;width:80.0%"> <img data-src="images/Adobe_Illustrator.png" style="margin-top:20px;;width:45.0%"></p>
+<p><img data-src="images/power-bi_logo.png" style="margin-top:10px;;width:80.0%"><img data-src="images/Tableau-Logo.png" style="margin-top:-15px;;width:80.0%"><br><img data-src="images/ClickView-logo-1.png" style="margin-top:-15px;;width:80.0%"><img data-src="images/flourish.jpg" style="margin-top:20px;;width:80.0%"><br><img data-src="images/datawrapper.png" style="margin-top:20px;;width:80.0%"><img data-src="images/Adobe_Illustrator.png" style="margin-top:20px;;width:45.0%"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:75%;">
 <p><img data-src="images/power-bi.png" style="width:90.0%"></p>
 </div>
 </div>
-</section></section>
-<section>
-<section id="graphiques-avec-r" class="title-slide slide level1 center">
-<h1><span class="bigtwo">Graphiques avec R</span></h1>
+</section></section><section><section id="graphiques-avec-r" class="title-slide slide level1 center"><h1><span class="bigtwo">Graphiques avec R</span></h1>
 
-</section>
-<section id="fonctions-graphiques-r-base-1995" class="slide level2">
-<h2><span class="bigone">Fonctions graphiques R-base (1995)</span></h2>
+</section><section id="fonctions-graphiques-r-base-1995" class="slide level2"><h2><span class="bigone">Fonctions graphiques R-base (1995)</span></h2>
 <p><span class="bigbis">La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. <strong>Au centre de l’ecosystème graphique du R-base : la fonction</strong> <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot"><strong><code>plot()</code></strong></a></span></p>
 <div class="codeXXL" style="margin-top:30px;">
 <div class="cell">
@@ -509,9 +483,7 @@
 </div>
 </div>
 </div>
-</section>
-<section id="plot" class="slide level2">
-<h2><span class="bigone">plot()</span></h2>
+</section><section id="plot" class="slide level2"><h2><span class="bigone">plot()</span></h2>
 <p><span class="bigtwo"><strong>Une fonction générique très pratique pour l’exploration, qui s’adapte aux différents types des données.</strong></span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -581,24 +553,35 @@
 </div>
 </div>
 </div>
-</section>
-<section id="autres-fonctions-graphiques-r-base" class="slide level2">
-<h2><span class="bigone">Autres fonctions graphiques R-base</span></h2>
+</section><section id="autres-fonctions-graphiques-r-base" class="slide level2"><h2><span class="bigone">Autres fonctions graphiques R-base</span></h2>
 <div class="bigbis">
 <ul>
-<li><code>hist()</code> : histogramme de distribution</li>
-<li><code>stripchart()</code> : diagrammes de dispersion</li>
-<li><code>dotchart()</code> : diagramme en points de Cleveland</li>
-<li><code>boxplot()</code> : diagramme en boîte</li>
-<li><code>qqnorm()</code> : diagramme quantile-quantile théorique normal</li>
-<li><code>qqplot()</code> : diagramme quantile-quantile empirique</li>
-<li><code>barplot()</code> : diagramme à barres</li>
-<li><code>pie()</code> : diagramme en secteurs</li>
-<li><code>mosaicplot()</code> : diagramme en mosaïque</li>
-<li><code>spineplot()</code> : diagrammes en épine (entre l’histogramme et le mosaic plot)</li>
-<li><code>curve()</code> : Représentation d’une expression mathématique</li>
-<li><code>matplot()</code> : Dispersions de toutes le variables d’un tableau (un graphique)</li>
-<li><code>pairs()</code> : Matrice de nuage de point pour l’ensemble des variables d’un tableau</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> : histogramme de distribution</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/stripchart.html">stripchart()</a></code> : diagrammes de dispersion</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart()</a></code> : diagramme en points de Cleveland</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot()</a></code> : diagramme en boîte</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm()</a></code> : diagramme quantile-quantile théorique normal</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/qqnorm.html">qqplot()</a></code> : diagramme quantile-quantile empirique</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/barplot.html">barplot()</a></code> : diagramme à barres</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/pie.html">pie()</a></code> : diagramme en secteurs</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/mosaicplot.html">mosaicplot()</a></code> : diagramme en mosaïque</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/spineplot.html">spineplot()</a></code> : diagrammes en épine (entre l’histogramme et le mosaic plot)</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/curve.html">curve()</a></code> : Représentation d’une expression mathématique</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/matplot.html">matplot()</a></code> : Dispersions de toutes le variables d’un tableau (un graphique)</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/pairs.html">pairs()</a></code> : Matrice de nuage de point pour l’ensemble des variables d’un tableau</li>
 <li>etc….</li>
 </ul>
 </div>
@@ -612,7 +595,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>En fonction du type de variable, la fonction <code>plot()</code> renvoie vers les fonctions <code>barplot()</code>, <code>spineplot()</code>, <code>stripchart()</code>, <code>boxplot()</code>, <code>curve()</code>, <code>pairs()</code>…</p>
+<p>En fonction du type de variable, la fonction <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> renvoie vers les fonctions <code><a href="https://rdrr.io/r/graphics/barplot.html">barplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/spineplot.html">spineplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/stripchart.html">stripchart()</a></code>, <code><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/curve.html">curve()</a></code>, <code><a href="https://rdrr.io/r/graphics/pairs.html">pairs()</a></code>…</p>
 </div>
 </div>
 </div>
@@ -711,9 +694,7 @@
 </div>
 </div>
 </div>
-</section>
-<section id="les-arguments-des-fonctions-graphiques" class="slide level2">
-<h2><span class="bigone">Les arguments des fonctions graphiques</span></h2>
+</section><section id="les-arguments-des-fonctions-graphiques" class="slide level2"><h2><span class="bigone">Les arguments des fonctions graphiques</span></h2>
 <p><span class="bigtwo">Une multitude d’arguments permettent de paramétrer la mise en page d’un graphique.</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
@@ -735,30 +716,36 @@
 </div>
 </div>
 </div>
-</section>
-<section id="les-fonctions-r-base-de-mise-en-page" class="slide level2">
-<h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
+</section><section id="les-fonctions-r-base-de-mise-en-page" class="slide level2"><h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
 <p><span class="bigtwo">Plusieurs fonctions permettent d’ajouter des éléments sur un graphique existant.</span></p>
 <div class="bigbis">
 <ul>
-<li><code>legend()</code> : légende</li>
-<li><code>title()</code> : titre</li>
-<li><code>density()</code> : courbe de densité à noyau</li>
-<li><code>points()</code> : point</li>
-<li><code>rug()</code> : représentation <em>stripchart</em> le long de l’axe des x</li>
-<li><code>lines()</code> : segments de droites reliant des points</li>
-<li><code>matlines()</code> : segments de droites reliant des points (utiliser avec <code>matplot()</code>)</li>
-<li><code>abline()</code> : droites traversant toute la zone graphique</li>
-<li><code>text()</code> : texte dans la zone graphique</li>
-<li><code>mtext()</code> : texte dans la marge</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/legend.html">legend()</a></code> : légende</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/title.html">title()</a></code> : titre</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/density.html">density()</a></code> : courbe de densité à noyau</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/points.html">points()</a></code> : point</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/rug.html">rug()</a></code> : représentation <em>stripchart</em> le long de l’axe des x</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/lines.html">lines()</a></code> : segments de droites reliant des points</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/matplot.html">matlines()</a></code> : segments de droites reliant des points (utiliser avec <code><a href="https://rdrr.io/r/graphics/matplot.html">matplot()</a></code>)</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/abline.html">abline()</a></code> : droites traversant toute la zone graphique</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code> : texte dans la zone graphique</li>
+<li>
+<code><a href="https://rdrr.io/r/graphics/mtext.html">mtext()</a></code> : texte dans la marge</li>
 <li>etc…</li>
 </ul>
 </div>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">type =</span> <span class="st">"o"</span>, <span class="co"># type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">col =</span> <span class="st">"red"</span>, <span class="co"># couleur, tapez `colours()` pour la liste complète</span></span>
 <span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">pch =</span> <span class="dv">20</span>, <span class="co"># type de symboles, un chiffre entre 0 et 25, tapez `?points`</span></span>
@@ -811,26 +798,20 @@
 <span id="cb19-51"><a href="#cb19-51"></a>     <span class="at">side =</span> <span class="dv">4</span>, <span class="co"># Emplacement (1 = bottom, 2 = left, 3 = top...)</span></span>
 <span id="cb19-52"><a href="#cb19-52"></a>     <span class="at">cex =</span> <span class="fl">0.9</span>, <span class="co"># Taille de la police</span></span>
 <span id="cb19-53"><a href="#cb19-53"></a>     <span class="at">col =</span> <span class="st">"grey"</span>)  </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="gestion-de-la-fenêtre-graphique" class="slide level2">
-<h2><span class="bigone">Gestion de la fenêtre graphique</span></h2>
-<p><span class="bigtwo"><strong>Deux fonctions permettent de gérer les paramètres de la fenêtre graphique.</strong></span></p>
-<p><span class="bigtwo">I. <code>par()</code> pour définir ou interroger les paramètres de la fenêtre graphique.</span></p>
+</section><section id="gestion-de-la-fenêtre-graphique" class="slide level2"><h2><span class="bigone">Gestion de la fenêtre graphique</span></h2>
+<p><span class="bigtwo"><strong>Trois fonctions permettent de gérer les paramètres de la fenêtre graphique.</strong></span></p>
+<p><span class="bigtwo">I. <code><a href="https://rdrr.io/r/graphics/par.html">par()</a></code> pour définir ou interroger les paramètres de la fenêtre graphique.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>, <span class="co"># Couleur de fond</span></span>
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>, <span class="co"># Couleur de fond</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>    <span class="at">col=</span> <span class="st">"white"</span>,      <span class="co"># couleur du graphique</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a>    <span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),    <span class="co"># Fenêtre découper en deux lignes / deux colonnes (4 graphiques)</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a>    <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>))  <span class="co"># Gestion des marges pour chaque graphique (B,L,T,R)</span></span>
@@ -839,24 +820,19 @@
 <span id="cb20-7"><a href="#cb20-7"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 2"</span>)</span>
 <span id="cb20-8"><a href="#cb20-8"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">sin</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">"plot 3"</span>)</span>
 <span id="cb20-9"><a href="#cb20-9"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">y =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 4"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p><span class="bigtwo">II. <code>layout()</code> propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.</span></p>
+<p><span class="bigtwo">II. <code><a href="https://rdrr.io/r/graphics/layout.html">layout()</a></code> propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
 [1,]    4    1    1
 [2,]    3    2    2
@@ -867,71 +843,97 @@
 <p><span class="bigbis">Avec la matrice ci-dessus, la fenêtre graphique sera paramétrée pour contenir trois graphiques. Le graphique 1 occupera toute la première ligne. le graphique 2 occupera les deux dernières lignes de la première colonne, et le 3e sera situé dans les deux dernières lignes de la dernière colonne.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Découpage de la fenêtre graphique</span></span>
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Découpage de la fenêtre graphique</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="fu">layout</span>(<span class="at">mat =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>))</span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
 <span id="cb23-4"><a href="#cb23-4"></a><span class="fu">hist</span>(co2, <span class="at">main =</span> <span class="st">"co2"</span>)</span>
 <span id="cb23-5"><a href="#cb23-5"></a><span class="fu">plot</span>(co2)</span>
 <span id="cb23-6"><a href="#cb23-6"></a><span class="fu">boxplot</span>(co2, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb23-7"><a href="#cb23-7"></a><span class="fu">qqnorm</span>(co2, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="limites-des-fonctions-graphiques-r-base" class="slide level2">
-<h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
-<p><br>
-</p>
-<div class="bigtwo">
-<p>Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun de fonctions présente tout de même quelques limites. Ces fonctions sont très simples d’utilisation, mais sont à finalement à privilégier dans un contexte d’exploration des données car :</p>
-<ul>
-<li><strong>Limiter en matière de types de représentations graphique</strong></li>
-<li><strong>Propose une syntaxe peu générique</strong></li>
-<li><strong>Un graphique + éléments de mise en pag ne peuvent pas être stockés dans un seul objet</strong></li>
-<li><strong>Le rendu graphique restera toujours assez rudimentaire…</strong></li>
-</ul>
-<p><br>
-</p>
-<p>Mais pas de panique, il existe tout une gamme de package qui offre une palette importante de fonctionnalités pour la production de graphiques très élégants, en seulement quelque lignes de code…</p>
+<p><span class="bigtwo">II. <code><a href="https://rdrr.io/r/grDevices/dev.html">dev.off()</a></code> ferme le graphique en cours et réinitialise par défault la fenêtre graphique.</span></p>
+<div class="codeXL" style="margin-top:30px;">
+<div class="cell" data-layout-align="center">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>) </span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-</section></section>
-<section>
-<section id="tour-dhorizon-des-packages-de-représentation-graphique" class="title-slide slide level1 center">
-<h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique</span></h1>
+</div>
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>null device 
+          1 </code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section><section id="limites-des-fonctions-graphiques-r-base" class="slide level2"><h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
+<p><br></p>
+<div class="bigone">
+<p>Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun présente des limites. Ces fonctions sont très simples d’utilisation, mais sont à privilégier dans un contexte d’exploration des données car :</p>
+<ul>
+<li><span class="elementR"><strong>Les types de représentation graphique sont limitées</strong></span></li>
+<li><span class="elementR"><strong>La syntaxe est peu générique</strong></span></li>
+<li><span class="elementR"><strong>Un graphique + les éléments de mise en page ne peuvent pas être stockés dans un seul objet</strong></span></li>
+<li><span class="elementR"><strong>Le rendu graphique restera toujours assez rudimentaire…</strong></span></li>
+</ul>
+</div>
+<p><br></p>
+<div class="fatxt">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Les extensions graphiques</strong></p>
+</div>
+<div class="callout-content">
+<p>Il existe de nombreux packages qui offrent une palette importante de fonctionnalités pour la production de graphiques spécifiques et élégants, en seulement quelques lignes de code…</p>
+</div>
+</div>
+</div>
+</div>
+</section></section><section><section id="tour-dhorizon-des-packages-de-représentation-graphique" class="title-slide slide level1 center"><h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique</span></h1>
 
-</section>
-<section id="lattice-2001" class="slide level2">
-<h2><span class="bigone">Lattice (2001)</span></h2>
+</section><section id="lattice-2001" class="slide level2"><h2><span class="bigone">Lattice (2001)</span></h2>
 <p><span class="bigtwo">Le package <code>lattice</code> vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-2.png" width="960"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-2.png" width="960"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-3.png" width="960"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-3.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -942,182 +944,227 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p><span class="bigtwo">Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.</span></p>
-</section>
-<section id="ggplot2-2007" class="slide level2">
-<h2><span class="bigone">ggplot2 (2007)</span></h2>
-<p><span class="bigtwo">Une révolution !</span></p>
+<div class="fatxt">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Ce package apporte des fonctionnalités supplémentaires aux fonctions graphiques R-base. Cependant, le rendu graphique reste rudimentaire.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ggplot2-2007---2012" class="slide level2"><h2><span class="bigone">ggplot2 (2007 - 2012)</span></h2>
+<div style="margin-top:20px;">
+<p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
+</div>
+<div class="bigtwo">
 <ul>
-<li>Repose sur le concept de La <em>Grammar of Graphics</em> Conceptualisée par Leland Wilkinson (2006 [1999])</li>
-<li>Type de représentation graphique possible très étendue</li>
-<li>Adapté au développement d’extensions</li>
-<li>Produit des graphiques élégants</li>
+<li>Repose sur le concept de La <span class="elementR"><em>Grammar of Graphics</em></span> <span class="citation" data-cites="wilkinson:1999:TGOG">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wilkinson 1999</a>)</span>
+</li>
+<li>Produit des graphiques très élégants par défault</li>
+<li>Est adapté au développement d’extensions</li>
+<li>Ouvre la possibilité de construire des représentations graphiques très diverses et personnalisées.</li>
 </ul>
-</section>
-<section id="ggplot2-extensions" class="slide level2">
-<h2>ggplot2 extensions</h2>
+</div>
+<div class="columns">
+<div class="column center" style="width:25%;">
+<div class="center">
+<p><img data-src="images/ggplot2.png" style="width:80.0%"></p>
+<p><a href="https://ggplot2.tidyverse.org/"><strong>https://ggplot2.tidyverse.org/</strong></a></p>
+</div>
+</div><div class="column" style="width:75%;">
+<div class="center">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ggplot2-au-delà-de-r" class="slide level2"><h2><span class="bigone">ggplot2, au delà de R…</span></h2>
+<p>La syntaxe de la grammair graphics a été reprise dans plusieurs langages…</p>
+</section><section id="ggplot2-r" class="slide level2"><h2>ggplot2 (R)</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-3"><a href="#cb28-3"></a></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cars, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Horsepower, </span>
+<span id="cb28-5"><a href="#cb28-5"></a>                                  <span class="at">y =</span> Miles_per_Gallon,</span>
+<span id="cb28-6"><a href="#cb28-6"></a>                                  <span class="at">color =</span> Origin)) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb28-8"><a href="#cb28-8"></a>  </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:70%;">
+<p><img data-src="images/gg_ggplot2.png"></p>
+</div>
+</div>
+<div class="attribution">
+<p><a href="https://ggplot2.tidyverse.org/">https://ggplot2.tidyverse.org/</a></p>
+</div>
+</section><section id="vegalite-javascript" class="slide level2"><h2>VegaLite (JavaScript)</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a>{</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="st">"$schema"</span><span class="op">:</span> <span class="st">"https://vega.github.io/schema/vega-lite/v5.json"</span><span class="op">,</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="st">"data"</span><span class="op">:</span> {<span class="st">"url"</span><span class="op">:</span> <span class="st">"data/cars.json"</span>}<span class="op">,</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="st">"mark"</span><span class="op">:</span> <span class="st">"point"</span><span class="op">,</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="st">"encoding"</span><span class="op">:</span> {</span>
+<span id="cb29-6"><a href="#cb29-6"></a>    <span class="st">"x"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Horsepower"</span><span class="op">,</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>    <span class="st">"y"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Miles_per_Gallon"</span><span class="op">,</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>    <span class="st">"color"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Origin"</span><span class="op">,</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a>              <span class="st">"type"</span><span class="op">:</span> <span class="st">"nominal"</span>}</span>
+<span id="cb29-12"><a href="#cb29-12"></a>  }</span>
+<span id="cb29-13"><a href="#cb29-13"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/gg_vegalite.svg" style="width:90.0%"></p>
+</div>
+</div>
+<div class="attribution">
+<p><a href="https://vega.github.io/vega-lite/">https://vega.github.io/vega-lite/</a></p>
+</div>
+</section><section id="altair-python" class="slide level2"><h2>Altair (Python)</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a>alt.Chart(cars).</span>
+<span id="cb30-4"><a href="#cb30-4"></a>  mark_circle(size<span class="op">=</span><span class="dv">60</span>).</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  encode(x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
+<span id="cb30-6"><a href="#cb30-6"></a>         y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
+<span id="cb30-7"><a href="#cb30-7"></a>         color<span class="op">=</span><span class="st">'Origin'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:65%;">
+<p><img data-src="images/gg_altair.png"></p>
+</div>
+</div>
+<div class="attribution">
+<p><a href="https://altair-viz.github.io/">https://altair-viz.github.io/</a></p>
+</div>
+</section><section id="observable-plot-js" class="slide level2"><h2>Observable Plot (js)</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  }<span class="op">,</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb31-7"><a href="#cb31-7"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(cars<span class="op">,</span> {</span>
+<span id="cb31-8"><a href="#cb31-8"></a>    <span class="dt">x</span><span class="op">:</span> <span class="st">"Horsepower"</span><span class="op">,</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a>    <span class="dt">y</span><span class="op">:</span> <span class="st">"Miles_per_Gallon"</span><span class="op">,</span></span>
+<span id="cb31-10"><a href="#cb31-10"></a>    <span class="dt">fill</span><span class="op">:</span> <span class="st">"Origin"</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>    })</span>
+<span id="cb31-12"><a href="#cb31-12"></a>  ]</span>
+<span id="cb31-13"><a href="#cb31-13"></a>})</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:70%;">
+<p><img data-src="images/gg_observable.png"></p>
+</div>
+</div>
+<div class="attribution">
+<p><a href="https://github.com/observablehq/plot">https://github.com/observablehq/plot</a></p>
+</div>
+</section><section id="ggplot2-extensions" class="slide level2"><h2>ggplot2 extensions</h2>
 <p>exts.ggplot2.tidyverse.org</p>
 <p>128 extensions</p>
 <p>cartographie, animation, intérativité, type de représentation, application…</p>
 <p>Esquisse</p>
 
-<img data-src="images/extension_ggplot.png" class="r-stretch"></section>
-<section id="de-la-customization-avancée" class="slide level2">
-<h2>De la Customization avancée</h2>
+<img data-src="images/extension_ggplot.png" class="r-stretch"></section><section id="de-la-customization-avancée" class="slide level2"><h2>De la Customization avancée</h2>
 <p>X-Men Characters - Cedric Scherer</p>
 <div class="center">
 <p><img data-src="images/xmen.jpg"></p>
 </div>
-<p><br>
-</p>
+<p><br></p>
 <p>Best selling Authors - Tania Shapiro</p>
 <div class="center">
 <p><img data-src="images/nyt.png"></p>
 </div>
-</section>
-<section id="à-lart-graphique-numérique" class="slide level2">
-<h2>à l’art graphique numérique</h2>
+</section><section id="à-lart-graphique-numérique" class="slide level2"><h2>à l’art graphique numérique</h2>
 <p>Thomas Lin Pedersen</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="images/art_1.png"><br>
-<img data-src="images/art_2.png"><br>
-<img data-src="images/art_3.png"></p>
+<p><img data-src="images/art_1.png"><br><img data-src="images/art_2.png"><br><img data-src="images/art_3.png"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/art_4.png"><br>
-<img data-src="images/art_5.png"><br>
-<img data-src="images/art_6.png"> <!-- ![](images/art_7.png) --></p>
+<p><img data-src="images/art_4.png"><br><img data-src="images/art_5.png"><br><img data-src="images/art_6.png"><!-- ![](images/art_7.png) --></p>
 </div>
 </div>
-</section></section>
-<section id="palettes-de-couleur" class="title-slide slide level1 center">
-<h1>Palettes de couleur</h1>
+</section></section><section id="palettes-de-couleur" class="title-slide slide level1 center"><h1>Palettes de couleur</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>De nombreuses palettes sont directement disponibles dans R-base</strong> <img data-src="images/swatch-plot-1.svg" alt="hcl.colors()"></p>
 </div><div class="column" style="width:50%;">
 <p>Près de 70 (!) packages proposent des palettes…</p>
 <ul>
-<li><code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes</li>
-<li><code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span> propose une app shiny</li>
+<li>
+<code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes</li>
+<li>
+<code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span> propose une app shiny</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/cols4all.png"></p>
-<figcaption><code>cols4all::c4a_gui()</code></figcaption>
-</figure>
+<figure><p><img data-src="images/cols4all.png"></p>
+<figcaption><code>cols4all::c4a_gui()</code></figcaption></figure>
 </div>
 </div>
 </div>
-</section>
+</section><section><section id="visualisation-thématique" class="title-slide slide level1 center"><h1>Visualisation thématique</h1>
 
-<section>
-<section id="visualisation-thématique" class="title-slide slide level1 center">
-<h1>Visualisation thématique</h1>
-
-</section>
-<section id="analyse-de-réseau" class="slide level2">
-<h2>Analyse de réseau</h2>
+</section><section id="analyse-de-réseau" class="slide level2"><h2>Analyse de réseau</h2>
 <p>networkD3</p>
-</section>
-<section id="analyse-de-séquence" class="slide level2">
-<h2>Analyse de séquence</h2>
-</section>
-<section id="scatterplot3d" class="slide level2">
-<h2>Scatterplot3D</h2>
-</section>
-<section id="rgl" class="slide level2">
-<h2>rgl</h2>
-</section>
-<section id="heatmap" class="slide level2">
-<h2>heatmap</h2>
+</section><section id="analyse-de-séquence" class="slide level2"><h2>Analyse de séquence</h2>
+</section><section id="scatterplot3d" class="slide level2"><h2>Scatterplot3D</h2>
+</section><section id="rgl" class="slide level2"><h2>rgl</h2>
+</section><section id="heatmap" class="slide level2"><h2>heatmap</h2>
 <p>superheat ComplexHeatmap</p>
-</section>
-<section id="textuelle" class="slide level2">
-<h2>Textuelle</h2>
+</section><section id="textuelle" class="slide level2"><h2>Textuelle</h2>
 <p>wordcloud</p>
-</section>
-<section id="slope-graphs" class="slide level2">
-<h2>Slope graphs</h2>
+</section><section id="slope-graphs" class="slide level2"><h2>Slope graphs</h2>
 <p>CGPfunctions</p>
-</section>
-<section id="circular-plot" class="slide level2">
-<h2>Circular plot</h2>
+</section><section id="circular-plot" class="slide level2"><h2>Circular plot</h2>
 <p>https://jokergoo.github.io/circlize_book/book/</p>
-</section>
-<section id="survival" class="slide level2">
-<h2>Survival</h2>
+</section><section id="survival" class="slide level2"><h2>Survival</h2>
 <p>Survival plots</p>
-</section>
-<section id="visualisation-spatiale" class="slide level2">
-<h2>Visualisation spatiale</h2>
-</section>
-<section id="intéractivité-javascript-link" class="slide level2">
-<h2>Intéractivité (javascript link)</h2>
+</section><section id="visualisation-spatiale" class="slide level2"><h2>Visualisation spatiale</h2>
+</section><section id="intéractivité-javascript-link" class="slide level2"><h2>Intéractivité (javascript link)</h2>
 <p>htmlwidgets.org</p>
-</section>
-<section id="leaflet" class="slide level2">
-<h2>leaflet</h2>
-</section>
-<section id="rbokeh" class="slide level2">
-<h2>rbokeh</h2>
-</section>
-<section id="rcharts" class="slide level2">
-<h2>rCharts</h2>
-</section>
-<section id="highcharter" class="slide level2">
-<h2>highcharter</h2>
-</section>
-<section id="shiny" class="slide level2">
-<h2>Shiny</h2>
-</section>
-<section id="autre-plotly-et-cie" class="slide level2">
-<h2>Autre (plotly et cie)</h2>
+</section><section id="leaflet" class="slide level2"><h2>leaflet</h2>
+</section><section id="rbokeh" class="slide level2"><h2>rbokeh</h2>
+</section><section id="rcharts" class="slide level2"><h2>rCharts</h2>
+</section><section id="highcharter" class="slide level2"><h2>highcharter</h2>
+</section><section id="shiny" class="slide level2"><h2>Shiny</h2>
+</section><section id="autre-plotly-et-cie" class="slide level2"><h2>Autre (plotly et cie)</h2>
 <p>Plotly &gt; ggplot2 &gt; Plotly.js &gt; D3.js &gt; Javascript</p>
 <p>echarts4r</p>
 <p>robservable</p>
-</section></section>
-<section>
-<section id="export" class="title-slide slide level1 center">
-<h1>Export</h1>
+</section></section><section><section id="export" class="title-slide slide level1 center"><h1>Export</h1>
 
-</section>
-<section id="classique" class="slide level2">
-<h2>Classique</h2>
-</section>
-<section id="notebook" class="slide level2">
-<h2>notebook</h2>
-</section>
-<section id="shiny-1" class="slide level2">
-<h2>shiny</h2>
-</section></section>
-<section>
-<section id="ressource" class="title-slide slide level1 center">
-<h1>Ressource</h1>
+</section><section id="classique" class="slide level2"><h2>Classique</h2>
+</section><section id="notebook" class="slide level2"><h2>notebook</h2>
+</section><section id="shiny-1" class="slide level2"><h2>shiny</h2>
+</section></section><section><section id="ressource" class="title-slide slide level1 center"><h1>Ressource</h1>
 
-</section>
-<section id="r-graph-galley" class="slide level2">
-<h2>R graph galley</h2>
-</section>
-<section id="r-charts" class="slide level2">
-<h2>R charts</h2>
-</section>
-<section id="rzine" class="slide level2">
-<h2>Rzine</h2>
-</section>
-<section id="ggplot2-official" class="slide level2">
-<h2>ggplot2 official</h2>
+</section><section id="r-graph-galley" class="slide level2"><h2>R graph galley</h2>
+</section><section id="r-charts" class="slide level2"><h2>R charts</h2>
+</section><section id="rzine" class="slide level2"><h2>Rzine</h2>
+</section><section id="ggplot2-official" class="slide level2"><h2>ggplot2 official</h2>
 <p>https://www.data-imaginist.com/screens/</p>
-</section>
-<section id="références-bibliographiques" class="slide level2 smaller scrollable">
-<h2>Références bibliographiques</h2>
+</section><section id="références-bibliographiques" class="slide level2 smaller scrollable"><h2>Références bibliographiques</h2>
 
 <img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Journée annuelle SO-MATE 2023 - Représentations graphiques avec R</p>
@@ -1129,29 +1176,18 @@ Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes
 <div id="ref-R-cols4all" class="csl-entry" role="listitem">
 Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
 </div>
+<div id="ref-R-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-wilkinson:1999:TGOG" class="csl-entry" role="listitem">
+Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New York, Inc.
+</div>
 </div>
 </section></section>
-    </div>
+</div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="index_files/libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="index_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script><script src="index_files/libs/revealjs/plugin/notes/notes.js"></script><script src="index_files/libs/revealjs/plugin/search/search.js"></script><script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script><script src="index_files/libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1343,9 +1379,7 @@ Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRA
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1380,9 +1414,7 @@ Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRA
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1528,6 +1560,6 @@ Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRA
       }
     });
     </script>
-    
+
 
 </body></html>

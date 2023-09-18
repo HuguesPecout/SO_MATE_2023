@@ -5,6 +5,7 @@
   color: #e4b93e;
 }
 
+
 .subtitle { 
   font-size: 150%; 
   font-weight: bold;
@@ -34,7 +35,9 @@
   color: #d8d9d8;
 }
 
-
+.fatxt { 
+  font-size: 220%;
+}
 
 .affiliations{
   font-size: 23px;
