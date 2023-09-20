@@ -915,7 +915,7 @@
 </div>
 </section></section><section><section id="tour-dhorizon-des-packages-de-représentation-graphique" class="title-slide slide level1 center"><h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique</span></h1>
 
-</section><section id="lattice-2001" class="slide level2"><h2><span class="bigone">Lattice (2001)</span></h2>
+</section><section id="lattice-2001" class="slide level2"><h2><span class="bigone">lattice (2001)</span></h2>
 <p><span class="bigtwo">Le package <code>lattice</code> vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
@@ -975,21 +975,21 @@
 </li>
 <li>Produit des graphiques très élégants par défault</li>
 <li>Est adapté au développement d’extensions</li>
-<li>Ouvre la possibilité de construire des représentations graphiques très diverses et personnalisées.</li>
+<li>Ouvre la possibilité de construire des <strong>représentations graphiques variées et personnalisées</strong>.</li>
 </ul>
 </div>
 <div class="columns">
-<div class="column center" style="width:25%;">
+<div class="column center" style="width:30%;">
 <div class="center">
-<p><img data-src="images/ggplot2.png" style="width:80.0%"></p>
-<p><a href="https://ggplot2.tidyverse.org/"><strong>https://ggplot2.tidyverse.org/</strong></a></p>
+<p><img data-src="images/gglayers.png"></p>
+<p><span class="small2"><a href="https://www.uvm.edu/~ngotelli/Rscripts/wickham.2009.pdf"><strong>A Layered Grammar of Graphics</strong></a> <span class="citation" data-cites="doi:10.1198/jcgs.2009.07098">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2010</a>)</span></span></p>
 </div>
-</div><div class="column" style="width:75%;">
+</div><div class="column" style="width:70%;">
 <div class="center">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:75.0%"></p>
+<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -997,69 +997,90 @@
 </div>
 </div>
 </div>
+<p><img data-src="images/gallery_ggplot2.png"></p>
+<p><img data-src="images/overview.png"></p>
+<p><img data-src="images/switzerland.png"></p>
 </section><section id="ggplot2-au-delà-de-r" class="slide level2"><h2><span class="bigone">ggplot2, au delà de R…</span></h2>
-<p>La syntaxe de la grammair graphics a été reprise dans plusieurs langages…</p>
-</section><section id="ggplot2-r" class="slide level2"><h2>ggplot2 (R)</h2>
+<div style="margin-top:20px;">
+<p><span class="bigone"><strong>La syntaxe de la <span class="elementR"><em>grammaire des graphiques</em></span>, implementée dans un premier temps en langage R, a été reprise et adaptée dans plusieurs langages de programmation.</strong></span></p>
+</div>
+<p><br></p>
+<div style="margin-top:20px;">
+<p><span class="bigtwo"><strong>La grammaire des graphiques avec <code>ggplot2</code> :</strong></span></p>
+</div>
 <div class="columns">
-<div class="column" style="width:30%;">
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb28-3"><a href="#cb28-3"></a></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cars, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Horsepower, </span>
-<span id="cb28-5"><a href="#cb28-5"></a>                                  <span class="at">y =</span> Miles_per_Gallon,</span>
-<span id="cb28-6"><a href="#cb28-6"></a>                                  <span class="at">color =</span> Origin)) <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb28-8"><a href="#cb28-8"></a>  </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:70%;">
+<div class="column" style="width:36%;">
+<div class="codeXL" style="margin-top:22px;">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cars) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Horsepower,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>                 <span class="at">y =</span> Miles_per_Gallon,</span>
+<span id="cb28-6"><a href="#cb28-6"></a>                 <span class="at">color =</span> Origin))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="center bold">
+<p><img data-src="images/ggplot2.png" style="width:40.0%"></p>
+<div class="moymd">
+<p><a href="https://ggplot2.tidyverse.org/">https://ggplot2.tidyverse.org/</a></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:64%;">
 <p><img data-src="images/gg_ggplot2.png"></p>
 </div>
 </div>
-<div class="attribution">
-<p><a href="https://ggplot2.tidyverse.org/">https://ggplot2.tidyverse.org/</a></p>
+</section><section id="la-grammaire-des-graphiques-en-python-altair" class="slide level2"><h2>La grammaire des graphiques en Python (<code>altair</code>)</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="codeXL" style="margin-top:22px;">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb29-2"><a href="#cb29-2"></a></span>
+<span id="cb29-3"><a href="#cb29-3"></a>alt.Chart(cars).</span>
+<span id="cb29-4"><a href="#cb29-4"></a>  mark_circle(size<span class="op">=</span><span class="dv">60</span>).</span>
+<span id="cb29-5"><a href="#cb29-5"></a>  encode(x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
+<span id="cb29-6"><a href="#cb29-6"></a>         y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
+<span id="cb29-7"><a href="#cb29-7"></a>         color<span class="op">=</span><span class="st">'Origin'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="vegalite-javascript" class="slide level2"><h2>VegaLite (JavaScript)</h2>
+<div class="center bold">
+<p><img data-src="images/altair.png" style="width:80.0%"></p>
+<p><a href="https://altair-viz.github.io/">https://altair-viz.github.io/</a></p>
+</div>
+</div><div class="column" style="width:70%;">
+<p><img data-src="images/gg_altair.png"></p>
+</div>
+</div>
+</section><section id="la-grammaire-des-graphiques-en-javascript-vegalite" class="slide level2"><h2>La grammaire des graphiques en JavaScript (<code>vegalite</code>)</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a>{</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="st">"$schema"</span><span class="op">:</span> <span class="st">"https://vega.github.io/schema/vega-lite/v5.json"</span><span class="op">,</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="st">"data"</span><span class="op">:</span> {<span class="st">"url"</span><span class="op">:</span> <span class="st">"data/cars.json"</span>}<span class="op">,</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="st">"mark"</span><span class="op">:</span> <span class="st">"point"</span><span class="op">,</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>  <span class="st">"encoding"</span><span class="op">:</span> {</span>
-<span id="cb29-6"><a href="#cb29-6"></a>    <span class="st">"x"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Horsepower"</span><span class="op">,</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>    <span class="st">"y"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Miles_per_Gallon"</span><span class="op">,</span></span>
-<span id="cb29-9"><a href="#cb29-9"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a>    <span class="st">"color"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Origin"</span><span class="op">,</span></span>
-<span id="cb29-11"><a href="#cb29-11"></a>              <span class="st">"type"</span><span class="op">:</span> <span class="st">"nominal"</span>}</span>
-<span id="cb29-12"><a href="#cb29-12"></a>  }</span>
-<span id="cb29-13"><a href="#cb29-13"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="codeXL" style="margin-top:22px;">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a>{</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="st">"$schema"</span><span class="op">:</span> <span class="st">"https://vega.github.io/schema/vega-lite/v5.json"</span><span class="op">,</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="st">"data"</span><span class="op">:</span> {<span class="st">"url"</span><span class="op">:</span> <span class="st">"data/cars.json"</span>}<span class="op">,</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="st">"mark"</span><span class="op">:</span> <span class="st">"point"</span><span class="op">,</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="st">"encoding"</span><span class="op">:</span> {</span>
+<span id="cb30-6"><a href="#cb30-6"></a>    <span class="st">"x"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Horsepower"</span><span class="op">,</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>    <span class="st">"y"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Miles_per_Gallon"</span><span class="op">,</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a>          <span class="st">"type"</span><span class="op">:</span> <span class="st">"quantitative"</span>}<span class="op">,</span></span>
+<span id="cb30-10"><a href="#cb30-10"></a>    <span class="st">"color"</span><span class="op">:</span> {<span class="st">"field"</span><span class="op">:</span> <span class="st">"Origin"</span><span class="op">,</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>              <span class="st">"type"</span><span class="op">:</span> <span class="st">"nominal"</span>}</span>
+<span id="cb30-12"><a href="#cb30-12"></a>  }</span>
+<span id="cb30-13"><a href="#cb30-13"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="center bold">
+<p><img data-src="images/vegalite.png" style="width:40.0%"></p>
+<p><a href="https://vega.github.io/vega-lite/">https://vega.github.io/vega-lite/</a></p>
+</div>
 </div><div class="column" style="width:60%;">
 <p><img data-src="images/gg_vegalite.svg" style="width:90.0%"></p>
 </div>
 </div>
-<div class="attribution">
-<p><a href="https://vega.github.io/vega-lite/">https://vega.github.io/vega-lite/</a></p>
-</div>
-</section><section id="altair-python" class="slide level2"><h2>Altair (Python)</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
-<span id="cb30-2"><a href="#cb30-2"></a></span>
-<span id="cb30-3"><a href="#cb30-3"></a>alt.Chart(cars).</span>
-<span id="cb30-4"><a href="#cb30-4"></a>  mark_circle(size<span class="op">=</span><span class="dv">60</span>).</span>
-<span id="cb30-5"><a href="#cb30-5"></a>  encode(x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
-<span id="cb30-6"><a href="#cb30-6"></a>         y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
-<span id="cb30-7"><a href="#cb30-7"></a>         color<span class="op">=</span><span class="st">'Origin'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:65%;">
-<p><img data-src="images/gg_altair.png"></p>
-</div>
-</div>
-<div class="attribution">
-<p><a href="https://altair-viz.github.io/">https://altair-viz.github.io/</a></p>
-</div>
-</section><section id="observable-plot-js" class="slide level2"><h2>Observable Plot (js)</h2>
+</section><section id="la-grammaire-des-graphiques-en-observable-js-plot" class="slide level2"><h2>La grammaire des graphiques en Observable JS (<code>Plot</code>)</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:30%;">
+<div class="codeXL" style="margin-top:22px;">
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
@@ -1073,31 +1094,61 @@
 <span id="cb31-11"><a href="#cb31-11"></a>    })</span>
 <span id="cb31-12"><a href="#cb31-12"></a>  ]</span>
 <span id="cb31-13"><a href="#cb31-13"></a>})</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="center bold">
+<p><img data-src="images/plot.svg" style="width:90.0%"><a href="https://github.com/observablehq/plot">https://github.com/observablehq/plot</a></p>
+</div>
 </div><div class="column" style="width:70%;">
 <p><img data-src="images/gg_observable.png"></p>
 </div>
 </div>
-<div class="attribution">
-<p><a href="https://github.com/observablehq/plot">https://github.com/observablehq/plot</a></p>
+</section><section id="les-extensions-de-ggplot2" class="slide level2"><h2><span class="bigone">Les extensions de <code>ggplot2</code></span></h2>
+<p><span class="bigtwo">De nombreuses extensions de <code>ggplot2</code> ont été développées et offrent de nouvelles fonctionnalités en matière de mise en forme, de types de représentation graphique, d’animation, d’intéractivité, d’objet pris en compte…</span></p>
+<div class="center bold">
+<p><img data-src="images/extension_ggplot.png" style="width:90.0%"></p>
+<div class="bigtwo">
+<p><a href="https://exts.ggplot2.tidyverse.org">https://exts.ggplot2.tidyverse.org</a></p>
 </div>
-</section><section id="ggplot2-extensions" class="slide level2"><h2>ggplot2 extensions</h2>
-<p>exts.ggplot2.tidyverse.org</p>
-<p>128 extensions</p>
-<p>cartographie, animation, intérativité, type de représentation, application…</p>
-<p>Esquisse</p>
-
-<img data-src="images/extension_ggplot.png" class="r-stretch"></section><section id="de-la-customization-avancée" class="slide level2"><h2>De la Customization avancée</h2>
-<p>X-Men Characters - Cedric Scherer</p>
+</div>
+</section><section id="esquisse-lextension-à-connaître" class="slide level2"><h2><span class="bigone"><code>esquisse</code>, l’extension à connaître</span></h2>
+<p><span class="bigtwo"><code>esquisse</code> est un package français <span class="citation" data-cites="esquisse">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Meyer et Perrier 2022</a>)</span>. C’est l’une des extensions <code>ggplot2</code> les plus téléchargées. Il s’agit d’un <em>addin</em> (shiny) pour créer des graphiques <code>ggplot2</code> de manière interactive, puis récupérer le code R généré automatiquement.</span></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="codeXL" style="margin-top:22px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">library</span>(esquisse)</span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">esquisser</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="center bold">
+<p><br><br><br></p>
+<p><img data-src="images/esquisse_logo.png" style="width:75.0%"></p>
+<p><a href="https://dreamrs.github.io/esquisse/">https://dreamrs.github.io/esquisse/</a></p>
+</div>
+</div><div class="column" style="width:70%;">
 <div class="center">
+<p><img data-src="images/esquisse.gif" style="width:80.0%"></p>
+</div>
+</div>
+</div>
+</section><section id="ggplot2-de-la-customization-avancée" class="slide level2"><h2><span class="bigone"><code>ggplot2</code>, de la customization avancée…</span></h2>
+<div class="center">
+<p><span class="bigtwo">X-Men Characters, by <strong>Cedric Scherer</strong></span></p>
+<p><a href="https://www.cedricscherer.com/top/dataviz/">https://www.cedricscherer.com/top/dataviz/</a></p>
 <p><img data-src="images/xmen.jpg"></p>
 </div>
 <p><br></p>
-<p>Best selling Authors - Tania Shapiro</p>
 <div class="center">
+<p><span class="bigtwo">Best selling Authors, by <strong>Tania Shapiro</strong></span></p>
+<p><a href="https://www.tanyashapiro.com/">https://www.tanyashapiro.com/</a></p>
 <p><img data-src="images/nyt.png"></p>
 </div>
-</section><section id="à-lart-graphique-numérique" class="slide level2"><h2>à l’art graphique numérique</h2>
-<p>Thomas Lin Pedersen</p>
+</section><section id="à-lart-graphique-numérique" class="slide level2"><h2><span class="bigone">… à l’art graphique numérique</span></h2>
+<div class="center">
+<p><span class="bigtwo"><strong>Thomas Lin Pedersen</strong> (Rstudio)</span></p>
+<p><a href="https://www.data-imaginist.com/art">https://www.data-imaginist.com/art</a></p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/art_1.png"><br><img data-src="images/art_2.png"><br><img data-src="images/art_3.png"></p>
@@ -1105,25 +1156,35 @@
 <p><img data-src="images/art_4.png"><br><img data-src="images/art_5.png"><br><img data-src="images/art_6.png"><!-- ![](images/art_7.png) --></p>
 </div>
 </div>
-</section></section><section id="palettes-de-couleur" class="title-slide slide level1 center"><h1>Palettes de couleur</h1>
+</section><section id="palettes-de-couleurs" class="slide level2"><h2><span class="bigone">Palettes de couleurs</span></h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>De nombreuses palettes sont directement disponibles dans R-base</strong> <img data-src="images/swatch-plot-1.svg" alt="hcl.colors()"></p>
-</div><div class="column" style="width:50%;">
-<p>Près de 70 (!) packages proposent des palettes…</p>
+<div class="column" style="width:47%;">
+<div class="center bold">
+<p><span class="bigtwo">De nombreuses palettes de couleurs sont directement disponibles en R-base :</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/swatch-plot-1.svg"></p>
+<figcaption><code><a href="https://rdrr.io/r/grDevices/palettes.html">hcl.colors()</a></code></figcaption></figure>
+</div>
+</div>
+</div><div class="column" style="width:6%;">
+
+</div><div class="column" style="width:47%;">
+<div class="center bold">
+<p><span class="bigtwo">Au cas où, près de 70 (!) packages proposent des palettes de couleurs</span></p>
 <ul>
 <li>
-<code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes</li>
+<code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes (compilation)</li>
 <li>
-<code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span> propose une app shiny</li>
+<code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span>, une application shiny pour les explorer</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="images/cols4all.png"></p>
-<figcaption><code>cols4all::c4a_gui()</code></figcaption></figure>
+<figcaption><code><a href="https://rdrr.io/pkg/cols4all/man/c4a_gui.html">cols4all::c4a_gui()</a></code></figcaption></figure>
 </div>
 </div>
 </div>
-</section><section><section id="visualisation-thématique" class="title-slide slide level1 center"><h1>Visualisation thématique</h1>
+</div>
+</section></section><section><section id="représentations-graphiques-thématique" class="title-slide slide level1 center"><h1>Représentations graphiques thématique</h1>
 
 </section><section id="analyse-de-réseau" class="slide level2"><h2>Analyse de réseau</h2>
 <p>networkD3</p>
@@ -1143,7 +1204,7 @@
 </section><section id="visualisation-spatiale" class="slide level2"><h2>Visualisation spatiale</h2>
 </section><section id="intéractivité-javascript-link" class="slide level2"><h2>Intéractivité (javascript link)</h2>
 <p>htmlwidgets.org</p>
-</section><section id="leaflet" class="slide level2"><h2>leaflet</h2>
+</section><section id="leafletmapview" class="slide level2"><h2>leaflet/Mapview</h2>
 </section><section id="rbokeh" class="slide level2"><h2>rbokeh</h2>
 </section><section id="rcharts" class="slide level2"><h2>rCharts</h2>
 </section><section id="highcharter" class="slide level2"><h2>highcharter</h2>
@@ -1152,18 +1213,19 @@
 <p>Plotly &gt; ggplot2 &gt; Plotly.js &gt; D3.js &gt; Javascript</p>
 <p>echarts4r</p>
 <p>robservable</p>
-</section></section><section><section id="export" class="title-slide slide level1 center"><h1>Export</h1>
+</section></section><section><section id="un-graphique-et-après" class="title-slide slide level1 center"><h1>Un graphique, et après ?</h1>
 
-</section><section id="classique" class="slide level2"><h2>Classique</h2>
+</section><section id="export-classique" class="slide level2"><h2>Export Classique</h2>
 </section><section id="notebook" class="slide level2"><h2>notebook</h2>
 </section><section id="shiny-1" class="slide level2"><h2>shiny</h2>
 </section></section><section><section id="ressource" class="title-slide slide level1 center"><h1>Ressource</h1>
 
-</section><section id="r-graph-galley" class="slide level2"><h2>R graph galley</h2>
+</section><section id="r-graph-gallery" class="slide level2"><h2>R graph gallery</h2>
 </section><section id="r-charts" class="slide level2"><h2>R charts</h2>
 </section><section id="rzine" class="slide level2"><h2>Rzine</h2>
 </section><section id="ggplot2-official" class="slide level2"><h2>ggplot2 official</h2>
 <p>https://www.data-imaginist.com/screens/</p>
+</section><section id="link-et-support" class="slide level2"><h2>Link et support</h2>
 </section><section id="références-bibliographiques" class="slide level2 smaller scrollable"><h2>Références bibliographiques</h2>
 
 <img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -1173,11 +1235,17 @@
 <div id="ref-R-paletteer" class="csl-entry" role="listitem">
 Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
 </div>
+<div id="ref-esquisse" class="csl-entry" role="listitem">
+Meyer, Fanny, et Victor Perrier. 2022. <em>esquisse: Explore and Visualize Your Data Interactively</em>. <a href="https://CRAN.R-project.org/package=esquisse">https://CRAN.R-project.org/package=esquisse</a>.
+</div>
 <div id="ref-R-cols4all" class="csl-entry" role="listitem">
 Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
 </div>
+<div id="ref-doi:10.1198/jcgs.2009.07098" class="csl-entry" role="listitem">
+Wickham, Hadley. 2010. <span>«&nbsp;A Layered Grammar of Graphics&nbsp;»</span>. <em>Journal of Computational and Graphical Statistics</em> 19 (1): 3‑28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.
+</div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
-Wickham, Hadley. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+———. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 <div id="ref-wilkinson:1999:TGOG" class="csl-entry" role="listitem">
 Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New York, Inc.

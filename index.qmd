@@ -591,7 +591,7 @@ Il existe de nombreux packages qui offrent une palette importante de fonctionnal
 
 # [Tour d'horizon des packages de représentation graphique]{.bigtwo}
 
-## [Lattice (2001)]{.bigone}
+## [lattice (2001)]{.bigone}
 
 [Le package `lattice` vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.]{.bigtwo} 
 
@@ -659,27 +659,28 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
 - Repose sur le concept de La [*Grammar of Graphics*]{.elementR} [@wilkinson:1999:TGOG]
 - Produit des graphiques très élégants par défault
 - Est adapté au développement d'extensions
-- Ouvre la possibilité de construire des représentations graphiques très diverses et personnalisées.
+- Ouvre la possibilité de construire des **représentations graphiques variées et personnalisées**.
 
 :::
 
 ::: columns
 
-::: {.column width="25%" .center}   
+::: {.column width="30%" .center}   
 ::: {.center}   
 
-![](images/ggplot2.png){width=80%}
+![](images/gglayers.png)
 
-[**https://ggplot2.tidyverse.org/**](https://ggplot2.tidyverse.org/)
+[[**A Layered Grammar of Graphics**](https://www.uvm.edu/~ngotelli/Rscripts/wickham.2009.pdf) [@doi:10.1198/jcgs.2009.07098]]{.small2}
+
 :::   
 :::
 
-::: {.column width="75%"}
+::: {.column width="70%"}
 
 ::: {.center}
 ```{r eval = TRUE, fig.align='center'}
 #| echo: false
-#| out.width: 75%
+#| out.width: 80%
 
 library(packageRank)
 tabdownload <- cranDownloads(packages = "ggplot2", from = "2012", to = "2023")
@@ -705,41 +706,95 @@ ggplot(data = tabdown, mapping = aes(x = date, y = count)) +
 
 :::
 
+![](images/gallery_ggplot2.png)
+
+![](images/overview.png)
+
+![](images/switzerland.png)
+
 ## [ggplot2, au delà de R...]{.bigone}
 
-La syntaxe de la grammair graphics a été reprise dans plusieurs langages...
+::: {style="margin-top:20px;"}  
+[**La syntaxe de la [*grammaire des graphiques*]{.elementR}, implementée dans un premier temps en langage R, a été reprise et adaptée dans plusieurs langages de programmation.**]{.bigone}
+:::
 
-## ggplot2 (R)
+\
+
+::: {style="margin-top:20px;"}  
+[**La grammaire des graphiques avec `ggplot2` :**]{.bigtwo}
+:::
 
 ::: columns
-:::: {.column width="30%"}
-
+:::: {.column width="36%"}
+::: {.codeXL style="margin-top:22px;"}
 ```r
-
 library(ggplot2)
 
-ggplot(data = cars, mapping = aes(x = Horsepower, 
-                                  y = Miles_per_Gallon,
-                                  color = Origin)) +
-  geom_point()
-  
+ggplot(data = cars) +
+  geom_point(aes(x = Horsepower,
+                 y = Miles_per_Gallon,
+                 color = Origin))
 ```
+
+::: {.center .bold}
+
+![](images/ggplot2.png){width=40%}
+
+:::{.moymd}     
+[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+:::
+
+:::
+
+:::
 ::::
-:::: {.column width="70%"}
+:::: {.column width="64%"}
 ![](images/gg_ggplot2.png)
 ::::
 :::
 
-::: attribution
-[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+
+
+
+##  La grammaire des graphiques en Python (`altair`)
+
+\
+
+::: columns  
+:::: {.column width="30%"}  
+::: {.codeXL style="margin-top:22px;"}  
+```python
+import altair as alt
+
+alt.Chart(cars).
+  mark_circle(size=60).
+  encode(x='Horsepower',
+         y='Miles_per_Gallon',
+         color='Origin')
+```
+:::
+
+::: {.center .bold}
+![](images/altair.png){width=80%}
+
+[https://altair-viz.github.io/](https://altair-viz.github.io/)
+
+:::
+
+::::
+:::: {.column width="70%"}
+![](images/gg_altair.png)
+::::
 :::
 
 
+##  La grammaire des graphiques en JavaScript (`vegalite`)
 
-## VegaLite (JavaScript)
+\
 
-::: columns
-:::: {.column width="40%"}
+::: columns  
+:::: {.column width="40%"}  
+::: {.codeXL style="margin-top:22px;"}  
 ```js
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -755,44 +810,34 @@ ggplot(data = cars, mapping = aes(x = Horsepower,
   }
 }
 ```
+:::
+
+::: {.center .bold}
+
+![](images/vegalite.png){width=40%}
+
+   
+[https://vega.github.io/vega-lite/](https://vega.github.io/vega-lite/) 
+
+
+:::
+
 ::::
+
 :::: {.column width="60%"}
 ![](images/gg_vegalite.svg){width="90%"}
 ::::
 :::
 
-::: attribution
-[https://vega.github.io/vega-lite/](https://vega.github.io/vega-lite/)
-:::
-
-## Altair (Python)
 
 
-::: columns
-:::: {.column width="35%"}
-```python
-import altair as alt
+##  La grammaire des graphiques en Observable JS (`Plot`)
 
-alt.Chart(cars).
-  mark_circle(size=60).
-  encode(x='Horsepower',
-         y='Miles_per_Gallon',
-         color='Origin')
-```
-::::
-:::: {.column width="65%"}
-![](images/gg_altair.png)
-::::
-:::
+\
 
-::: attribution
-[https://altair-viz.github.io/](https://altair-viz.github.io/)
-:::
-
-## Observable Plot (js)
-
-::: columns
-:::: {.column width="30%"}
+::: columns  
+:::: {.column width="30%"}  
+::: {.codeXL style="margin-top:22px;"}  
 
 ```js
 Plot.plot({
@@ -809,50 +854,118 @@ Plot.plot({
   ]
 })
 ```
+:::
+
+::: {.center .bold}
+
+![](images/plot.svg){width="90%"}
+[https://github.com/observablehq/plot](https://github.com/observablehq/plot)
+
+:::
+
 ::::
+
 :::: {.column width="70%"}
 ![](images/gg_observable.png)
 ::::
-:::
 
-::: attribution
-[https://github.com/observablehq/plot](https://github.com/observablehq/plot)
 :::
 
 
-## ggplot2 extensions
 
-exts.ggplot2.tidyverse.org
+## [Les extensions de `ggplot2`]{.bigone}
+
+[De nombreuses extensions de `ggplot2` ont été développées et offrent de nouvelles fonctionnalités en matière de mise en forme, de types de représentation graphique, d'animation, d'intéractivité, d'objet pris en compte...]{.bigtwo}
+
+::: {.center .bold}
+
+![](images/extension_ggplot.png){width="90%"}
+
+::: {.bigtwo}
+[https://exts.ggplot2.tidyverse.org](https://exts.ggplot2.tidyverse.org)
+:::
+
+:::
 
 
-128 extensions
 
-cartographie, animation, intérativité, type de représentation, application...
+## [`esquisse`, l'extension à connaître]{.bigone}
 
-Esquisse
+[`esquisse` est un package français [@esquisse]. C'est l'une des extensions `ggplot2` les plus téléchargées. Il s'agit d'un *addin* (shiny) pour créer des graphiques `ggplot2` de manière interactive, puis récupérer le code R généré automatiquement.]{.bigtwo}
+
+::: columns  
+:::: {.column width="30%"}  
+::: {.codeXL style="margin-top:22px;"}  
+
+```{r}
+#| eval: false
+#| echo: true
+library(esquisse)
+
+esquisser()
+```
+
+:::
+
+::: {.center .bold}
+
+\
+\
+\
+
+![](images/esquisse_logo.png){width="75%"}
+
+[https://dreamrs.github.io/esquisse/](https://dreamrs.github.io/esquisse/)
+
+:::
 
 
-![](images/extension_ggplot.png)
+::::
 
-## De la Customization avancée
-
-X-Men Characters - Cedric Scherer
+:::: {.column width="70%"}  
 
 ::: {.center}
+![](images/esquisse.gif){width="80%"}
+:::
+::::
+
+:::
+
+## [`ggplot2`, de la customization avancée...]{.bigone}
+
+
+
+::: {.center}
+
+[X-Men Characters, by **Cedric Scherer**]{.bigtwo}
+
+[https://www.cedricscherer.com/top/dataviz/](https://www.cedricscherer.com/top/dataviz/)
+
 ![](images/xmen.jpg)
 :::
 
 \
 
-Best selling Authors - Tania Shapiro
+
 
 ::: {.center}
+
+[Best selling Authors, by **Tania Shapiro**]{.bigtwo}
+
+[https://www.tanyashapiro.com/](https://www.tanyashapiro.com/)
+
 ![](images/nyt.png)
 :::
 
-## à l'art graphique numérique
+## [... à l'art graphique numérique]{.bigone}
 
-Thomas Lin Pedersen 
+::: {.center}
+
+[**Thomas Lin Pedersen** (Rstudio)]{.bigtwo} 
+
+[https://www.data-imaginist.com/art](https://www.data-imaginist.com/art)
+
+:::
 
 ::: columns
 ::: {.column width=50%}
@@ -871,28 +984,38 @@ Thomas Lin Pedersen
 :::
 
 
-# Palettes de couleur
+## [Palettes de couleurs]{.bigone}
 
 ::: columns
-::: {.column width="50%"}
-**De nombreuses palettes sont directement disponibles dans R-base** 
-![`hcl.colors()`](images/swatch-plot-1.svg)
+::: {.column width="47%"}
+:::: {.center .bold}
+[De nombreuses palettes de couleurs sont directement disponibles en R-base :]{.bigtwo} 
 
+![`hcl.colors()`](images/swatch-plot-1.svg)
+::::
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
 
-Près de 70 (!) packages proposent des palettes...   
+::: {.column width="47%"}
 
-- `paletteer` [@R-paletteer] propose 2587 palettes
-- `cols4all` [@R-cols4all] propose une app shiny
+:::: {.center .bold}
+
+[Au cas où, près de 70 (!) packages proposent des palettes de couleurs]{.bigtwo} 
+
+- `paletteer` [@R-paletteer] propose 2587 palettes (compilation)
+- `cols4all` [@R-cols4all], une application shiny pour les explorer
 
 ![`cols4all::c4a_gui()`](images/cols4all.png)
-:::
+
+::::
 
 :::
 
-# Visualisation thématique
+:::
+
+# Représentations graphiques thématique
 
 ## Analyse de réseau
 
@@ -930,7 +1053,7 @@ Survival plots
 
 htmlwidgets.org
 
-## leaflet
+## leaflet/Mapview
 
 ## rbokeh
 
@@ -948,9 +1071,9 @@ echarts4r
 
 robservable
 
-# Export
+# Un graphique, et après ?
 
-## Classique
+## Export Classique
 
 ## notebook
 
@@ -958,7 +1081,7 @@ robservable
 
 # Ressource
 
-## R graph galley
+## R graph gallery
 
 ## R charts
 
@@ -967,6 +1090,8 @@ robservable
 ## ggplot2 official
 
 https://www.data-imaginist.com/screens/
+
+## Link et support
 
 
 ## Références bibliographiques
