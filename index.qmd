@@ -1100,9 +1100,9 @@ robservable
 
 ## R charts
 
-## Rzine.fr
+##  <img src="images/Rzine_logo.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> Rzine.fr
 
-Site web pour la diffusion et partage de ressources sur la pratique de R en sciences humaines, sociales et territoriales 
+[Site web pour la diffusion et partage de ressources sur la pratique de R en SHS]{.bigtwo} 
 
 ![](images/rzine.png)
 
