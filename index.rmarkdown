@@ -32,6 +32,7 @@ revealjs-plugins:
   - pointer
 ---
 
+
 # [Outils de représentation de données]{.bigtwo}
 
 ## [Graphiques avec Excel]{.bigone}
@@ -123,11 +124,13 @@ revealjs-plugins:
 [La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. **Au centre de l'ecosystème graphique du R-base : la fonction** [**`plot()`**](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot)]{.bigbis}
 
 ::: {.codeXXL style="margin-top:30px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 85%
 plot(x = 1, y = 1)
 ```
+
 :::
 
 ## [plot()]{.bigone}
@@ -140,32 +143,38 @@ plot(x = 1, y = 1)
 [1 variable quantitative]{.orange .codeL} - [Nuage de points ordonnés]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(cars$speed)
 ```
+
 :::
 
 [2 variables quantitatives]{.orange .codeL} - [Nuage de points]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(speed ~ dist, data = cars)
 ```
+
 :::
 
 
 [1 variable quanti vs 1 variable quali]{.orange .codeL}  - [Boîte à moustache]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(ncases ~ agegp, data = esoph)
 ```
+
 :::
 
 :::
@@ -176,17 +185,20 @@ plot(ncases ~ agegp, data = esoph)
 [1 variable qualitative]{.orange .codeL} - [Diagramme en barre]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(esoph$agegp)
 
 ```
+
 ::: 
 
 [2 variables qualitatives]{.orange .codeL} - [Graphique en mosaic]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
@@ -194,16 +206,19 @@ plot(esoph$agegp)
 plot(alcgp ~ agegp, data = esoph)
 ```
 
+
 :::
 
 [1 variable quali vs 1 variable quanti]{.orange .codeL} - [Spine plot]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(agegp ~ ncases, data = esoph)
 ```
+
 :::
 :::
 :::
@@ -211,11 +226,13 @@ plot(agegp ~ ncases, data = esoph)
 [Un tableau de données complet]{.orange .codeL} - [Un seul type de graphique]{.codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 plot(iris)
 ```
+
 :::
 
 
@@ -251,31 +268,37 @@ En fonction du type de variable, la fonction `plot()` renvoie vers les fonctions
 [Histogramme de distribution]{.orange .codeL} 
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 hist(cars$speed)
 ```
+
 :::
 
 [Diagrammes de dispersion]{.orange .codeL} 
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 stripchart(cars$speed, method = "stack")
 ```
+
 :::
 
 [Diagrammes en épine]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 spineplot(agegp ~ ncases, data = esoph)
 ```
+
 :::
 
 
@@ -286,28 +309,33 @@ spineplot(agegp ~ ncases, data = esoph)
 [Boîte à moustache]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 boxplot(cars$speed)
 ```
+
 :::
 
 [Diagramme en points de Cleveland]{.orange .codeL} 
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 dotchart(cars$speed)
 
 ```
+
 :::
 
 
 [Camembert]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
@@ -320,6 +348,7 @@ tab <- data.frame(
 # Plot the chart.
 pie(tab$value, tab$name)
 ```
+
 :::
 
 :::
@@ -329,11 +358,13 @@ pie(tab$value, tab$name)
 [Diagramme à barres]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 barplot(table(esoph$agegp))
 ```
+
 :::
 
 
@@ -341,21 +372,25 @@ barplot(table(esoph$agegp))
 [Expression mathématique]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 curve(expr = x^3)
 ```
+
 :::
 
 [Nuage de points - toutes les variables]{.orange .codeL}
 
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
 pairs(iris)
 ```
+
 :::
 
 :::
@@ -366,12 +401,15 @@ pairs(iris)
 
 [Une multitude d'arguments permettent de paramétrer la mise en page d'un graphique.]{.bigtwo}
 
+
 ```{r}
 x <- seq(-pi, pi, 0.1)
 y <- sin(x)
 ```
 
+
 ::: {.codeXL style="margin-top:10px;"}
+
 ```{r}
 #| echo: true
 #| out.width: 100%
@@ -390,6 +428,7 @@ plot(y ~ x,
   main = "La fonction sinus entre -pi et pi" # titre général pour le graphique
 ) 
 ```
+
 :::
 
 ## [Les fonctions R-base de mise en page]{.bigone}
@@ -412,6 +451,7 @@ plot(y ~ x,
 :::
 
 ::: {.codeXL style="margin-top:30px;"}
+
 ```{r eval = TRUE, fig.align='center'}
 #| code-fold: TRUE
 #| echo: true
@@ -473,6 +513,7 @@ mtext(text = "Source : données complétement fictives", # Texte à afficher
 
  
 ```
+
 :::
 
 ## [Gestion de la fenêtre graphique]{.bigone}
@@ -482,6 +523,7 @@ mtext(text = "Source : données complétement fictives", # Texte à afficher
 [I. `par()` pour définir ou interroger les paramètres de la fenêtre graphique.]{.bigtwo}
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 #| code-fold: TRUE
 #| echo: true
@@ -498,23 +540,27 @@ plot(x = sin(1:10), y = 1:10, main = "plot 3")
 plot(x = 1:10, y = exp(1:10), main = "plot 4")
 
 ```
+
 :::
 
 
 [II. `layout()` propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.]{.bigtwo}
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 #| code-fold: TRUE
 #| echo: true
 #| out.width: 100%
 matrix(c(4, 3, 3, 1, 2, 2, 1, 2, 2), 3, 3)
 ```
+
 :::
 
 [Avec la matrice ci-dessus, la fenêtre graphique sera paramétrée pour contenir trois graphiques. Le graphique 1 occupera toute la première ligne. le graphique 2 occupera les deux dernières lignes de la première colonne, et le 3e sera situé dans les deux dernières lignes de la dernière colonne.]{.bigbis}
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 #| code-fold: TRUE
 #| echo: true
@@ -529,12 +575,14 @@ boxplot(co2, axes = FALSE)
 qqnorm(co2, main = "")
 
 ```
+
 :::
 
 
 [II. `dev.off()` ferme le graphique en cours et réinitialise par défault la fenêtre graphique.]{.bigtwo}
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 #| code-fold: TRUE
 #| echo: true
@@ -557,6 +605,7 @@ dev.off()
 plot(1,1)
 
 ```
+
 :::
 
 
@@ -595,6 +644,7 @@ Il existe de nombreux packages qui offrent une palette importante de fonctionnal
 [Le package `lattice` vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.]{.bigtwo} 
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 library(lattice)
 attach(mtcars)
@@ -622,17 +672,20 @@ bwplot(cyl.f~mpg|gear.f,
 cloud(mpg~wt*qsec|cyl.f,
    main="3D Scatterplot by Cylinders")
 ```
+
 :::
 
 [L'une de ses principales caractéristiques est la prise en charge de la création de graphiques en treillis, qui permettent d'afficher des variables ou des relations entre variables, conditionnées par une ou plusieurs autres variables.]{.bigtwo} 
 
 ::: {.codeXL style="margin-top:30px;"}   
+
 ```{r eval = TRUE, fig.align='center'}
 # scatterplots for each combination of two factors
 xyplot(mpg~wt|cyl.f*gear.f,
    main="Scatterplots by Cylinders and Gears",
    ylab="Miles per Gallon", xlab="Car Weight")
 ```
+
 :::
 
 
@@ -677,6 +730,7 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
 ::: {.column width="70%"}
 
 ::: {.center}
+
 ```{r eval = TRUE, fig.align='center'}
 #| echo: false
 #| out.width: 80%
@@ -699,6 +753,7 @@ ggplot(data = tabdown, mapping = aes(x = date, y = count)) +
 
 
 ```
+
 :::
 
 :::
@@ -896,6 +951,7 @@ Plot.plot({
 :::: {.column width="30%"}  
 ::: {.codeXL style="margin-top:22px;"}  
 
+
 ```{r}
 #| eval: false
 #| echo: true
@@ -903,6 +959,7 @@ library(esquisse)
 
 esquisser()
 ```
+
 
 :::
 
@@ -1042,6 +1099,7 @@ TraminEr
 
 ## Scatterplot3D
 
+
 ```{r}
 library(scatterplot3d)
 # Custom shapes/colors
@@ -1058,6 +1116,7 @@ legend("bottom", legend = levels(iris$Species),
       pch = c(16, 17, 18), 
       inset = -0.25, xpd = TRUE, horiz = TRUE)
 ```
+
 
 
 ## rgl
@@ -1137,3 +1196,4 @@ https://www.data-imaginist.com/screens/
 
 
 ## Références bibliographiques
+
