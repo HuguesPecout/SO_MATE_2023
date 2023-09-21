@@ -116,7 +116,7 @@ revealjs-plugins:
 :::
 
 
-# [Graphiques avec R]{.bigtwo}
+# [Graphiques avec R-base]{.bigtwo}
 
 ## [Fonctions graphiques R-base (1995)]{.bigone}
 
@@ -587,9 +587,8 @@ Il existe de nombreux packages qui offrent une palette importante de fonctionnal
 :::
 
 
+# [La révolution `ggplot2`]{.bigtwo}
 
-
-# [Tour d'horizon des packages de représentation graphique]{.bigtwo}
 
 ## [lattice (2001)]{.bigone}
 
@@ -957,6 +956,19 @@ esquisser()
 ![](images/nyt.png)
 :::
 
+\
+
+
+
+::: {.center}
+
+**Spatio-temporal Wikidata. Exploration de données ouvertes et liées du web 3.0**, par R. Krummeich, H. Pecout & S. Rey-Coyrehourcq
+
+[https://rzine-reviews.github.io/wikidata_sparql_rzine/#content](https://rzine-reviews.github.io/wikidata_sparql_rzine/#content)
+
+![](images/sparql.png)
+:::
+
 ## [... à l'art graphique numérique]{.bigone}
 
 ::: {.center}
@@ -1015,13 +1027,16 @@ esquisser()
 
 :::
 
-# Représentations graphiques thématique
+# [Tour d'horizon des packages de représentation graphique, par thématique]{.bigtwo}
 
-## Analyse de réseau
+
+## [Analyse de réseau]{.bigone}
+
+gggraph
 
 networkD3
 
-## Analyse de séquence
+## [Analyse de séquence]{.bigone}
 
 ## Scatterplot3D
 
@@ -1085,7 +1100,14 @@ robservable
 
 ## R charts
 
-## Rzine
+## Rzine.fr
+
+Site web pour la diffusion et partage de ressources sur la pratique de R en sciences humaines, sociales et territoriales 
+
+![](images/rzine.png)
+
+
+https://rzine.fr/publication/
 
 ## ggplot2 official
 
