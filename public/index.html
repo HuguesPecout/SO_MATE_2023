@@ -406,6 +406,7 @@
       margin-right: 0; 
     }
   </style>
+<script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="index_files/libs/d3-4.5.0/d3.min.js"></script><script src="index_files/libs/forceNetwork-binding-0.4/forceNetwork.js"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -967,7 +968,7 @@
 </div>
 </section><section id="ggplot2-2007---2012" class="slide level2"><h2><span class="bigone">ggplot2 (2007 - 2012)</span></h2>
 <div style="margin-top:20px;">
-<p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
+<p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="Rggplot2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
 </div>
 <div class="bigtwo">
 <ul>
@@ -1193,12 +1194,110 @@
 </section></section><section><section id="tour-dhorizon-des-packages-de-représentation-graphique-par-thématique" class="title-slide slide level1 center"><h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique, par thématique</span></h1>
 
 </section><section id="analyse-de-réseau" class="slide level2"><h2><span class="bigone">Analyse de réseau</span></h2>
-<p>gggraph igraph networkD3</p>
+<h3 id="package-igraph">package <code>igraph</code>
+</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Chargement jeu de données exemple</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">library</span>(igraphdata)</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">data</span>(karate)</span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="co"># Affichage d'un objet igraph (réseau)</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="fu">plot</span>(karate)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Mise en page  d</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">plot</span>(karate, </span>
+<span id="cb34-3"><a href="#cb34-3"></a>     <span class="at">vertex.color =</span> <span class="fu">V</span>(karate)<span class="sc">$</span>Faction,      <span class="co"># couleur des sommets</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>     <span class="at">vertex.frame.color =</span> <span class="st">"white"</span>,          <span class="co"># couleur des contours des sommets</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>     <span class="at">vertex.shape =</span> <span class="st">"square"</span>,               <span class="co"># forme des sommets</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>     <span class="at">vertex.size =</span> <span class="fu">degree</span>(karate),          <span class="co"># taille des sommets</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>     <span class="at">vertex.label =</span> <span class="cn">NA</span>,                     <span class="co"># étiquettes des sommets</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>     <span class="at">vertex.label.degree =</span> <span class="dv">0</span>,       <span class="co"># position / au centre du sommet (0 = droite, "pi"= gauche)</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a>     <span class="at">edge.color =</span> <span class="st">"goldenrod3"</span>,     <span class="co"># couleur des arêtes</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a>     <span class="at">edge.curved=</span>.<span class="dv">1</span>,                <span class="co"># courbure des arêtes (0 = droit)</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a>     <span class="co"># arrow.mode = 3,              # type de flèche </span></span>
+<span id="cb34-12"><a href="#cb34-12"></a>     <span class="co"># edge.arrow.size = 12,        # taille de la pointe de la flèche</span></span>
+<span id="cb34-13"><a href="#cb34-13"></a>     <span class="at">edge.width =</span> <span class="fu">E</span>(karate)<span class="sc">$</span>weight,          <span class="co"># largeur des arêtes</span></span>
+<span id="cb34-14"><a href="#cb34-14"></a>     <span class="at">edge.lty =</span> <span class="dv">1</span>,                           <span class="co"># type de trait (1=plein, 2=pointillés, 3=points...)</span></span>
+<span id="cb34-15"><a href="#cb34-15"></a>     <span class="at">margin =</span>  <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>,<span class="dv">0</span>),                 <span class="co"># marges</span></span>
+<span id="cb34-16"><a href="#cb34-16"></a>     <span class="at">main =</span> <span class="fu">graph_attr</span>(karate, <span class="st">"name"</span>),      <span class="co"># titre principal</span></span>
+<span id="cb34-17"><a href="#cb34-17"></a>     <span class="at">sub =</span> <span class="fu">graph_attr</span>(karate, <span class="st">"Author"</span>),     <span class="co"># sous-titre</span></span>
+<span id="cb34-18"><a href="#cb34-18"></a>     <span class="at">layout =</span> <span class="fu">layout_</span>(karate, <span class="fu">with_lgl</span>()))             <span class="co"># sous-titre                   </span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="ggraph-extension-ggplot2">
+<code>ggraph</code> (extension ggplot2)</h3>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="co">#&gt; Loading required package: ggplot2</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb35-4"><a href="#cb35-4"></a></span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb35-6"><a href="#cb35-6"></a></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="co"># Create graph of highschool friendships</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>graph <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(highschool) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-9"><a href="#cb35-9"></a>    <span class="fu">mutate</span>(<span class="at">Popularity =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">'in'</span>))</span>
+<span id="cb35-10"><a href="#cb35-10"></a></span>
+<span id="cb35-11"><a href="#cb35-11"></a><span class="co"># plot using ggraph</span></span>
+<span id="cb35-12"><a href="#cb35-12"></a><span class="fu">ggraph</span>(graph, <span class="at">layout =</span> <span class="st">'kk'</span>) <span class="sc">+</span> </span>
+<span id="cb35-13"><a href="#cb35-13"></a>    <span class="fu">geom_edge_fan</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> <span class="fu">after_stat</span>(index)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb35-14"><a href="#cb35-14"></a>    <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Popularity)) <span class="sc">+</span> </span>
+<span id="cb35-15"><a href="#cb35-15"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
+<span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">'steelblue'</span>, <span class="at">fg_text_colour =</span> <span class="st">'white'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<h3 id="networkd3"><code>networkD3</code></h3>
+<div class="codeXL" style="margin-top:10px;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="at">from=</span><span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"K"</span>, <span class="st">"A"</span>, <span class="st">"M"</span>),</span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="at">to=</span><span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"Z"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"K"</span>)</span>
+<span id="cb36-4"><a href="#cb36-4"></a>)</span>
+<span id="cb36-5"><a href="#cb36-5"></a></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="fu">library</span>(networkD3)</span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="fu">simpleNetwork</span>(data , <span class="at">height=</span><span class="st">"100px"</span>, <span class="at">width=</span><span class="st">"100px"</span>,        </span>
+<span id="cb36-8"><a href="#cb36-8"></a>              <span class="at">Source =</span> <span class="dv">1</span>,                 <span class="co"># column number of source</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>              <span class="at">Target =</span> <span class="dv">2</span>,                 <span class="co"># column number of target</span></span>
+<span id="cb36-10"><a href="#cb36-10"></a>              <span class="at">linkDistance =</span> <span class="dv">10</span>,          <span class="co"># distance between node. Increase this value to have more space between nodes</span></span>
+<span id="cb36-11"><a href="#cb36-11"></a>              <span class="at">charge =</span> <span class="sc">-</span><span class="dv">900</span>,              <span class="co"># numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value)</span></span>
+<span id="cb36-12"><a href="#cb36-12"></a>              <span class="at">fontSize =</span> <span class="dv">14</span>,              <span class="co"># size of the node names</span></span>
+<span id="cb36-13"><a href="#cb36-13"></a>              <span class="at">fontFamily =</span> <span class="st">"serif"</span>,       <span class="co"># font og node names</span></span>
+<span id="cb36-14"><a href="#cb36-14"></a>              <span class="at">linkColour =</span> <span class="st">"#666"</span>,        <span class="co"># colour of edges, MUST be a common colour for the whole graph</span></span>
+<span id="cb36-15"><a href="#cb36-15"></a>              <span class="at">nodeColour =</span> <span class="st">"#69b3a2"</span>,     <span class="co"># colour of nodes, MUST be a common colour for the whole graph</span></span>
+<span id="cb36-16"><a href="#cb36-16"></a>              <span class="at">opacity =</span> <span class="fl">0.9</span>,              <span class="co"># opacity of nodes. 0=transparent. 1=no transparency</span></span>
+<span id="cb36-17"><a href="#cb36-17"></a>              <span class="at">zoom =</span> T                    <span class="co"># Can you zoom on the figure?</span></span>
+<span id="cb36-18"><a href="#cb36-18"></a>              )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cfb3ff22326c1f11c83a" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-cfb3ff22326c1f11c83a">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<p>visNetwork</p>
 </section><section id="analyse-de-séquence" class="slide level2"><h2><span class="bigone">Analyse de séquence</span></h2>
 <p>TraminEr</p>
 </section><section id="scatterplot3d" class="slide level2"><h2>Scatterplot3D</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section><section id="rgl" class="slide level2"><h2>rgl</h2>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section><section id="rgl" class="slide level2"><h2>rgl</h2>
 </section><section id="heatmap" class="slide level2"><h2>heatmap</h2>
 <p>superheat ComplexHeatmap</p>
 </section><section id="textuelle" class="slide level2"><h2>Textuelle</h2>
@@ -1226,18 +1325,57 @@
 </section><section id="export-classique" class="slide level2"><h2>Export Classique</h2>
 </section><section id="notebook" class="slide level2"><h2>notebook</h2>
 </section><section id="shiny-1" class="slide level2"><h2>shiny</h2>
-</section></section><section><section id="ressource" class="title-slide slide level1 center"><h1>Ressource</h1>
+</section></section><section><section id="ressources-utiles" class="title-slide slide level1 center"><h1><span class="bigtwo">Ressources utiles</span></h1>
 
-</section><section id="r-graph-gallery" class="slide level2"><h2>R graph gallery</h2>
-</section><section id="r-charts" class="slide level2"><h2>R charts</h2>
+</section><section id="r-graph-gallery.com" class="slide level2"><h2>
+<img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> r-graph-gallery.com</h2>
+<iframe width="1070" height="540" src="https://r-graph-gallery.com/" title="R_Graph_Gallery"></iframe>
+<div class="center bigtwo">
+<p><a href="https://www.yan-holtz.com/">By <strong>Yan Hotlz</strong></a></p>
+</div>
+</section><section id="r-charts.com" class="slide level2"><h2>
+<img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"> r-charts.com</h2>
+<iframe width="1070" height="540" src="https://r-charts.com/" title="R_Charts"></iframe>
+<div class="center bigtwo">
+<p><a href="https://twitter.com/i/flow/login?redirect_after_login=%2FRCoderWeb%2F">By <strong>José Carlos Soage</strong></a></p>
+</div>
 </section><section id="rzine.fr" class="slide level2"><h2>
-<img src="images/Rzine_logo.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> Rzine.fr</h2>
-<p><span class="bigtwo">Site web pour la diffusion et partage de ressources sur la pratique de R en SHS</span></p>
-<p><img data-src="images/rzine.png"></p>
-<p>https://rzine.fr/publication/</p>
-</section><section id="ggplot2-official" class="slide level2"><h2>ggplot2 official</h2>
-<p>https://www.data-imaginist.com/screens/</p>
-</section><section id="link-et-support" class="slide level2"><h2>Link et support</h2>
+<img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> rzine.fr</h2>
+<iframe width="1070" height="600" src="https://rzine.fr" title="rzine.fr"></iframe>
+</section><section id="ggplot2.tidyverse.org" class="slide level2"><h2>
+<img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> ggplot2.tidyverse.org</h2>
+<iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="rzine.fr"></iframe>
+</section><section id="section" class="slide level2"><h2></h2>
+<p><br></p>
+<div class="bigcinq">
+<p><strong>Merci de votre attention</strong></p>
+</div>
+<p><br><br><br></p>
+<div class="center2">
+<div class="bigone">
+<p>hugues.pecout@cnrs.fr</p>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:20%;">
+
+</div><div class="column" style="width:30%;">
+<p><img src="images/github.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"><a href="https://github.com/HuguesPecout/">HuguesPecout</a></p>
+<p><br></p>
+<p><img src="images/gitlab.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"><a href="https://gitlab.huma-num.fr/hpecout">hpecout</a></p>
+</div><div class="column" style="width:30%;">
+<p><img src="images/twitter.png" width="55" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"><a href="https://twitter.com/rzine_shs/">rzine_shs</a></p>
+<p><br></p>
+<p><img src="images/mastodon_icon.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"><a href="https://fosstodon.org/@rzine">rzine@fosstodon.org</a></p>
+</div><div class="column" style="width:20%;">
+
+</div>
+</div>
+<p><br><br><br><br></p>
+<div class="bigbis">
+<p><strong>Diaporama</strong> : <a href="https://HuguesPecout.github.io/SO_MATE_2023/">https://HuguesPecout.github.io/SO_MATE_2023/</a><br><strong>Code source</strong> : <a href="https://github.com/HuguesPecout/SO_MATE_2023">https://github.com/HuguesPecout/SO_MATE_2023</a></p>
+</div>
+</div>
 </section><section id="références-bibliographiques" class="slide level2 smaller scrollable"><h2>Références bibliographiques</h2>
 
 <img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -1256,7 +1394,7 @@ Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRA
 <div id="ref-doi:10.1198/jcgs.2009.07098" class="csl-entry" role="listitem">
 Wickham, Hadley. 2010. <span>«&nbsp;A Layered Grammar of Graphics&nbsp;»</span>. <em>Journal of Computational and Graphical Statistics</em> 19 (1): 3‑28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.
 </div>
-<div id="ref-R-ggplot2" class="csl-entry" role="listitem">
+<div id="ref-Rggplot2" class="csl-entry" role="listitem">
 ———. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 <div id="ref-wilkinson:1999:TGOG" class="csl-entry" role="listitem">

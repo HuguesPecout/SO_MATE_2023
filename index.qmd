@@ -650,7 +650,7 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
 
 
 ::: {style="margin-top:20px;"}   
-[**le package `ggplot2` [@R-ggplot2] est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R**. Ce package :]{.bigtwo}
+[**le package `ggplot2` [@Rggplot2] est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R**. Ce package :]{.bigtwo}
 :::
 
 ::: {.bigtwo}
@@ -1032,9 +1032,114 @@ esquisser()
 
 ## [Analyse de réseau]{.bigone}
 
-gggraph
-igraph
-networkD3
+###  package `igraph`
+
+::: columns
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+# Chargement jeu de données exemple
+library(igraphdata)
+data(karate)
+
+# Affichage d'un objet igraph (réseau)
+library(igraph)
+plot(karate)
+```
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+
+# Mise en page  d
+plot(karate, 
+     vertex.color = V(karate)$Faction,      # couleur des sommets
+     vertex.frame.color = "white",          # couleur des contours des sommets
+     vertex.shape = "square",               # forme des sommets
+     vertex.size = degree(karate),          # taille des sommets
+     vertex.label = NA,                     # étiquettes des sommets
+     vertex.label.degree = 0,       # position / au centre du sommet (0 = droite, "pi"= gauche)
+     edge.color = "goldenrod3",     # couleur des arêtes
+     edge.curved=.1,                # courbure des arêtes (0 = droit)
+     # arrow.mode = 3,              # type de flèche 
+     # edge.arrow.size = 12,        # taille de la pointe de la flèche
+     edge.width = E(karate)$weight,          # largeur des arêtes
+     edge.lty = 1,                           # type de trait (1=plein, 2=pointillés, 3=points...)
+     margin =  c(0,0,0.2,0),                 # marges
+     main = graph_attr(karate, "name"),      # titre principal
+     sub = graph_attr(karate, "Author"),     # sous-titre
+     layout = layout_(karate, with_lgl()))             # sous-titre                   
+
+```
+:::
+
+:::
+
+:::
+
+###  `ggraph` (extension ggplot2)
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+
+library(ggraph)
+#> Loading required package: ggplot2
+library(tidygraph)
+
+library(tidyverse)
+
+# Create graph of highschool friendships
+graph <- as_tbl_graph(highschool) %>% 
+    mutate(Popularity = centrality_degree(mode = 'in'))
+
+# plot using ggraph
+ggraph(graph, layout = 'kk') + 
+    geom_edge_fan(aes(alpha = after_stat(index)), show.legend = FALSE) + 
+    geom_node_point(aes(size = Popularity)) + 
+    facet_edges(~year) + 
+    theme_graph(foreground = 'steelblue', fg_text_colour = 'white')
+```
+:::
+
+###  `networkD3`
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+data <- data.frame(
+  from=c("A", "A", "B", "D", "C", "D", "E", "B", "C", "D", "K", "A", "M"),
+  to=c("B", "E", "F", "A", "C", "A", "B", "Z", "A", "C", "A", "B", "K")
+)
+
+library(networkD3)
+simpleNetwork(data , height="100px", width="100px",        
+              Source = 1,                 # column number of source
+              Target = 2,                 # column number of target
+              linkDistance = 10,          # distance between node. Increase this value to have more space between nodes
+              charge = -900,              # numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value)
+              fontSize = 14,              # size of the node names
+              fontFamily = "serif",       # font og node names
+              linkColour = "#666",        # colour of edges, MUST be a common colour for the whole graph
+              nodeColour = "#69b3a2",     # colour of nodes, MUST be a common colour for the whole graph
+              opacity = 0.9,              # opacity of nodes. 0=transparent. 1=no transparency
+              zoom = T                    # Can you zoom on the figure?
+              )
+```
+:::
+
+
+
+
+visNetwork
 
 ## [Analyse de séquence]{.bigone}
 
@@ -1114,26 +1219,117 @@ robservable
 
 ## shiny
 
-# Ressource
+# [Ressources utiles]{.bigtwo}
 
-## R graph gallery
-
-## R charts
-
-##  <img src="images/Rzine_logo.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> Rzine.fr
-
-[Site web pour la diffusion et partage de ressources sur la pratique de R en SHS]{.bigtwo} 
-
-![](images/rzine.png)
+## <img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> r-graph-gallery.com
 
 
-https://rzine.fr/publication/
+```{=html}
+<iframe width="1070" height="540" src="https://r-graph-gallery.com/" title="R_Graph_Gallery"></iframe>
+```
 
-## ggplot2 official
 
-https://www.data-imaginist.com/screens/
+::: {.center .bigtwo}
+[By **Yan Hotlz**](https://www.yan-holtz.com/)
+:::
 
-## Link et support
+
+
+## <img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"/> r-charts.com
+
+
+
+
+```{=html}
+<iframe width="1070" height="540" src="https://r-charts.com/" title="R_Charts"></iframe>
+```
+
+
+::: {.center .bigtwo}
+[By **José Carlos Soage**](https://twitter.com/i/flow/login?redirect_after_login=%2FRCoderWeb%2F)
+:::
+
+
+##  <img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> rzine.fr
+
+
+```{=html}
+<iframe width="1070" height="600" src="https://rzine.fr" title="rzine.fr"></iframe>
+```
+
+
+
+## <img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> ggplot2.tidyverse.org
+
+```{=html}
+<iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="rzine.fr"></iframe>
+```
+
+
+
+
+## 
+
+\
+
+::: {.bigcinq}
+**Merci de votre attention**
+:::
+
+\
+\
+\
+
+::: {.center2}
+
+::: {.bigone}  
+hugues.pecout@cnrs.fr   
+:::
+
+\
+
+::: columns   
+::: {.column width="20%"}   
+
+:::
+
+::: {.column width="30%"}   
+
+<img src="images/github.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"/> [HuguesPecout](https://github.com/HuguesPecout/) 
+
+\
+
+<img src="images/gitlab.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"/> [hpecout](https://gitlab.huma-num.fr/hpecout) 
+
+:::
+
+::: {.column width="30%"}
+
+<img src="images/twitter.png" width="55" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"/>[rzine_shs](https://twitter.com/rzine_shs/) 
+
+\
+
+<img src="images/mastodon_icon.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"/>[rzine@fosstodon.org](https://fosstodon.org/@rzine) 
+
+:::
+
+::: {.column width="20%"}   
+
+:::
+
+:::
+
+\
+\
+\
+\
+
+::: {.bigbis}
+**Diaporama** :  [https://HuguesPecout.github.io/SO_MATE_2023/](https://HuguesPecout.github.io/SO_MATE_2023/)    
+**Code source** : [https://github.com/HuguesPecout/SO_MATE_2023](https://github.com/HuguesPecout/SO_MATE_2023)   
+:::
+
+:::
 
 
 ## Références bibliographiques

@@ -318,3 +318,14 @@ margin-bottom: 100px;
 font-weight:bold;
 }
 
+.wrap {
+  width: 1070px;
+  height: 640px;
+  overflow: hidden;
+}
+
+
+.bigcinq{
+  font-size: 280%;
+    text-align: center;
+}
