@@ -422,6 +422,34 @@
 
   <p class="affiliation"><img src="images/cnrs.png" width="60" style="margin-right:320px;"><img src="images/somate.png" width="260" style="margin-right:320px;"><img src="images/geocite.jpeg" width="60"></p>
 
+</section><section id="bonjour" class="slide level2"><h2><span class="bigtwo">Bonjour !</span></h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:87%;">
+<div class="big3">
+<p><strong>Hugues Pecout</strong>, ingénieur d’études <a href="https://www.cnrs.fr/fr">CNRS</a> en <strong>sciences de l’information géographique</strong></p>
+</div>
+<div class="big3">
+<ul>
+<li><p>2012-2022 : <a href="https://cist.cnrs.fr/">FR CIST</a> (Collège international des sciences territoriales)</p></li>
+<li><p>Depuis 2022 : <a href="https://geographie-cites.cnrs.fr/">UMR Géographie-Cités</a></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:13%;">
+<p><img data-src="images/cnrs.png"></p>
+</div>
+</div>
+<p><span class="small2">Travail dans le domaine de la <strong>géographie quantitative</strong> : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, réseau, textuelle…), représentation graphique et cartographie de <strong>données géographiques hétérogénes</strong> (données conventionnelles, d’enquête, big data…).</span></p>
+<p><span class="small2">Principale mission actuelle : <strong>formation aux outils &amp; méthodes pour les données et protocoles dans les Humanités Numériques</strong></span></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="big3">Spécialisé dans l’utilisation de R depuis 2015</span></p>
+<p><span class="small2">Depuis 2018 : Coordination du <a href="https://rzine.fr/">projet Rzine</a></span><br><span class="small2">Depuis 2022 : Animateur du groupe d’utilisateur·rices <a href="https://elementr.netlify.app/">ElementR</a></span><br><span class="small2">Depuis 2021 : Membre du <a href="https://gt-notebook.gitpages.huma-num.fr/site_quarto/">Groupe de travail Notebook</a></span></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="images/Rzine_logo.png" style="margin-right:25px;;width:25.0%"><img data-src="images/ElementR.png" style="margin-right:30px;;width:25.0%"><img data-src="images/notebook_logo.png" style="margin-bottom:25px;;width:30.0%"></p>
+</div>
+</div>
 </section><section><section id="outils-de-représentation-de-données" class="title-slide slide level1 center"><h1><span class="bigtwo">Outils de représentation de données</span></h1>
 
 </section><section id="graphiques-avec-excel" class="slide level2"><h2><span class="bigone">Graphiques avec Excel</span></h2>
@@ -887,6 +915,36 @@
 </div>
 </div>
 </div>
+</section><section id="la-fonction-locator" class="slide level2"><h2><span class="bigone">La fonction <code>locator()</code></span></h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><video data-src="images/locator.webm" style="margin-top:10px;;width:100.0%" controls=""><a href="images/locator.webm">Video</a></video></p>
+</div><div class="column" style="width:30%;">
+<p><br></p>
+<ul>
+<li><span class="bigtwo"><strong>Permet de récupérer des coordonnées dans la fenêtre graphique</strong></span></li>
+</ul>
+<p>&nbsp;<br></p>
+<ul>
+<li><span class="bigtwo"><strong>Peut être utilisé pour du placement intéractif d’éléments de mise en page</strong></span></li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;<br></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Attention</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="bigtwo">Ne fonctionne pas avec tous les packages qui proposent des représentations graphiques sur un système de référence orthonormé différent de celui proposé par défault par la fénétre graphique.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="limites-des-fonctions-graphiques-r-base" class="slide level2"><h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
 <p><br></p>
 <div class="bigone">
@@ -1287,8 +1345,8 @@
 <span id="cb36-17"><a href="#cb36-17"></a>              <span class="at">zoom =</span> T                    <span class="co"># Can you zoom on the figure?</span></span>
 <span id="cb36-18"><a href="#cb36-18"></a>              )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cfb3ff22326c1f11c83a" style="width:100%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-cfb3ff22326c1f11c83a">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
+<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-20fea14e7b70026f402f" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-20fea14e7b70026f402f">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1345,6 +1403,104 @@
 </section><section id="ggplot2.tidyverse.org" class="slide level2"><h2>
 <img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> ggplot2.tidyverse.org</h2>
 <iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="rzine.fr"></iframe>
+</section></section><section><section id="atelier-pratique" class="title-slide slide level1 center"><h1><span class="bigtwo">Atelier pratique</span></h1>
+
+</section><section id="présentation-du-jeu-de-données" class="slide level2"><h2><span class="bigtwo">Présentation du jeu de données</span></h2>
+<p>Réseau des relais de poste à 5 dates : 1632, 1708, 1733, 1758, 1783, 1810, 1833</p>
+<blockquote>
+<p>Nicolas Verdier, Anne Bretagnolle. L’extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩</p>
+</blockquote>
+<p>16 couches géographiques (données géoréférencées) :</p>
+<ul>
+<li>8 couches de points (relais de poste). 1 pour chaque date. format shapefile.<br>
+</li>
+<li>8 couches de lignes (route postales). 1 pour chaque date. format shapefile.</li>
+</ul></section></section><section><section id="représentation-de-réseau-avec-igraph" class="title-slide slide level1 center"><h1><span class="bigtwo">Représentation de réseau avec <code>igraph</code></span></h1>
+
+</section><section id="supports-pédagogiques" class="slide level2"><h2><span class="bigtwo">Supports pédagogiques</span></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quartodoc">
+<iframe class="slide2" src="https://elementr.gitpages.huma-num.fr/session_reseau/intro_reseau_igraph/">
+</iframe>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="center">
+<button type="submit" class="btn btn btn-succes">
+<span class="bigtwo"><a href="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/" target="_blank"><strong>Consulter le support en plein écran</strong></a></span>
+</button>
+</div>
+<p><br><br></p>
+<p>Pour aller plus loin :</p>
+<li>
+Gabor Csardi, nd, <a href="http://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/igraph.pdf" onclick="window.open(this.href); return false;"><em>Practical statistical network analysis (with R and igraph)</em></a>
+</li>
+<li>
+Katherine Ognyanova, 2016, <a href="https://kateto.net/netscix2016.html" onclick="window.open(this.href); return false;"><em>Network Analysis and Visualization with R and igraph</em></a>
+</li>
+<li>
+Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-with-r/" onclick="window.open(this.href); return false;"><em>Introduction to Network Analysis with R</em></a>
+</li>
+<p>&nbsp;<br></p>
+<p>Documentation du package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span> :</p>
+<ul>
+<li>
+<a href="https://r.igraph.org/">Site web</a><br>
+</li>
+<li>
+<a href="https://igraph.org/r/doc/">Manuel officiel</a><br>
+</li>
+<li>
+<a href="https://cran.r-project.org/web/packages/igraph/vignettes/igraph.html">Vignette</a><br>
+</li>
+<li><a href="https://cheatography.com/trvoldemort/cheat-sheets/igraph/">Cheat sheet</a></li>
+</ul>
+<p><br></p>
+</div>
+</div>
+</section><section id="exercice" class="slide level2"><h2><span class="bigtwo">Exercice</span></h2>
+</section></section><section><section id="cartographie-avec-mapsf" class="title-slide slide level1 center"><h1><span class="bigtwo">Cartographie avec <code>mapsf</code></span></h1>
+
+</section><section id="supports-pédagogiques-1" class="slide level2"><h2><span class="bigtwo">Supports pédagogiques</span></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quartodoc">
+<iframe class="slide2" src="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/">
+</iframe>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="center">
+<button type="submit" class="btn btn-success">
+<span class="bigtwo"><a href="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/" target="_blank"><strong>Consulter le support en plein écran</strong></a></span>
+</button>
+</div>
+<p><br><br></p>
+<p>Pour aller plus loin :</p>
+<ul>
+<li>
+<a href="https://rcarto.github.io/cartographie_avec_r/">Cartographie avec R</a> <span class="citation" data-cites="Giraud_Cartographie_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023a</a>)</span><br>
+</li>
+<li>
+<a href="https://rcarto.github.io/geomatique_avec_r/">Geomatique avec R</a> <span class="citation" data-cites="Giraud_Geomatique_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023b</a>)</span>
+</li>
+</ul>
+<p><br></p>
+<p>Documentation du package <code>mapsf</code> <span class="citation" data-cites="R-mapsf">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud 2022</a>)</span> :</p>
+<ul>
+<li>
+<a href="https://riatelab.github.io/mapsf/">Site web</a><br>
+</li>
+<li>
+<a href="https://riatelab.github.io/mapsf/articles/">Vignettes</a><br>
+</li>
+<li><a href="https://raw.githubusercontent.com/riatelab/mapsf/master/vignettes/web_only/img/mapsf_cheatsheet.pdf">Cheat sheet</a></li>
+</ul>
+<p><br></p>
+<p>Une remarque ? Une question ? Une proposition d’amélioration pour <code>mapsf</code> ?</p>
+<p><a href="mailto:timothee.giraud@cnrs.fr">timothee.giraud@cnrs.fr</a></p>
+</div>
+</div>
+</section><section id="exercice-1" class="slide level2"><h2><span class="bigtwo">Exercice</span></h2>
 </section><section id="section" class="slide level2"><h2></h2>
 <p><br></p>
 <div class="bigcinq">
@@ -1382,6 +1538,18 @@
 <p>Journée annuelle SO-MATE 2023 - Représentations graphiques avec R</p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-R-igraph" class="csl-entry" role="listitem">
+Csárdi, Gábor, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, et Kirill Müller. 2023. <em><span>igraph</span>: Network Analysis and Visualization in R</em>. <a href="https://doi.org/10.5281/zenodo.7682609">https://doi.org/10.5281/zenodo.7682609</a>.
+</div>
+<div id="ref-R-mapsf" class="csl-entry" role="listitem">
+Giraud, Timothée. 2022. <em>mapsf: Thematic Cartography</em>. <a href="https://CRAN.R-project.org/package=mapsf">https://CRAN.R-project.org/package=mapsf</a>.
+</div>
+<div id="ref-Giraud_Cartographie_avec_R_2023" class="csl-entry" role="listitem">
+Giraud, Timothée, et Hugues Pecout. 2023a. <span>«&nbsp;<span>Cartographie avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528161">https://doi.org/10.5281/zenodo.7528161</a>.
+</div>
+<div id="ref-Giraud_Geomatique_avec_R_2023" class="csl-entry" role="listitem">
+———. 2023b. <span>«&nbsp;<span>Géomatique avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528145">https://doi.org/10.5281/zenodo.7528145</a>.
+</div>
 <div id="ref-R-paletteer" class="csl-entry" role="listitem">
 Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
 </div>

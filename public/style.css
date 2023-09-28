@@ -329,3 +329,23 @@ font-weight:bold;
   font-size: 280%;
     text-align: center;
 }
+
+
+
+.quartodoc{
+  width:90%;
+  height:620px;
+}
+
+
+.slide2{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 300px;
+    height: inherit !important; 
+   border: 1px solid #1a8d73;
+}
+
+
+

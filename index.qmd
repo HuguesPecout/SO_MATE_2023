@@ -32,6 +32,59 @@ revealjs-plugins:
   - pointer
 ---
 
+## [Bonjour !]{.bigtwo}
+
+\
+
+::: columns
+:::{.column width="87%"}
+:::: {.big3}
+**Hugues Pecout**, ingénieur d'études [CNRS](https://www.cnrs.fr/fr) en **sciences de l'information géographique**
+::::
+:::: {.big3}
+- 2012-2022 : [FR CIST](https://cist.cnrs.fr/) (Collège international des sciences territoriales)   
+
+- Depuis 2022 : [UMR Géographie-Cités](https://geographie-cites.cnrs.fr/) 
+::::
+
+:::
+
+:::{.column width="13%"}
+
+![](images/cnrs.png)
+:::
+
+:::
+
+
+[Travail dans le domaine de la **géographie quantitative**  : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, réseau, textuelle...), représentation graphique et cartographie de **données géographiques hétérogénes** (données conventionnelles, d'enquête, big data...).]{.small2}
+
+[Principale mission actuelle : **formation aux outils & méthodes pour les données et protocoles dans les Humanités Numériques**]{.small2}
+
+\
+
+::: columns
+:::{.column width="55%"}
+
+[Spécialisé dans l'utilisation de R depuis 2015]{.big3}
+
+[Depuis 2018 : Coordination du [projet Rzine](https://rzine.fr/)]{.small2}     
+[Depuis 2022 : Animateur du groupe d'utilisateur·rices [ElementR](https://elementr.netlify.app/)]{.small2}     
+[Depuis 2021 : Membre du [Groupe de travail Notebook](https://gt-notebook.gitpages.huma-num.fr/site_quarto/)]{.small2}   
+
+:::
+
+:::{.column width="45%"}
+
+![](images/Rzine_logo.png){width=25% style="margin-right:25px;"}![](images/ElementR.png){width=25% style="margin-right:30px;"}![](images/notebook_logo.png){width=30% style="margin-bottom:25px;"}
+
+:::
+
+:::
+
+
+
+
 # [Outils de représentation de données]{.bigtwo}
 
 ## [Graphiques avec Excel]{.bigone}
@@ -557,6 +610,35 @@ dev.off()
 plot(1,1)
 
 ```
+:::
+
+## [La fonction `locator()`]{.bigone}
+
+::: columns
+::: {.column width="70%"}
+![](images/locator.webm){width=100% style="margin-top:10px;"} 
+:::
+
+::: {.column width="30%"}
+
+\
+
+- [**Permet de récupérer des coordonnées dans la fenêtre graphique**]{.bigtwo}
+
+ \
+
+- [**Peut être utilisé pour du placement intéractif d'éléments de mise en page**]{.bigtwo}
+
+ \
+ \
+
+:::{.callout-note}
+## Attention
+[Ne fonctionne pas avec tous les packages qui proposent des représentations graphiques sur un système de référence orthonormé différent de celui proposé par défault par la fénétre graphique.]{.bigtwo}
+:::
+
+:::
+
 :::
 
 
@@ -1266,9 +1348,119 @@ robservable
 ```
 
 
+# [Atelier pratique]{.bigtwo}
+
+## [Présentation du jeu de données]{.bigtwo}
+
+Réseau des relais de poste à 5 dates : 1632, 1708, 1733, 1758, 1783, 1810, 1833
+
+> Nicolas Verdier, Anne Bretagnolle. L'extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩
+
+16 couches géographiques (données géoréférencées) :
+
+- 8 couches de points (relais de poste). 1 pour chaque date. format shapefile.   
+- 8 couches de lignes (route postales). 1 pour chaque date. format shapefile.   
 
 
-## 
+
+# [Représentation de réseau avec `igraph`]{.bigtwo}
+
+## [Supports pédagogiques]{.bigtwo}
+
+::: columns
+
+:::{.column width="60%"}
+::: quartodoc
+<iframe class="slide2" src="https://elementr.gitpages.huma-num.fr/session_reseau/intro_reseau_igraph/"></iframe>
+:::
+:::
+
+:::{.column width="40%"}
+
+:::{.center}
+<button type="submit" class="btn btn btn-succes">[[ **Consulter le support en plein écran** ](https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/){target="_blank"}]{.bigtwo}</button>
+:::
+
+\
+\
+
+Pour aller plus loin : 
+
+<li>Gabor Csardi, nd, <a href="http://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/igraph.pdf" onclick="window.open(this.href); return false;">*Practical statistical network analysis (with R and igraph)*</a></li>
+
+<li>Katherine Ognyanova, 2016, <a href="https://kateto.net/netscix2016.html" onclick="window.open(this.href); return false;">*Network Analysis and Visualization with R and igraph*</a></li>
+
+<li>Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-with-r/" onclick="window.open(this.href); return false;">*Introduction to Network Analysis with R*</a></li>
+
+ \
+
+Documentation du package `igraph` [@R-igraph] :
+
+- [Site web](https://r.igraph.org/)     
+- [Manuel officiel](https://igraph.org/r/doc/)    
+- [Vignette](https://cran.r-project.org/web/packages/igraph/vignettes/igraph.html)   
+- [Cheat sheet](https://cheatography.com/trvoldemort/cheat-sheets/igraph/)   
+
+\
+
+:::
+
+:::
+
+## [Exercice]{.bigtwo}
+
+# [Cartographie avec `mapsf`]{.bigtwo}
+
+## [Supports pédagogiques]{.bigtwo}
+
+::: columns
+
+:::{.column width="60%"}
+::: quartodoc
+<iframe class="slide2" src="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/"></iframe>
+:::
+:::
+
+:::{.column width="40%"}
+:::{.center}
+<button type="submit" class="btn btn-success">[[ **Consulter le support en plein écran** ](https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/){target="_blank"}]{.bigtwo}</button>
+:::
+
+\
+\
+
+Pour aller plus loin : 
+
+- [Cartographie avec R](https://rcarto.github.io/cartographie_avec_r/) [@Giraud_Cartographie_avec_R_2023]    
+- [Geomatique avec R](https://rcarto.github.io/geomatique_avec_r/)  [@Giraud_Geomatique_avec_R_2023]
+
+\
+
+Documentation du package `mapsf` [@R-mapsf] :
+
+- [Site web](https://riatelab.github.io/mapsf/)     
+- [Vignettes](https://riatelab.github.io/mapsf/articles/)   
+- [Cheat sheet](https://raw.githubusercontent.com/riatelab/mapsf/master/vignettes/web_only/img/mapsf_cheatsheet.pdf)   
+
+\
+
+Une remarque ? Une question ? Une proposition d'amélioration pour `mapsf` ? 
+
+[timothee.giraud@cnrs.fr](mailto:timothee.giraud@cnrs.fr)
+
+
+:::
+
+
+:::
+
+
+
+
+## [Exercice]{.bigtwo}
+
+
+##
 
 \
 
