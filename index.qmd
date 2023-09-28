@@ -1434,7 +1434,6 @@ Pour aller plus loin :
 - [Cartographie avec R](https://rcarto.github.io/cartographie_avec_r/) [@Giraud_Cartographie_avec_R_2023]    
 - [Geomatique avec R](https://rcarto.github.io/geomatique_avec_r/)  [@Giraud_Geomatique_avec_R_2023]
 
-\
 
 Documentation du package `mapsf` [@R-mapsf] :
 
@@ -1442,12 +1441,14 @@ Documentation du package `mapsf` [@R-mapsf] :
 - [Vignettes](https://riatelab.github.io/mapsf/articles/)   
 - [Cheat sheet](https://raw.githubusercontent.com/riatelab/mapsf/master/vignettes/web_only/img/mapsf_cheatsheet.pdf)   
 
-\
 
 Une remarque ? Une question ? Une proposition d'amélioration pour `mapsf` ? 
 
 [timothee.giraud@cnrs.fr](mailto:timothee.giraud@cnrs.fr)
 
+::: {.center}
+![](images/mapsf.png){width="35%"}
+:::
 
 :::
 
