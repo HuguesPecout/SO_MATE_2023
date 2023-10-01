@@ -7,17 +7,17 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
-<meta name="author" content="Hugues Pecout (CNRS, UMR Géographie-Cités)">
-<title>Visualisation de données avec R</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
-<style>
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.433">
+
+  <meta name="author" content="Hugues Pecout (CNRS, UMR Géographie-Cités)">
+  <title>Visualisation de données avec R</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -114,14 +114,14 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
-<link rel="stylesheet" href="style.css">
-<link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="index_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -318,7 +318,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -406,24 +406,42 @@
       margin-right: 0; 
     }
   </style>
-<script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="index_files/libs/d3-4.5.0/d3.min.js"></script><script src="index_files/libs/forceNetwork-binding-0.4/forceNetwork.js"></script>
+  <script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+  <script src="index_files/libs/d3-4.5.0/d3.min.js"></script>
+  <script src="index_files/libs/forceNetwork-binding-0.4/forceNetwork.js"></script>
+  <link href="index_files/libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet">
+  <script src="index_files/libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+  <script src="index_files/libs/wordcloud2-0.0.1/hover.js"></script>
+  <script src="index_files/libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center"><p class="title">Visualisation de données avec R</p>
+<section id="title-slide" class="center">
+
+
+
+
+  <p class="title">Visualisation de données avec R</p>
   <p class="subtitle">Tour d’horizon des fonctionnalités de représentation graphique</p>
 
-  <img class="img" src="images/entete.png"><p class="author">Hugues Pecout (CNRS, UMR Géographie-Cités)</p>
+  <img class="img" src="images/entete.png">
+
+<br>
+
+  <p class="author">Hugues Pecout (CNRS, UMR Géographie-Cités)</p>
   <p class="institute">Journée annuelle SO-MATE 2023, Limoges</p>
 
-
+<br>
 
   <p class="affiliation"><img src="images/cnrs.png" width="60" style="margin-right:320px;"><img src="images/somate.png" width="260" style="margin-right:320px;"><img src="images/geocite.jpeg" width="60"></p>
 
-</section><section id="bonjour" class="slide level2"><h2><span class="bigtwo">Bonjour !</span></h2>
-<p><br></p>
+</section>
+<section id="bonjour" class="slide level2">
+<h2><span class="bigtwo">Bonjour !</span></h2>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:87%;">
 <div class="big3">
@@ -441,35 +459,46 @@
 </div>
 <p><span class="small2">Travail dans le domaine de la <strong>géographie quantitative</strong> : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, réseau, textuelle…), représentation graphique et cartographie de <strong>données géographiques hétérogénes</strong> (données conventionnelles, d’enquête, big data…).</span></p>
 <p><span class="small2">Principale mission actuelle : <strong>formation aux outils &amp; méthodes pour les données et protocoles dans les Humanités Numériques</strong></span></p>
-<p><br></p>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><span class="big3">Spécialisé dans l’utilisation de R depuis 2015</span></p>
-<p><span class="small2">Depuis 2018 : Coordination du <a href="https://rzine.fr/">projet Rzine</a></span><br><span class="small2">Depuis 2022 : Animateur du groupe d’utilisateur·rices <a href="https://elementr.netlify.app/">ElementR</a></span><br><span class="small2">Depuis 2021 : Membre du <a href="https://gt-notebook.gitpages.huma-num.fr/site_quarto/">Groupe de travail Notebook</a></span></p>
+<p><span class="small2">Depuis 2018 : Coordination du <a href="https://rzine.fr/">projet Rzine</a></span><br>
+<span class="small2">Depuis 2022 : Animateur du groupe d’utilisateur·rices <a href="https://elementr.netlify.app/">ElementR</a></span><br>
+<span class="small2">Depuis 2021 : Membre du <a href="https://gt-notebook.gitpages.huma-num.fr/site_quarto/">Groupe de travail Notebook</a></span></p>
 </div><div class="column" style="width:45%;">
 <p><img data-src="images/Rzine_logo.png" style="margin-right:25px;;width:25.0%"><img data-src="images/ElementR.png" style="margin-right:30px;;width:25.0%"><img data-src="images/notebook_logo.png" style="margin-bottom:25px;;width:30.0%"></p>
 </div>
 </div>
-</section><section><section id="outils-de-représentation-de-données" class="title-slide slide level1 center"><h1><span class="bigtwo">Outils de représentation de données</span></h1>
+</section>
+<section>
+<section id="outils-de-représentation-de-données" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Outils de représentation de données</span></h1>
 
-</section><section id="graphiques-avec-excel" class="slide level2"><h2><span class="bigone">Graphiques avec Excel</span></h2>
+</section>
+<section id="graphiques-avec-excel" class="slide level2">
+<h2><span class="bigone">Graphiques avec Excel</span></h2>
 <div class="columns">
 <div class="column" style="width:25%;">
 <div style="font-size:145%;">
 <p>✅ <strong>Rapide</strong><br>
 ✅ <strong>Facile</strong></p>
-<p><br></p>
+<p><br>
+</p>
 <div class="txt2">
 <p><strong>Fonctionnalités disponibles :</strong></p>
 <p>❌ Graphiques par défault<br>
 ❌ Types de graphiques<br>
 ❌ Interactivité</p>
-<p><br></p>
+<p><br>
+</p>
 <p><strong>Gestion des données :</strong></p>
 <p>❌ Manipulation des données<br>
 ❌ Statistiques<br>
 ❌ Données volumineuses</p>
-<p><br></p>
+<p><br>
+</p>
 <p><strong>Reproductibilité :</strong></p>
 <p>❌ Automatisation du pipeline<br>
 ❌ Collaboration<br>
@@ -486,23 +515,32 @@
 </div>
 </div>
 </div>
-</section><section id="graphiques-avec-des-outils-dédiés" class="slide level2"><h2><span class="bigone">Graphiques avec des outils dédiés</span></h2>
+</section>
+<section id="graphiques-avec-des-outils-dédiés" class="slide level2">
+<h2><span class="bigone">Graphiques avec des outils dédiés</span></h2>
 <p><span style="font-size:130%;margin-top:10px">Des <strong>fonctionnalités avancées</strong> et des <strong>sorties graphiques très élégantes</strong>, mais des <strong>logiciels payants</strong>.</span></p>
 <div style="margin-top:-10px;">
 <p><span style="font-size:130%;">Bon outils si on ne pratique pas R régulièrement, mais <strong>limité notamment en matière de reproductibilité</strong>.</span></p>
 </div>
 <div class="columns">
 <div class="column" style="width:20%;">
-<p><img data-src="images/power-bi_logo.png" style="margin-top:10px;;width:80.0%"><img data-src="images/Tableau-Logo.png" style="margin-top:-15px;;width:80.0%"><br><img data-src="images/ClickView-logo-1.png" style="margin-top:-15px;;width:80.0%"><img data-src="images/flourish.jpg" style="margin-top:20px;;width:80.0%"><br><img data-src="images/datawrapper.png" style="margin-top:20px;;width:80.0%"><img data-src="images/Adobe_Illustrator.png" style="margin-top:20px;;width:45.0%"></p>
+<p><img data-src="images/power-bi_logo.png" style="margin-top:10px;;width:80.0%"> <img data-src="images/Tableau-Logo.png" style="margin-top:-15px;;width:80.0%"><br>
+<img data-src="images/ClickView-logo-1.png" style="margin-top:-15px;;width:80.0%"> <img data-src="images/flourish.jpg" style="margin-top:20px;;width:80.0%"><br>
+<img data-src="images/datawrapper.png" style="margin-top:20px;;width:80.0%"> <img data-src="images/Adobe_Illustrator.png" style="margin-top:20px;;width:45.0%"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:75%;">
 <p><img data-src="images/power-bi.png" style="width:90.0%"></p>
 </div>
 </div>
-</section></section><section><section id="graphiques-avec-r-base" class="title-slide slide level1 center"><h1><span class="bigtwo">Graphiques avec R-base</span></h1>
+</section></section>
+<section>
+<section id="graphiques-avec-r-base" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Graphiques avec R-base</span></h1>
 
-</section><section id="fonctions-graphiques-r-base-1995" class="slide level2"><h2><span class="bigone">Fonctions graphiques R-base (1995)</span></h2>
+</section>
+<section id="fonctions-graphiques-r-base-1995" class="slide level2">
+<h2><span class="bigone">Fonctions graphiques R-base (1995)</span></h2>
 <p><span class="bigbis">La version 1.0 de R a été publiée en 2000, mais ce langage est distribué en tant que logiciel Open Source et avec des fonctions graphiques depuis 1995. <strong>Au centre de l’ecosystème graphique du R-base : la fonction</strong> <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot"><strong><code>plot()</code></strong></a></span></p>
 <div class="codeXXL" style="margin-top:30px;">
 <div class="cell">
@@ -512,7 +550,9 @@
 </div>
 </div>
 </div>
-</section><section id="plot" class="slide level2"><h2><span class="bigone">plot()</span></h2>
+</section>
+<section id="plot" class="slide level2">
+<h2><span class="bigone">plot()</span></h2>
 <p><span class="bigtwo"><strong>Une fonction générique très pratique pour l’exploration, qui s’adapte aux différents types des données.</strong></span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -582,35 +622,24 @@
 </div>
 </div>
 </div>
-</section><section id="autres-fonctions-graphiques-r-base" class="slide level2"><h2><span class="bigone">Autres fonctions graphiques R-base</span></h2>
+</section>
+<section id="autres-fonctions-graphiques-r-base" class="slide level2">
+<h2><span class="bigone">Autres fonctions graphiques R-base</span></h2>
 <div class="bigbis">
 <ul>
-<li>
-<code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> : histogramme de distribution</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/stripchart.html">stripchart()</a></code> : diagrammes de dispersion</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart()</a></code> : diagramme en points de Cleveland</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot()</a></code> : diagramme en boîte</li>
-<li>
-<code><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm()</a></code> : diagramme quantile-quantile théorique normal</li>
-<li>
-<code><a href="https://rdrr.io/r/stats/qqnorm.html">qqplot()</a></code> : diagramme quantile-quantile empirique</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/barplot.html">barplot()</a></code> : diagramme à barres</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/pie.html">pie()</a></code> : diagramme en secteurs</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/mosaicplot.html">mosaicplot()</a></code> : diagramme en mosaïque</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/spineplot.html">spineplot()</a></code> : diagrammes en épine (entre l’histogramme et le mosaic plot)</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/curve.html">curve()</a></code> : Représentation d’une expression mathématique</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/matplot.html">matplot()</a></code> : Dispersions de toutes le variables d’un tableau (un graphique)</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/pairs.html">pairs()</a></code> : Matrice de nuage de point pour l’ensemble des variables d’un tableau</li>
+<li><code>hist()</code> : histogramme de distribution</li>
+<li><code>stripchart()</code> : diagrammes de dispersion</li>
+<li><code>dotchart()</code> : diagramme en points de Cleveland</li>
+<li><code>boxplot()</code> : diagramme en boîte</li>
+<li><code>qqnorm()</code> : diagramme quantile-quantile théorique normal</li>
+<li><code>qqplot()</code> : diagramme quantile-quantile empirique</li>
+<li><code>barplot()</code> : diagramme à barres</li>
+<li><code>pie()</code> : diagramme en secteurs</li>
+<li><code>mosaicplot()</code> : diagramme en mosaïque</li>
+<li><code>spineplot()</code> : diagrammes en épine (entre l’histogramme et le mosaic plot)</li>
+<li><code>curve()</code> : Représentation d’une expression mathématique</li>
+<li><code>matplot()</code> : Dispersions de toutes le variables d’un tableau (un graphique)</li>
+<li><code>pairs()</code> : Matrice de nuage de point pour l’ensemble des variables d’un tableau</li>
 <li>etc….</li>
 </ul>
 </div>
@@ -624,7 +653,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>En fonction du type de variable, la fonction <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> renvoie vers les fonctions <code><a href="https://rdrr.io/r/graphics/barplot.html">barplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/spineplot.html">spineplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/stripchart.html">stripchart()</a></code>, <code><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot()</a></code>, <code><a href="https://rdrr.io/r/graphics/curve.html">curve()</a></code>, <code><a href="https://rdrr.io/r/graphics/pairs.html">pairs()</a></code>…</p>
+<p>En fonction du type de variable, la fonction <code>plot()</code> renvoie vers les fonctions <code>barplot()</code>, <code>spineplot()</code>, <code>stripchart()</code>, <code>boxplot()</code>, <code>curve()</code>, <code>pairs()</code>…</p>
 </div>
 </div>
 </div>
@@ -723,7 +752,9 @@
 </div>
 </div>
 </div>
-</section><section id="les-arguments-des-fonctions-graphiques" class="slide level2"><h2><span class="bigone">Les arguments des fonctions graphiques</span></h2>
+</section>
+<section id="les-arguments-des-fonctions-graphiques" class="slide level2">
+<h2><span class="bigone">Les arguments des fonctions graphiques</span></h2>
 <p><span class="bigtwo">Une multitude d’arguments permettent de paramétrer la mise en page d’un graphique.</span></p>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
@@ -745,36 +776,30 @@
 </div>
 </div>
 </div>
-</section><section id="les-fonctions-r-base-de-mise-en-page" class="slide level2"><h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
+</section>
+<section id="les-fonctions-r-base-de-mise-en-page" class="slide level2">
+<h2><span class="bigone">Les fonctions R-base de mise en page</span></h2>
 <p><span class="bigtwo">Plusieurs fonctions permettent d’ajouter des éléments sur un graphique existant.</span></p>
 <div class="bigbis">
 <ul>
-<li>
-<code><a href="https://rdrr.io/r/graphics/legend.html">legend()</a></code> : légende</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/title.html">title()</a></code> : titre</li>
-<li>
-<code><a href="https://rdrr.io/r/stats/density.html">density()</a></code> : courbe de densité à noyau</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/points.html">points()</a></code> : point</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/rug.html">rug()</a></code> : représentation <em>stripchart</em> le long de l’axe des x</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/lines.html">lines()</a></code> : segments de droites reliant des points</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/matplot.html">matlines()</a></code> : segments de droites reliant des points (utiliser avec <code><a href="https://rdrr.io/r/graphics/matplot.html">matplot()</a></code>)</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/abline.html">abline()</a></code> : droites traversant toute la zone graphique</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code> : texte dans la zone graphique</li>
-<li>
-<code><a href="https://rdrr.io/r/graphics/mtext.html">mtext()</a></code> : texte dans la marge</li>
+<li><code>legend()</code> : légende</li>
+<li><code>title()</code> : titre</li>
+<li><code>density()</code> : courbe de densité à noyau</li>
+<li><code>points()</code> : point</li>
+<li><code>rug()</code> : représentation <em>stripchart</em> le long de l’axe des x</li>
+<li><code>lines()</code> : segments de droites reliant des points</li>
+<li><code>matlines()</code> : segments de droites reliant des points (utiliser avec <code>matplot()</code>)</li>
+<li><code>abline()</code> : droites traversant toute la zone graphique</li>
+<li><code>text()</code> : texte dans la zone graphique</li>
+<li><code>mtext()</code> : texte dans la marge</li>
 <li>etc…</li>
 </ul>
 </div>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, </span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">type =</span> <span class="st">"o"</span>, <span class="co"># type de tracé: points ("p"), lignes ("l"), les deux ("b" ou "o"), ...</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">col =</span> <span class="st">"red"</span>, <span class="co"># couleur, tapez `colours()` pour la liste complète</span></span>
 <span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">pch =</span> <span class="dv">20</span>, <span class="co"># type de symboles, un chiffre entre 0 et 25, tapez `?points`</span></span>
@@ -827,20 +852,26 @@
 <span id="cb19-51"><a href="#cb19-51"></a>     <span class="at">side =</span> <span class="dv">4</span>, <span class="co"># Emplacement (1 = bottom, 2 = left, 3 = top...)</span></span>
 <span id="cb19-52"><a href="#cb19-52"></a>     <span class="at">cex =</span> <span class="fl">0.9</span>, <span class="co"># Taille de la police</span></span>
 <span id="cb19-53"><a href="#cb19-53"></a>     <span class="at">col =</span> <span class="st">"grey"</span>)  </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+</details>
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="gestion-de-la-fenêtre-graphique" class="slide level2"><h2><span class="bigone">Gestion de la fenêtre graphique</span></h2>
+</section>
+<section id="gestion-de-la-fenêtre-graphique" class="slide level2">
+<h2><span class="bigone">Gestion de la fenêtre graphique</span></h2>
 <p><span class="bigtwo"><strong>Trois fonctions permettent de gérer les paramètres de la fenêtre graphique.</strong></span></p>
-<p><span class="bigtwo">I. <code><a href="https://rdrr.io/r/graphics/par.html">par()</a></code> pour définir ou interroger les paramètres de la fenêtre graphique.</span></p>
+<p><span class="bigtwo">I. <code>par()</code> pour définir ou interroger les paramètres de la fenêtre graphique.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>, <span class="co"># Couleur de fond</span></span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>, <span class="co"># Couleur de fond</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>    <span class="at">col=</span> <span class="st">"white"</span>,      <span class="co"># couleur du graphique</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a>    <span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),    <span class="co"># Fenêtre découper en deux lignes / deux colonnes (4 graphiques)</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a>    <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>))  <span class="co"># Gestion des marges pour chaque graphique (B,L,T,R)</span></span>
@@ -849,19 +880,24 @@
 <span id="cb20-7"><a href="#cb20-7"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 2"</span>)</span>
 <span id="cb20-8"><a href="#cb20-8"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">sin</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">"plot 3"</span>)</span>
 <span id="cb20-9"><a href="#cb20-9"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">y =</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">main =</span> <span class="st">"plot 4"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+</details>
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p><span class="bigtwo">II. <code><a href="https://rdrr.io/r/graphics/layout.html">layout()</a></code> propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.</span></p>
+<p><span class="bigtwo">II. <code>layout()</code> propose moins d’arguments mais permet un meilleur ajustement de la disposition des figures.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
 [1,]    4    1    1
 [2,]    3    2    2
@@ -872,64 +908,84 @@
 <p><span class="bigbis">Avec la matrice ci-dessus, la fenêtre graphique sera paramétrée pour contenir trois graphiques. Le graphique 1 occupera toute la première ligne. le graphique 2 occupera les deux dernières lignes de la première colonne, et le 3e sera situé dans les deux dernières lignes de la dernière colonne.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Découpage de la fenêtre graphique</span></span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Découpage de la fenêtre graphique</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="fu">layout</span>(<span class="at">mat =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">3</span>))</span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
 <span id="cb23-4"><a href="#cb23-4"></a><span class="fu">hist</span>(co2, <span class="at">main =</span> <span class="st">"co2"</span>)</span>
 <span id="cb23-5"><a href="#cb23-5"></a><span class="fu">plot</span>(co2)</span>
 <span id="cb23-6"><a href="#cb23-6"></a><span class="fu">boxplot</span>(co2, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb23-7"><a href="#cb23-7"></a><span class="fu">qqnorm</span>(co2, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+</details>
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p><span class="bigtwo">II. <code><a href="https://rdrr.io/r/grDevices/dev.html">dev.off()</a></code> ferme le graphique en cours et réinitialise par défault la fenêtre graphique.</span></p>
+<p><span class="bigtwo">II. <code>dev.off()</code> ferme le graphique en cours et réinitialise par défault la fenêtre graphique.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>) </span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">"royalblue1"</span>) </span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+</details>
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
 <pre><code>null device 
           1 </code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="la-fonction-locator" class="slide level2"><h2><span class="bigone">La fonction <code>locator()</code></span></h2>
+</section>
+<section id="la-fonction-locator" class="slide level2">
+<h2><span class="bigone">La fonction <code>locator()</code></span></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p><video data-src="images/locator.webm" style="margin-top:10px;;width:100.0%" controls=""><a href="images/locator.webm">Video</a></video></p>
 </div><div class="column" style="width:30%;">
-<p><br></p>
+<p><br>
+</p>
 <ul>
 <li><span class="bigtwo"><strong>Permet de récupérer des coordonnées dans la fenêtre graphique</strong></span></li>
 </ul>
-<p>&nbsp;<br></p>
+<p>&nbsp;<br>
+</p>
 <ul>
 <li><span class="bigtwo"><strong>Peut être utilisé pour du placement intéractif d’éléments de mise en page</strong></span></li>
 </ul>
 <p>&nbsp;<br>
-&nbsp;<br></p>
+&nbsp;<br>
+</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -945,8 +1001,11 @@
 </div>
 </div>
 </div>
-</section><section id="limites-des-fonctions-graphiques-r-base" class="slide level2"><h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
-<p><br></p>
+</section>
+<section id="limites-des-fonctions-graphiques-r-base" class="slide level2">
+<h2><span class="bigone">Limites des fonctions graphiques R-base</span></h2>
+<p><br>
+</p>
 <div class="bigone">
 <p>Si il existe déjà un certains nombre de fonctionnalités pour la représentation graphique en R-base, ce socle commun présente des limites. Ces fonctions sont très simples d’utilisation, mais sont à privilégier dans un contexte d’exploration des données car :</p>
 <ul>
@@ -956,7 +1015,8 @@
 <li><span class="elementR"><strong>Le rendu graphique restera toujours assez rudimentaire…</strong></span></li>
 </ul>
 </div>
-<p><br></p>
+<p><br>
+</p>
 <div class="fatxt">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -972,27 +1032,35 @@
 </div>
 </div>
 </div>
-</section></section><section><section id="la-révolution-ggplot2" class="title-slide slide level1 center"><h1><span class="bigtwo">La révolution <code>ggplot2</code></span></h1>
+</section></section>
+<section>
+<section id="la-révolution-ggplot2" class="title-slide slide level1 center">
+<h1><span class="bigtwo">La révolution <code>ggplot2</code></span></h1>
 
-</section><section id="lattice-2001" class="slide level2"><h2><span class="bigone">lattice (2001)</span></h2>
+</section>
+<section id="lattice-2001" class="slide level2">
+<h2><span class="bigone">lattice (2001)</span></h2>
 <p><span class="bigtwo">Le package <code>lattice</code> vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.</span></p>
 <div class="codeXL" style="margin-top:30px;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-2.png" width="960"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-2.png" width="960"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-3.png" width="960"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-3.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1003,7 +1071,8 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1024,14 +1093,15 @@
 </div>
 </div>
 </div>
-</section><section id="ggplot2-2007---2012" class="slide level2"><h2><span class="bigone">ggplot2 (2007 - 2012)</span></h2>
+</section>
+<section id="ggplot2-2007---2012" class="slide level2">
+<h2><span class="bigone">ggplot2 (2007 - 2012)</span></h2>
 <div style="margin-top:20px;">
 <p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="Rggplot2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
 </div>
 <div class="bigtwo">
 <ul>
-<li>Repose sur le concept de La <span class="elementR"><em>Grammar of Graphics</em></span> <span class="citation" data-cites="wilkinson:1999:TGOG">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wilkinson 1999</a>)</span>
-</li>
+<li>Repose sur le concept de La <span class="elementR"><em>Grammar of Graphics</em></span> <span class="citation" data-cites="wilkinson:1999:TGOG">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wilkinson 1999</a>)</span></li>
 <li>Produit des graphiques très élégants par défault</li>
 <li>Est adapté au développement d’extensions</li>
 <li>Ouvre la possibilité de construire des <strong>représentations graphiques variées et personnalisées</strong>.</li>
@@ -1048,7 +1118,8 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:80.0%"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1059,11 +1130,14 @@
 <p><img data-src="images/gallery_ggplot2.png"></p>
 <p><img data-src="images/overview.png"></p>
 <p><img data-src="images/switzerland.png"></p>
-</section><section id="ggplot2-au-delà-de-r" class="slide level2"><h2><span class="bigone">ggplot2, au delà de R…</span></h2>
+</section>
+<section id="ggplot2-au-delà-de-r" class="slide level2">
+<h2><span class="bigone">ggplot2, au delà de R…</span></h2>
 <div style="margin-top:20px;">
 <p><span class="bigone"><strong>La syntaxe de la <span class="elementR"><em>grammaire des graphiques</em></span>, implementée dans un premier temps en langage R, a été reprise et adaptée dans plusieurs langages de programmation.</strong></span></p>
 </div>
-<p><br></p>
+<p><br>
+</p>
 <div style="margin-top:20px;">
 <p><span class="bigtwo"><strong>La grammaire des graphiques avec <code>ggplot2</code> :</strong></span></p>
 </div>
@@ -1087,8 +1161,11 @@
 <p><img data-src="images/gg_ggplot2.png"></p>
 </div>
 </div>
-</section><section id="la-grammaire-des-graphiques-en-python-altair" class="slide level2"><h2>La grammaire des graphiques en Python (<code>altair</code>)</h2>
-<p><br></p>
+</section>
+<section id="la-grammaire-des-graphiques-en-python-altair" class="slide level2">
+<h2>La grammaire des graphiques en Python (<code>altair</code>)</h2>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="codeXL" style="margin-top:22px;">
@@ -1108,8 +1185,11 @@
 <p><img data-src="images/gg_altair.png"></p>
 </div>
 </div>
-</section><section id="la-grammaire-des-graphiques-en-javascript-vegalite" class="slide level2"><h2>La grammaire des graphiques en JavaScript (<code>vegalite</code>)</h2>
-<p><br></p>
+</section>
+<section id="la-grammaire-des-graphiques-en-javascript-vegalite" class="slide level2">
+<h2>La grammaire des graphiques en JavaScript (<code>vegalite</code>)</h2>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="codeXL" style="margin-top:22px;">
@@ -1135,8 +1215,11 @@
 <p><img data-src="images/gg_vegalite.svg" style="width:90.0%"></p>
 </div>
 </div>
-</section><section id="la-grammaire-des-graphiques-en-observable-js-plot" class="slide level2"><h2>La grammaire des graphiques en Observable JS (<code>Plot</code>)</h2>
-<p><br></p>
+</section>
+<section id="la-grammaire-des-graphiques-en-observable-js-plot" class="slide level2">
+<h2>La grammaire des graphiques en Observable JS (<code>Plot</code>)</h2>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="codeXL" style="margin-top:22px;">
@@ -1155,13 +1238,15 @@
 <span id="cb31-13"><a href="#cb31-13"></a>})</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="center bold">
-<p><img data-src="images/plot.svg" style="width:90.0%"><a href="https://github.com/observablehq/plot">https://github.com/observablehq/plot</a></p>
+<p><img data-src="images/plot.svg" style="width:90.0%"> <a href="https://github.com/observablehq/plot">https://github.com/observablehq/plot</a></p>
 </div>
 </div><div class="column" style="width:70%;">
 <p><img data-src="images/gg_observable.png"></p>
 </div>
 </div>
-</section><section id="les-extensions-de-ggplot2" class="slide level2"><h2><span class="bigone">Les extensions de <code>ggplot2</code></span></h2>
+</section>
+<section id="les-extensions-de-ggplot2" class="slide level2">
+<h2><span class="bigone">Les extensions de <code>ggplot2</code></span></h2>
 <p><span class="bigtwo">De nombreuses extensions de <code>ggplot2</code> ont été développées et offrent de nouvelles fonctionnalités en matière de mise en forme, de types de représentation graphique, d’animation, d’intéractivité, d’objet pris en compte…</span></p>
 <div class="center bold">
 <p><img data-src="images/extension_ggplot.png" style="width:90.0%"></p>
@@ -1169,7 +1254,9 @@
 <p><a href="https://exts.ggplot2.tidyverse.org">https://exts.ggplot2.tidyverse.org</a></p>
 </div>
 </div>
-</section><section id="esquisse-lextension-à-connaître" class="slide level2"><h2><span class="bigone"><code>esquisse</code>, l’extension à connaître</span></h2>
+</section>
+<section id="esquisse-lextension-à-connaître" class="slide level2">
+<h2><span class="bigone"><code>esquisse</code>, l’extension à connaître</span></h2>
 <p><span class="bigtwo"><code>esquisse</code> est un package français <span class="citation" data-cites="esquisse">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Meyer et Perrier 2022</a>)</span>. C’est l’une des extensions <code>ggplot2</code> les plus téléchargées. Il s’agit d’un <em>addin</em> (shiny) pour créer des graphiques <code>ggplot2</code> de manière interactive, puis récupérer le code R généré automatiquement.</span></p>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -1181,7 +1268,10 @@
 </div>
 </div>
 <div class="center bold">
-<p><br><br><br></p>
+<p><br>
+<br>
+<br>
+</p>
 <p><img data-src="images/esquisse_logo.png" style="width:75.0%"></p>
 <p><a href="https://dreamrs.github.io/esquisse/">https://dreamrs.github.io/esquisse/</a></p>
 </div>
@@ -1191,44 +1281,58 @@
 </div>
 </div>
 </div>
-</section><section id="ggplot2-de-la-customization-avancée" class="slide level2"><h2><span class="bigone"><code>ggplot2</code>, de la customization avancée…</span></h2>
+</section>
+<section id="ggplot2-de-la-customization-avancée" class="slide level2">
+<h2><span class="bigone"><code>ggplot2</code>, de la customization avancée…</span></h2>
 <div class="center">
 <p><span class="bigtwo">X-Men Characters, by <strong>Cedric Scherer</strong></span></p>
 <p><a href="https://www.cedricscherer.com/top/dataviz/">https://www.cedricscherer.com/top/dataviz/</a></p>
 <p><img data-src="images/xmen.jpg"></p>
 </div>
-<p><br></p>
+<p><br>
+</p>
 <div class="center">
 <p><span class="bigtwo">Best selling Authors, by <strong>Tania Shapiro</strong></span></p>
 <p><a href="https://www.tanyashapiro.com/">https://www.tanyashapiro.com/</a></p>
 <p><img data-src="images/nyt.png"></p>
 </div>
-<p><br></p>
+<p><br>
+</p>
 <div class="center">
 <p><strong>Spatio-temporal Wikidata. Exploration de données ouvertes et liées du web 3.0</strong>, par R. Krummeich, H. Pecout &amp; S. Rey-Coyrehourcq</p>
 <p><a href="https://rzine-reviews.github.io/wikidata_sparql_rzine/#content">https://rzine-reviews.github.io/wikidata_sparql_rzine/#content</a></p>
 <p><img data-src="images/sparql.png"></p>
 </div>
-</section><section id="à-lart-graphique-numérique" class="slide level2"><h2><span class="bigone">… à l’art graphique numérique</span></h2>
+</section>
+<section id="à-lart-graphique-numérique" class="slide level2">
+<h2><span class="bigone">… à l’art graphique numérique</span></h2>
 <div class="center">
 <p><span class="bigtwo"><strong>Thomas Lin Pedersen</strong> (Rstudio)</span></p>
 <p><a href="https://www.data-imaginist.com/art">https://www.data-imaginist.com/art</a></p>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="images/art_1.png"><br><img data-src="images/art_2.png"><br><img data-src="images/art_3.png"></p>
+<p><img data-src="images/art_1.png"><br>
+<img data-src="images/art_2.png"><br>
+<img data-src="images/art_3.png"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/art_4.png"><br><img data-src="images/art_5.png"><br><img data-src="images/art_6.png"><!-- ![](images/art_7.png) --></p>
+<p><img data-src="images/art_4.png"><br>
+<img data-src="images/art_5.png"><br>
+<img data-src="images/art_6.png"> <!-- ![](images/art_7.png) --></p>
 </div>
 </div>
-</section><section id="palettes-de-couleurs" class="slide level2"><h2><span class="bigone">Palettes de couleurs</span></h2>
+</section>
+<section id="palettes-de-couleurs" class="slide level2">
+<h2><span class="bigone">Palettes de couleurs</span></h2>
 <div class="columns">
 <div class="column" style="width:47%;">
 <div class="center bold">
 <p><span class="bigtwo">De nombreuses palettes de couleurs sont directement disponibles en R-base :</span></p>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/swatch-plot-1.svg"></p>
-<figcaption><code><a href="https://rdrr.io/r/grDevices/palettes.html">hcl.colors()</a></code></figcaption></figure>
+<figure>
+<p><img data-src="images/swatch-plot-1.svg"></p>
+<figcaption><code>hcl.colors()</code></figcaption>
+</figure>
 </div>
 </div>
 </div><div class="column" style="width:6%;">
@@ -1237,23 +1341,27 @@
 <div class="center bold">
 <p><span class="bigtwo">Au cas où, près de 70 (!) packages proposent des palettes de couleurs</span></p>
 <ul>
-<li>
-<code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes (compilation)</li>
-<li>
-<code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span>, une application shiny pour les explorer</li>
+<li><code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes (compilation)</li>
+<li><code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span>, une application shiny pour les explorer</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/cols4all.png"></p>
-<figcaption><code><a href="https://rdrr.io/pkg/cols4all/man/c4a_gui.html">cols4all::c4a_gui()</a></code></figcaption></figure>
+<figure>
+<p><img data-src="images/cols4all.png"></p>
+<figcaption><code>cols4all::c4a_gui()</code></figcaption>
+</figure>
 </div>
 </div>
 </div>
 </div>
-</section></section><section><section id="tour-dhorizon-des-packages-de-représentation-graphique-par-thématique" class="title-slide slide level1 center"><h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique, par thématique</span></h1>
+</section></section>
+<section>
+<section id="tour-dhorizon-des-packages-de-représentation-graphique-par-thématique" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique, par thématique</span></h1>
 
-</section><section id="analyse-de-réseau" class="slide level2"><h2><span class="bigone">Analyse de réseau</span></h2>
-<h3 id="package-igraph">package <code>igraph</code>
-</h3>
+</section>
+<section id="représentation-de-réseau" class="slide level2">
+<h2><span class="bigone">Représentation de réseau</span></h2>
+<h3 id="package-igraph-r-igraph">package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span></h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="codeXL" style="margin-top:10px;">
@@ -1292,14 +1400,13 @@
 <span id="cb34-17"><a href="#cb34-17"></a>     <span class="at">sub =</span> <span class="fu">graph_attr</span>(karate, <span class="st">"Author"</span>),     <span class="co"># sous-titre</span></span>
 <span id="cb34-18"><a href="#cb34-18"></a>     <span class="at">layout =</span> <span class="fu">layout_</span>(karate, <span class="fu">with_lgl</span>()))             <span class="co"># sous-titre                   </span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/mouahahah-1.png" width="960"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<h3 id="ggraph-extension-ggplot2">
-<code>ggraph</code> (extension ggplot2)</h3>
+<h3 id="ggraph-extension-ggplot2-ggraph"><code>ggraph</code> (extension ggplot2) <span class="citation" data-cites="ggraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Pedersen 2022</a>)</span></h3>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggraph)</span>
@@ -1319,11 +1426,11 @@
 <span id="cb35-15"><a href="#cb35-15"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
 <span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">'steelblue'</span>, <span class="at">fg_text_colour =</span> <span class="st">'white'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
 </div>
 </div>
 </div>
-<h3 id="networkd3"><code>networkD3</code></h3>
+<h3 id="package-networkd3-networkd3">package <code>networkD3</code> <span class="citation" data-cites="networkD3">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Allaire et al. 2017</a>)</span></h3>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -1345,67 +1452,163 @@
 <span id="cb36-17"><a href="#cb36-17"></a>              <span class="at">zoom =</span> T                    <span class="co"># Can you zoom on the figure?</span></span>
 <span id="cb36-18"><a href="#cb36-18"></a>              )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8c5fb4987a5dd3e981fa" style="width:100%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8c5fb4987a5dd3e981fa">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
+<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40e8e1dd76303959ee4e" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-40e8e1dd76303959ee4e">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<p>visNetwork</p>
-</section><section id="analyse-de-séquence" class="slide level2"><h2><span class="bigone">Analyse de séquence</span></h2>
-<p>TraminEr</p>
-</section><section id="scatterplot3d" class="slide level2"><h2>Scatterplot3D</h2>
+<h3 id="package-visnetwork">package <code>visNetwork</code></h3>
+</section>
+<section id="représentation-de-séquence" class="slide level2">
+<h2><span class="bigone">Représentation de séquence</span></h2>
+<h3 id="package-traminer">package <code>TraMineR</code></h3>
+<p>Gabadinho, A. &amp; Ritschard, G. (2013), Searching for typical life trajectories applied to child birth histories, In R. Lévy &amp; E. Widmer (eds.), Gendered life courses. pp.&nbsp;287-312. Vienna: LIT</p>
+<p>Gabadinho, A., Ritschard, G., Müller, N. S., &amp; Studer, M. (2011). Analyzing and Visualizing State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI https://doi.org/10.18637/jss.v040.i04.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "employment"  "FE"          "HE"          "joblessness" "school"     
+[6] "training"   </code></pre>
+</div>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section><section id="rgl" class="slide level2"><h2>rgl</h2>
-</section><section id="heatmap" class="slide level2"><h2>heatmap</h2>
-<p>superheat ComplexHeatmap</p>
-</section><section id="textuelle" class="slide level2"><h2>Textuelle</h2>
-<p>wordcloud</p>
-</section><section id="slope-graphs" class="slide level2"><h2>Slope graphs</h2>
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<section id="heatmap" class="slide level2">
+<h2><span class="bigone">Heatmap</span></h2>
+<h3 id="package-superheat-superheat">package <code>superheat</code> <span class="citation" data-cites="superheat">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Barter et Yu 2017</a>)</span></h3>
+<iframe width="1070" height="540" src="https://rlbarter.github.io/superheat/index.html" title="superheat"></iframe>
+<h3 id="package-complexheatmap">package <code>ComplexHeatmap</code></h3>
+<iframe width="1070" height="540" src="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html" title="ComplexHeatmap"></iframe>
+</section>
+<section id="nuage-de-mots" class="slide level2">
+<h2><span class="bigone">Nuage de mots</span></h2>
+<h3 id="package-wordcoud-wordcloud">Package <code>wordcoud</code> <span class="citation" data-cites="wordcloud">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Fellows 2018</a>)</span></h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         word freq
+oil       oil   85
+said     said   73
+prices prices   48
+opec     opec   42
+mln       mln   31
+the       the   26</code></pre>
+</div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"><h3 id="package-wordcoud2-wordcloud2">Package <code>wordcoud2</code> <span class="citation" data-cites="wordcloud2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Lang et Chien 2018</a>)</span></h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         word freq
+oil       oil   85
+said     said   73
+prices prices   48
+opec     opec   42
+mln       mln   31
+the       the   26</code></pre>
+</div>
+<div class="cell-output-display">
+
+<div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d47355ebc5b5f98e1ea7" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d47355ebc5b5f98e1ea7">{"x":{"word":["oil","said","prices","opec","mln","the","last","bpd","dlrs","crude","market","reuter","saudi","will","one","barrel","kuwait","new","official","pct","price","barrels","government","production","sheikh","industry","meeting","minister","world","also","billion","futures","month","output","petroleum","quota","sources","accord","analysts","but","group","gulf","january","markets","report","today","december","demand","economic","economy","energy","help","international","may","nazer","nymex","posted","present","they","traders","158","ability","agreement","ali","april","arabia","budget","emergency","exchange","hold","imports","members","recent","riyals","says","sell","years","abdulaziz","agency","arab","ceiling","company","contract","daily","emirates","expected","expenditure","exports","growth","now","opecs","plans","qatar","quoted","research","reserve","reserves","states","study","united","way","week","west","year","150","according","added","among","asked","brings","buyers","can","change","corp","cut","day","development","effective","exploration","fall","february","fell","free","higher","increase","levels","meet","must","never","per","policy","power","problem","producing","protect","pumping","reduced","revenue","revenues","rise","saying","set","since","spa","strategic","texas","this","total","transaction","weak","yesterday","13nation","1985","198586","1986","1987","198788","address","agreed","alkhalifa","alqabas","alsabah","announced","appears","arabian","arabias","around","average","back","bank","bbl","boost","called","commitment","companies","compared","countrys","current","decrease","denied","dollars","domestic","due","efp","estimate","estimates","export","fixed","foreign","four","future","grade","guard","high","hisham","however","inc","indonesia","indonesias","intermediate","kingdoms","kuwaits","local","low","lower","lowered","made","main","march","mckiernan","measures","mizrahi","moves","much","named","next","officials","plant","position","president","pressure","producer","projected","published","real","refinery","reiterated","remain","rule","say","sector","several","sharp","ship","six","slightly","smaller","spokeswoman","state","sweet","texaco","three","trading","two","weeks","york","1518","198687","20s","285000","500","725","750","948000","activity","adhering","agriculture","along","apparently","appeared","approved","architect","areas","aspen","bankers","based","benchmark","benefits","canada","canadian","cash","changed","changes","circumstance","clearly","closed","coast","come","committee","commodity","consumption","countries","country","crossroads","crucial","cubic","currently","customers","deal","decembers","decline","deficit","deposits","deputy","diamond","differentials","difficulties","direction","discounted","dlr","early","ecuador","effect","embargo","embassy","entering","even","falling","feb","first","fiscal","fiscales","forced","fully","gcc","general","given","grades","halt","hit","hope","humanistic","impact","import","increased","increasing","instead","institute","interview","investment","jersey","june","keep","late","light","limit","limits","line","lost","louisiana","lowest","major","marketing","member","mid","million","ministers","mitigate","months","nearing","net","neutral","none","nuclear","organisation","organization","outlook","overseas","pact","pay","petroliferos","planned","port","positive","postings","predicted","press","pricing","private","probably","problems","pronounced","protected","public","put","quotes","raise","rate","reduction","referring","remarks","reports","return","review","risks","riyal","selfimposed","selling","share","shortfall","spot","steady","stick","strongly","studies","support","take","taken","techniques","throughput","trade","trust","trying","uncertainty","union","value","wam","wanted","weakness","winter","yacimientos","yanbu","zero","zone","100000","108","111","115","12217","1232","1381","13member","156","1600","1635","1650","1667","168","1685","1752","180000","200000","200foot","2226","24hour","2766","300","3749598","3750003","4133","534","5472","614","658","6745","678","718","738","able","abroad","accept","across","add","addressed","adherence","advantage","advisers","after","agricultural","aground","allocated","allocations","allow","almost","already","althani","although","alvite","amidst","analysis","analyst","annual","anything","apparent","aramco","argentine","arrangement","asia","asian","assesses","assign","assigned","associates","attract","available","averaging","aware","bahrain","bahrains","balance","baseless","basic","basis","because","beginning","bijan","bin","bit","bodys","briefly","broadened","brothers","buildings","burden","buy","buyer","calendar","cambridge","capacity","capozza","carrying","center","century","cera","certain","cftc","chairman","challenge","characterized","charging","cheap","cheating","chevron","chv","cited","citing","clever","close","closer","closes","coming","commission","communications","companys","completed","complex","condition","conditions","considered","construction","contacts","continuation","continue","continued","continues","contracted","contributed","control","cooperation","coordination","copany","corps","council","counter","coupled","covered","creek","critical","cts","currency","custom","cuts","cutting","cypriot","daniel","david","days","debtburdened","debut","decided","declared","declines","deemed","defence","delaware","delivered","delivering","departments","deregulate","deregulation","determination","devalue","device","differential","difficulty","dillard","director","discuss","discussing","distribution","distributions","divided","doha","dollar","drawbacks","drop","dropped","earlier","earnings","eastern","easy","ecuadors","editor","edmontonswann","education","eight","either","elaborate","elections","electricity","end","engineers","entitlements","environment","equally","estimated","european","exceed","exceeding","excess","excesses","excessive","exerted","exist","expanded","expansion","expartners","expectations","expects","explained","exporting","exxon","face","faced","faces","facilities","facing","failed","fallen","favours","fee","fernando","figure","figures","finance","firmer","floating","followed","for","forces","foremost","fourth","frank","full","fundamentals","gas","generally","geneva","get","globalization","glut","guaranteed","halting","harvard","heads","health","hedge","hedged","helped","hemisphere","highly","hills","hitting","hoped","housing","houston","immediately","implementation","improve","improvement","include","including","independent","indications","initiate","initiative","institutions","interbank","interest","investments","issue","jamaica","jan","juaymah","jubail","jump","just","khalifa","lack","largest","later","latest","launched","lead","leading","learn","least","lending","less","lesson","level","liberalised","lift","liftings","like","lines","liquidity","little","loan","lodged","longterm","ltd","lukman","lull","maintain","make","manager","manipulate","many","marathon","marathons","marker","mcfadden","means","mercantile","metrers","metres","mid1960s","mid1986","mideast","minus","mlotok","mob","mobil","momentum","money","monopolies","monthend","moussavarrahmani","movement","nation","natural","need","needs","negative","negotiate","neither","network","news","newspaper","nigerian","nine","nonoil","northern","notes","offset","onetwelfth","oneweek","open","opens","operations","opposite","optimism","optimistic","option","order","organiaation","our","outlining","outside","overproducing","part","parties","partly","party","past","paths","paul","paulsboro","payments","pegged","performance","period","pertains","pessimistic","philadelphia","physical","placed","plastics","platinum","point","policies","political","population","positions","postponed","pressures","previous","primarily","primary","principal","procedure","produce","produced","producers","product","products","program","projection","projects","prompted","proposed","proved","providing","provision","publish","purposes","quarter","quiet","quietly","quotas","rallied","ran","ranging","ras","rates","rationalise","readdress","reaffirmed","reasonable","recommending","recovering","recurrent","reference","refineries","refining","reflect","refloat","reform","reforms","regain","regard","regarding","region","regional","reiterate","relaxation","relieve","reluctant","remainder","remained","reported","request","resistance","resisting","resources","respectively","responsibilites","restored","restraint","restrictions","result","reuters","revealed","reviews","right","rilwanu","rising","river","rocks","rosemary","rumour","rushing","sales","salomon","santos","satisfied","saw","scheduled","scheme","seapride","season","secretary","security","seeing","seek","september","series","serve","services","session","sets","seven","severely","shamrock","sharply","shoulder","show","showed","shown","signed","signs","situation","sixmonth","slackens","slide","slump","social","sold","soon","sort","sour","south","southeast","spend","spill","spoke","spokesman","spotnext","spriggs","stabilise","stabilize","stable","start","statement","steel","steering","steps","stiff","storage","strong","subsequently","substitution","succeed","suffer","suffering","suhartos","sunday","sundays","supply","supporting","suppose","surrounding","swift","talks","tanker","tanurah","tapers","teach","telephone","terminals","test","there","third","thomas","though","thought","threemonth","tide","together","told","totalled","tower","trader","trades","traditional","traditionally","transacted","transmission","transport","trends","trusts","try","turmoil","twofold","uae","uncertain","unchanged","under","unions","unitholders","universitys","unlikely","unocal","unusually","urged","use","virtual","wants","water","wealth","wednesday","weekend","welcomed","when","whether","wishes","worldwide","xon","yergin","yesterdays"],"freq":[85,73,48,42,31,26,24,23,23,21,20,20,18,18,17,15,14,14,14,14,13,11,11,11,11,10,10,10,10,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.48235294117647,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"star","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+</div>
+</div>
+<p>Mais aussi <code>ggwordcloud</code> et `ggwordcloud2``…</p>
+</section>
+<section id="slope-graphs" class="slide level2">
+<h2>Slope graphs</h2>
 <p>CGPfunctions</p>
-</section><section id="circular-plot" class="slide level2"><h2>Circular plot</h2>
-<p>https://jokergoo.github.io/circlize_book/book/</p>
-</section><section id="survival" class="slide level2"><h2>Survival</h2>
+</section>
+<section id="graphique-circulaire" class="slide level2">
+<h2>Graphique circulaire</h2>
+<h3 id="package-circlize-10.1093bioinformaticsbtu393">package <code>circlize</code> <span class="citation" data-cites="10.1093/bioinformatics/btu393">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Gu et al. 2014</a>)</span></h3>
+<iframe width="1070" height="540" src="https://jokergoo.github.io/circlize_book/book/" title="circlize_book"></iframe>
+</section>
+<section id="survival" class="slide level2">
+<h2>Survival</h2>
 <p>Survival plots</p>
-</section><section id="visualisation-spatiale" class="slide level2"><h2>Visualisation spatiale</h2>
-</section><section id="intéractivité-javascript-link" class="slide level2"><h2>Intéractivité (javascript link)</h2>
+</section>
+<section id="visualisation-spatiale" class="slide level2">
+<h2>Visualisation spatiale</h2>
+</section>
+<section id="graphique-3d" class="slide level2">
+<h2><span class="bigone">Graphique 3D</span></h2>
+<h3 id="package-scatterplot3d">package <code>Scatterplot3D</code></h3>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"><h3 id="package-rgl">package <code>rgl</code></h3>
+<p>Create 3D Plots and Animation in R using RGL Package</p>
+</section>
+<section id="intéractivité-javascript-link" class="slide level2">
+<h2>Intéractivité (javascript link)</h2>
 <p>htmlwidgets.org</p>
-</section><section id="leafletmapview" class="slide level2"><h2>leaflet/Mapview</h2>
-</section><section id="rbokeh" class="slide level2"><h2>rbokeh</h2>
-</section><section id="rcharts" class="slide level2"><h2>rCharts</h2>
-</section><section id="highcharter" class="slide level2"><h2>highcharter</h2>
-</section><section id="shiny" class="slide level2"><h2>Shiny</h2>
-</section><section id="autre-plotly-et-cie" class="slide level2"><h2>Autre (plotly et cie)</h2>
+</section>
+<section id="leafletmapview" class="slide level2">
+<h2>leaflet/Mapview</h2>
+</section>
+<section id="rbokeh" class="slide level2">
+<h2>rbokeh</h2>
+</section>
+<section id="rcharts" class="slide level2">
+<h2>rCharts</h2>
+</section>
+<section id="highcharter" class="slide level2">
+<h2>highcharter</h2>
+</section>
+<section id="shiny" class="slide level2">
+<h2>Shiny</h2>
+</section>
+<section id="autre-plotly-et-cie" class="slide level2">
+<h2>Autre (plotly et cie)</h2>
 <p>Plotly &gt; ggplot2 &gt; Plotly.js &gt; D3.js &gt; Javascript</p>
 <p>echarts4r</p>
 <p>robservable</p>
-</section></section><section><section id="un-graphique-et-après" class="title-slide slide level1 center"><h1>Un graphique, et après ?</h1>
+</section></section>
+<section>
+<section id="un-graphique-et-après" class="title-slide slide level1 center">
+<h1>Un graphique, et après ?</h1>
 
-</section><section id="export-classique" class="slide level2"><h2>Export Classique</h2>
-</section><section id="notebook" class="slide level2"><h2>notebook</h2>
-</section><section id="shiny-1" class="slide level2"><h2>shiny</h2>
-</section></section><section><section id="ressources-utiles" class="title-slide slide level1 center"><h1><span class="bigtwo">Ressources utiles</span></h1>
+</section>
+<section id="export-classique" class="slide level2">
+<h2>Export Classique</h2>
+</section>
+<section id="notebook" class="slide level2">
+<h2>notebook</h2>
+</section>
+<section id="shiny-1" class="slide level2">
+<h2>shiny</h2>
+</section></section>
+<section>
+<section id="ressources-utiles" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Ressources utiles</span></h1>
 
-</section><section id="r-graph-gallery.com" class="slide level2"><h2>
-<img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> r-graph-gallery.com</h2>
+</section>
+<section id="r-graph-gallery.com" class="slide level2">
+<h2><img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> r-graph-gallery.com</h2>
 <iframe width="1070" height="540" src="https://r-graph-gallery.com/" title="R_Graph_Gallery"></iframe>
 <div class="center bigtwo">
 <p><a href="https://www.yan-holtz.com/">By <strong>Yan Hotlz</strong></a></p>
 </div>
-</section><section id="r-charts.com" class="slide level2"><h2>
-<img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"> r-charts.com</h2>
+</section>
+<section id="r-charts.com" class="slide level2">
+<h2><img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"> r-charts.com</h2>
 <iframe width="1070" height="540" src="https://r-charts.com/" title="R_Charts"></iframe>
 <div class="center bigtwo">
 <p><a href="https://twitter.com/i/flow/login?redirect_after_login=%2FRCoderWeb%2F">By <strong>José Carlos Soage</strong></a></p>
 </div>
-</section><section id="rzine.fr" class="slide level2"><h2>
-<img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> rzine.fr</h2>
+</section>
+<section id="rzine.fr" class="slide level2">
+<h2><img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> rzine.fr</h2>
 <iframe width="1070" height="600" src="https://rzine.fr" title="rzine.fr"></iframe>
-</section><section id="ggplot2.tidyverse.org" class="slide level2"><h2>
-<img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> ggplot2.tidyverse.org</h2>
+</section>
+<section id="ggplot2.tidyverse.org" class="slide level2">
+<h2><img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"> ggplot2.tidyverse.org</h2>
 <iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="rzine.fr"></iframe>
-</section></section><section><section id="atelier-pratique" class="title-slide slide level1 center"><h1><span class="bigtwo">Atelier pratique</span></h1>
+</section></section>
+<section>
+<section id="atelier-pratique" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Atelier pratique</span></h1>
 
-</section><section id="présentation-du-jeu-de-données" class="slide level2"><h2><span class="bigtwo">Présentation du jeu de données</span></h2>
+</section>
+<section id="présentation-du-jeu-de-données" class="slide level2">
+<h2><span class="bigtwo">Présentation du jeu de données</span></h2>
 <p>Réseau des relais de poste à 5 dates : 1632, 1708, 1733, 1758, 1783, 1810, 1833</p>
 <blockquote>
 <p>Nicolas Verdier, Anne Bretagnolle. L’extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩</p>
@@ -1415,9 +1618,15 @@
 <li>8 couches de points (relais de poste). 1 pour chaque date. format shapefile.<br>
 </li>
 <li>8 couches de lignes (route postales). 1 pour chaque date. format shapefile.</li>
-</ul></section></section><section><section id="représentation-de-réseau-avec-igraph" class="title-slide slide level1 center"><h1><span class="bigtwo">Représentation de réseau avec <code>igraph</code></span></h1>
+</ul>
+</section></section>
+<section>
+<section id="représentation-de-réseau-avec-igraph" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Représentation de réseau avec <code>igraph</code></span></h1>
 
-</section><section id="supports-pédagogiques" class="slide level2"><h2><span class="bigtwo">Supports pédagogiques</span></h2>
+</section>
+<section id="supports-pédagogiques" class="slide level2">
+<h2><span class="bigtwo">Supports pédagogiques</span></h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="quartodoc">
@@ -1430,7 +1639,9 @@
 <span class="bigtwo"><a href="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/" target="_blank"><strong>Consulter le support en plein écran</strong></a></span>
 </button>
 </div>
-<p><br><br></p>
+<p><br>
+<br>
+</p>
 <p>Pour aller plus loin :</p>
 <li>
 Gabor Csardi, nd, <a href="http://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/igraph.pdf" onclick="window.open(this.href); return false;"><em>Practical statistical network analysis (with R and igraph)</em></a>
@@ -1441,27 +1652,33 @@ Katherine Ognyanova, 2016, <a href="https://kateto.net/netscix2016.html" onclick
 <li>
 Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-with-r/" onclick="window.open(this.href); return false;"><em>Introduction to Network Analysis with R</em></a>
 </li>
-<p>&nbsp;<br></p>
+<p>&nbsp;<br>
+</p>
 <p>Documentation du package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span> :</p>
 <ul>
-<li>
-<a href="https://r.igraph.org/">Site web</a><br>
+<li><a href="https://r.igraph.org/">Site web</a><br>
 </li>
-<li>
-<a href="https://igraph.org/r/doc/">Manuel officiel</a><br>
+<li><a href="https://igraph.org/r/doc/">Manuel officiel</a><br>
 </li>
-<li>
-<a href="https://cran.r-project.org/web/packages/igraph/vignettes/igraph.html">Vignette</a><br>
+<li><a href="https://cran.r-project.org/web/packages/igraph/vignettes/igraph.html">Vignette</a><br>
 </li>
 <li><a href="https://cheatography.com/trvoldemort/cheat-sheets/igraph/">Cheat sheet</a></li>
 </ul>
-<p><br></p>
+<p><br>
+</p>
 </div>
 </div>
-</section><section id="exercice" class="slide level2"><h2><span class="bigtwo">Exercice</span></h2>
-</section></section><section><section id="cartographie-avec-mapsf" class="title-slide slide level1 center"><h1><span class="bigtwo">Cartographie avec <code>mapsf</code></span></h1>
+</section>
+<section id="exercice" class="slide level2">
+<h2><span class="bigtwo">Exercice</span></h2>
+</section></section>
+<section>
+<section id="cartographie-avec-mapsf" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Cartographie avec <code>mapsf</code></span></h1>
 
-</section><section id="supports-pédagogiques-1" class="slide level2"><h2><span class="bigtwo">Supports pédagogiques</span></h2>
+</section>
+<section id="supports-pédagogiques-1" class="slide level2">
+<h2><span class="bigtwo">Supports pédagogiques</span></h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="quartodoc">
@@ -1474,23 +1691,20 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 <span class="bigtwo"><a href="https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/" target="_blank"><strong>Consulter le support en plein écran</strong></a></span>
 </button>
 </div>
-<p><br><br></p>
+<p><br>
+<br>
+</p>
 <p>Pour aller plus loin :</p>
 <ul>
-<li>
-<a href="https://rcarto.github.io/cartographie_avec_r/">Cartographie avec R</a> <span class="citation" data-cites="Giraud_Cartographie_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023a</a>)</span><br>
+<li><a href="https://rcarto.github.io/cartographie_avec_r/">Cartographie avec R</a> <span class="citation" data-cites="Giraud_Cartographie_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023a</a>)</span><br>
 </li>
-<li>
-<a href="https://rcarto.github.io/geomatique_avec_r/">Geomatique avec R</a> <span class="citation" data-cites="Giraud_Geomatique_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023b</a>)</span>
-</li>
+<li><a href="https://rcarto.github.io/geomatique_avec_r/">Geomatique avec R</a> <span class="citation" data-cites="Giraud_Geomatique_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023b</a>)</span></li>
 </ul>
 <p>Documentation du package <code>mapsf</code> <span class="citation" data-cites="R-mapsf">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud 2022</a>)</span> :</p>
 <ul>
-<li>
-<a href="https://riatelab.github.io/mapsf/">Site web</a><br>
+<li><a href="https://riatelab.github.io/mapsf/">Site web</a><br>
 </li>
-<li>
-<a href="https://riatelab.github.io/mapsf/articles/">Vignettes</a><br>
+<li><a href="https://riatelab.github.io/mapsf/articles/">Vignettes</a><br>
 </li>
 <li><a href="https://raw.githubusercontent.com/riatelab/mapsf/master/vignettes/web_only/img/mapsf_cheatsheet.pdf">Cheat sheet</a></li>
 </ul>
@@ -1501,46 +1715,73 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 </div>
 </div>
 </div>
-</section><section id="exercice-1" class="slide level2"><h2><span class="bigtwo">Exercice</span></h2>
-</section><section id="section" class="slide level2"><h2></h2>
-<p><br></p>
+</section>
+<section id="exercice-1" class="slide level2">
+<h2><span class="bigtwo">Exercice</span></h2>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><br>
+</p>
 <div class="bigcinq">
 <p><strong>Merci de votre attention</strong></p>
 </div>
-<p><br><br><br></p>
+<p><br>
+<br>
+<br>
+</p>
 <div class="center2">
 <div class="bigone">
 <p>hugues.pecout@cnrs.fr</p>
 </div>
-<p><br></p>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:20%;">
 
 </div><div class="column" style="width:30%;">
-<p><img src="images/github.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"><a href="https://github.com/HuguesPecout/">HuguesPecout</a></p>
-<p><br></p>
-<p><img src="images/gitlab.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"><a href="https://gitlab.huma-num.fr/hpecout">hpecout</a></p>
+<p><img src="images/github.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"> <a href="https://github.com/HuguesPecout/">HuguesPecout</a></p>
+<p><br>
+</p>
+<p><img src="images/gitlab.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"> <a href="https://gitlab.huma-num.fr/hpecout">hpecout</a></p>
 </div><div class="column" style="width:30%;">
 <p><img src="images/twitter.png" width="55" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"><a href="https://twitter.com/rzine_shs/">rzine_shs</a></p>
-<p><br></p>
+<p><br>
+</p>
 <p><img src="images/mastodon_icon.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"><a href="https://fosstodon.org/@rzine">rzine@fosstodon.org</a></p>
 </div><div class="column" style="width:20%;">
 
 </div>
 </div>
-<p><br><br><br><br></p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
 <div class="bigbis">
-<p><strong>Diaporama</strong> : <a href="https://HuguesPecout.github.io/SO_MATE_2023/">https://HuguesPecout.github.io/SO_MATE_2023/</a><br><strong>Code source</strong> : <a href="https://github.com/HuguesPecout/SO_MATE_2023">https://github.com/HuguesPecout/SO_MATE_2023</a></p>
+<p><strong>Diaporama</strong> : <a href="https://HuguesPecout.github.io/SO_MATE_2023/">https://HuguesPecout.github.io/SO_MATE_2023/</a><br>
+<strong>Code source</strong> : <a href="https://github.com/HuguesPecout/SO_MATE_2023">https://github.com/HuguesPecout/SO_MATE_2023</a></p>
 </div>
 </div>
-</section><section id="références-bibliographiques" class="slide level2 smaller scrollable"><h2>Références bibliographiques</h2>
+</section>
+<section id="références-bibliographiques" class="slide level2 smaller scrollable">
+<h2>Références bibliographiques</h2>
 
 <img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Journée annuelle SO-MATE 2023 - Représentations graphiques avec R</p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-networkD3" class="csl-entry" role="listitem">
+Allaire, J. J., Christopher Gandrud, Kenton Russell, et CJ Yetman. 2017. <em>networkD3: D3 JavaScript Network Graphs from R</em>. <a href="https://CRAN.R-project.org/package=networkD3">https://CRAN.R-project.org/package=networkD3</a>.
+</div>
+<div id="ref-superheat" class="csl-entry" role="listitem">
+Barter, Rebecca, et Bin Yu. 2017. <em>superheat: A Graphical Tool for Exploring Complex Datasets Using Heatmaps</em>. <a href="https://CRAN.R-project.org/package=superheat">https://CRAN.R-project.org/package=superheat</a>.
+</div>
 <div id="ref-R-igraph" class="csl-entry" role="listitem">
 Csárdi, Gábor, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, et Kirill Müller. 2023. <em><span>igraph</span>: Network Analysis and Visualization in R</em>. <a href="https://doi.org/10.5281/zenodo.7682609">https://doi.org/10.5281/zenodo.7682609</a>.
+</div>
+<div id="ref-wordcloud" class="csl-entry" role="listitem">
+Fellows, Ian. 2018. <em>wordcloud: Word Clouds</em>. <a href="https://CRAN.R-project.org/package=wordcloud">https://CRAN.R-project.org/package=wordcloud</a>.
 </div>
 <div id="ref-R-mapsf" class="csl-entry" role="listitem">
 Giraud, Timothée. 2022. <em>mapsf: Thematic Cartography</em>. <a href="https://CRAN.R-project.org/package=mapsf">https://CRAN.R-project.org/package=mapsf</a>.
@@ -1551,11 +1792,20 @@ Giraud, Timothée, et Hugues Pecout. 2023a. <span>«&nbsp;<span>Cartographie ave
 <div id="ref-Giraud_Geomatique_avec_R_2023" class="csl-entry" role="listitem">
 ———. 2023b. <span>«&nbsp;<span>Géomatique avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528145">https://doi.org/10.5281/zenodo.7528145</a>.
 </div>
+<div id="ref-10.1093/bioinformatics/btu393" class="csl-entry" role="listitem">
+Gu, Zuguang, Lei Gu, Roland Eils, Matthias Schlesner, et Benedikt Brors. 2014. <span>«&nbsp;<span>circlize implements and enhances circular visualization in R </span>&nbsp;»</span>. <em>Bioinformatics</em> 30 (19): 2811‑12. <a href="https://doi.org/10.1093/bioinformatics/btu393">https://doi.org/10.1093/bioinformatics/btu393</a>.
+</div>
 <div id="ref-R-paletteer" class="csl-entry" role="listitem">
 Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
 </div>
+<div id="ref-wordcloud2" class="csl-entry" role="listitem">
+Lang, Dawei, et Guan-tin Chien. 2018. <em>wordcloud2: Create Word Cloud by ’htmlwidget’</em>. <a href="https://CRAN.R-project.org/package=wordcloud2">https://CRAN.R-project.org/package=wordcloud2</a>.
+</div>
 <div id="ref-esquisse" class="csl-entry" role="listitem">
 Meyer, Fanny, et Victor Perrier. 2022. <em>esquisse: Explore and Visualize Your Data Interactively</em>. <a href="https://CRAN.R-project.org/package=esquisse">https://CRAN.R-project.org/package=esquisse</a>.
+</div>
+<div id="ref-ggraph" class="csl-entry" role="listitem">
+Pedersen, Thomas Lin. 2022. <em>ggraph: An Implementation of Grammar of Graphics for Graphs and Networks</em>. <a href="https://CRAN.R-project.org/package=ggraph">https://CRAN.R-project.org/package=ggraph</a>.
 </div>
 <div id="ref-R-cols4all" class="csl-entry" role="listitem">
 Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
@@ -1571,10 +1821,27 @@ Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New Y
 </div>
 </div>
 </section></section>
-</div>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="index_files/libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="index_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script><script src="index_files/libs/revealjs/plugin/notes/notes.js"></script><script src="index_files/libs/revealjs/plugin/search/search.js"></script><script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script><script src="index_files/libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1766,7 +2033,9 @@ Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New Y
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1801,7 +2070,9 @@ Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New Y
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1947,6 +2218,6 @@ Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New Y
       }
     });
     </script>
-
+    
 
 </body></html>

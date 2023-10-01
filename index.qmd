@@ -1112,9 +1112,9 @@ esquisser()
 # [Tour d'horizon des packages de représentation graphique, par thématique]{.bigtwo}
 
 
-## [Analyse de réseau]{.bigone}
+## [Représentation de réseau]{.bigone}
 
-###  package `igraph`
+###  package `igraph` [@R-igraph]
 
 ::: columns
 ::: {.column width="50%"}
@@ -1137,7 +1137,7 @@ plot(karate)
 ::: {.column width="50%"}
 
 ::: {.codeXL style="margin-top:10px;"}
-```{r}
+```{r mouahahah}
 #| echo: true
 
 # Mise en page  d
@@ -1166,7 +1166,7 @@ plot(karate,
 
 :::
 
-###  `ggraph` (extension ggplot2)
+###  `ggraph` (extension ggplot2) [@ggraph]
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
@@ -1191,10 +1191,10 @@ ggraph(graph, layout = 'kk') +
 ```
 :::
 
-###  `networkD3`
+###  package `networkD3` [@networkD3]
 
 ::: {.codeXL style="margin-top:10px;"}
-```{r}
+```{r toto}
 #| echo: true
 #| out.width: 100%
 data <- data.frame(
@@ -1219,15 +1219,132 @@ simpleNetwork(data , height="100px", width="100px",
 :::
 
 
+### package `visNetwork`
 
 
-visNetwork
 
-## [Analyse de séquence]{.bigone}
+## [Représentation de séquence]{.bigone}
 
-TraminEr
 
-## Scatterplot3D
+### package `TraMineR`
+
+  Gabadinho, A. & Ritschard, G. (2013), Searching for typical life trajectories applied to
+  child birth histories, In R. Lévy & E. Widmer (eds.), Gendered life courses.  pp. 287-312.
+  Vienna: LIT
+  
+  Gabadinho, A., Ritschard, G., Müller, N. S., & Studer, M. (2011). Analyzing and Visualizing
+  State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI
+  https://doi.org/10.18637/jss.v040.i04.
+
+```{r}
+library(TraMineR)
+data(mvad)
+seqstatl(mvad[, 17:86])
+
+mvad.alphabet <- c("employment", "FE", "HE", "joblessness", "school", 
+    "training")
+mvad.labels <- c("employment", "further education", "higher education", 
+    "joblessness", "school", "training")
+mvad.scodes <- c("EM", "FE", "HE", "JL", "SC", "TR")
+mvad.seq <- seqdef(mvad, 17:86, alphabet = mvad.alphabet, states = mvad.scodes, 
+    labels = mvad.labels, xtstep = 6)
+
+par(mfrow = c(2, 2))
+
+
+seqiplot(mvad.seq, with.legend = FALSE, border = NA, main = "The first 10 sequences in the mvad.seq sequence object")
+
+seqIplot(mvad.seq, sortv = "from.start", with.legend = FALSE, main = "All the sequences in the data set, sorted by states from start")
+
+seqfplot(mvad.seq, with.legend = FALSE, border = NA, main ="The 10 most frequent sequences.")
+
+#legend for the state colors
+seqlegend(mvad.seq)
+
+```
+
+
+
+## [Heatmap]{.bigone} 
+
+### package `superheat` [@superheat]
+
+```{=html}
+<iframe width="1070" height="540" src="https://rlbarter.github.io/superheat/index.html" title="superheat"></iframe>
+```
+
+### package `ComplexHeatmap`
+
+```{=html}
+<iframe width="1070" height="540" src="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html" title="ComplexHeatmap"></iframe>
+```
+
+
+## [Nuage de mots]{.bigone} 
+
+### Package `wordcoud` [@wordcloud]
+
+
+```{r}
+ # library
+library(wordcloud2) 
+library(wordcloud) 
+# données en entrée (6 premières lignes)
+head(demoFreq)
+
+wordcloud(words = demoFreq$word, 
+          freq = demoFreq$freq, 
+          min.freq = 1,
+          max.words=200, 
+          random.order=FALSE, 
+          rot.per=0.35,            
+          colors=brewer.pal(8, "Dark2"))
+
+```
+
+
+
+### Package `wordcoud2` [@wordcloud2]
+
+```{r}
+ # library
+library(wordcloud2) 
+
+# données en entrée (6 premières lignes)
+head(demoFreq)
+
+# Nuage de mot
+wordcloud2(demoFreq, size = 0.7, shape = 'star')
+```
+
+Mais aussi `ggwordcloud` et `ggwordcloud2``...
+
+
+## Slope graphs
+
+CGPfunctions
+
+## Graphique circulaire 
+
+### package `circlize` [@10.1093/bioinformatics/btu393]
+
+```{=html}
+<iframe width="1070" height="540" src="https://jokergoo.github.io/circlize_book/book/" title="circlize_book"></iframe>
+```
+
+
+## Survival
+
+Survival plots
+
+## Visualisation spatiale
+
+
+
+## [Graphique 3D]{.bigone}
+
+
+### package `Scatterplot3D`
 
 ```{r}
 library(scatterplot3d)
@@ -1247,29 +1364,25 @@ legend("bottom", legend = levels(iris$Species),
 ```
 
 
-## rgl
+### package `rgl`
 
-## heatmap
+Create 3D Plots and Animation in R using RGL Package
 
-superheat ComplexHeatmap
+```{r}
+library(rgl)
 
-## Textuelle
+  
+# load the set
+data(iris)
+  
+# plot the 3D graph
+plot3d(iris$Sepal.Length, iris$Sepal.Width, iris$Petal.Length, col = "red", size = 3, type = "s")
+  
+# add animations
+play3d(spin3d(axis = c(0, 0, 1)), duration = 10)
 
-wordcloud
 
-## Slope graphs
-
-CGPfunctions
-
-## Circular plot
-
-https://jokergoo.github.io/circlize_book/book/
-
-## Survival
-
-Survival plots
-
-## Visualisation spatiale
+```
 
 ## Intéractivité (javascript link)
 
