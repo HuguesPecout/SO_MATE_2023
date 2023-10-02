@@ -1,6 +1,6 @@
 ---
-title: "Visualisation de données avec R"
-subtitle: "Tour d'horizon des fonctionnalités de représentation graphique"
+title: "Représentation graphique avec R"
+subtitle: "Tour d'horizon personnel des fonctionnalités graphiques disponibles"
 img: images/entete.png
 # date: 
 author: Hugues Pecout (CNRS, UMR Géographie-Cités)
@@ -32,7 +32,7 @@ revealjs-plugins:
   - pointer
 ---
 
-## [Bonjour !]{.bigtwo}
+## [Bonjour]{.bigtwo}
 
 \
 
@@ -57,9 +57,8 @@ revealjs-plugins:
 :::
 
 
-[Travail dans le domaine de la **géographie quantitative**  : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, réseau, textuelle...), représentation graphique et cartographie de **données géographiques hétérogénes** (données conventionnelles, d'enquête, big data...).]{.small2}
+[Travail dans le domaine de la **géographie humaine et quantitative**  : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, de réseau, textuelle...), représentation graphique et cartographie de **données géographiques hétérogènes** (données conventionnelles, données d'enquête, IGV, webscraping...).]{.big3}
 
-[Principale mission actuelle : **formation aux outils & méthodes pour les données et protocoles dans les Humanités Numériques**]{.small2}
 
 \
 
@@ -81,6 +80,10 @@ revealjs-plugins:
 :::
 
 :::
+
+\
+
+[D'avantage spécialiste de la communauté R que du langage informatique. Plus formateur que développeur...]{.big3}
 
 
 
@@ -1078,6 +1081,7 @@ esquisser()
 :::
 
 
+
 ## [Palettes de couleurs]{.bigone}
 
 ::: columns
@@ -1109,19 +1113,26 @@ esquisser()
 
 :::
 
-# [Tour d'horizon des packages de représentation graphique, par thématique]{.bigtwo}
 
 
-## [Représentation de réseau]{.bigone}
+# [Quelques packages de représentations graphiques spécifiques à connaître...]{.bigtwo}
 
-###  package `igraph` [@R-igraph]
+
+## [Visualisation de réseau]{.bigone}
+
+\
+
+###  Package `igraph` [@R-igraph]
 
 ::: columns
 ::: {.column width="50%"}
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
+#| code-fold: TRUE
 #| echo: true
+#| out.width: 100%
+
 # Chargement jeu de données exemple
 library(igraphdata)
 data(karate)
@@ -1138,7 +1149,9 @@ plot(karate)
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r mouahahah}
+#| code-fold: TRUE
 #| echo: true
+#| out.width: 100%
 
 # Mise en page  d
 plot(karate, 
@@ -1166,16 +1179,19 @@ plot(karate,
 
 :::
 
-###  `ggraph` (extension ggplot2) [@ggraph]
+\
+
+###  Package `ggraph` [@ggraph]
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
+#| code-fold: TRUE
 #| echo: true
+#| eval: false
+#| out.width: 100%
 
 library(ggraph)
-#> Loading required package: ggplot2
 library(tidygraph)
-
 library(tidyverse)
 
 # Create graph of highschool friendships
@@ -1191,12 +1207,16 @@ ggraph(graph, layout = 'kk') +
 ```
 :::
 
-###  package `networkD3` [@networkD3]
+\
+
+###  Package `networkD3` [@networkD3]
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r toto}
+#| code-fold: TRUE
 #| echo: true
 #| out.width: 100%
+
 data <- data.frame(
   from=c("A", "A", "B", "D", "C", "D", "E", "B", "C", "D", "K", "A", "M"),
   to=c("B", "E", "F", "A", "C", "A", "B", "Z", "A", "C", "A", "B", "K")
@@ -1218,15 +1238,22 @@ simpleNetwork(data , height="100px", width="100px",
 ```
 :::
 
+\
 
-### package `visNetwork`
-
-
-
-## [Représentation de séquence]{.bigone}
+###  Package `visNetwork`
 
 
-### package `TraMineR`
+\
+
+###  Package `sfnetwork` 
+
+
+
+## [Visualisation de séquence]{.bigone}
+
+\
+
+###  Package `TraMineR`
 
   Gabadinho, A. & Ritschard, G. (2013), Searching for typical life trajectories applied to
   child birth histories, In R. Lévy & E. Widmer (eds.), Gendered life courses.  pp. 287-312.
@@ -1237,43 +1264,48 @@ simpleNetwork(data , height="100px", width="100px",
   https://doi.org/10.18637/jss.v040.i04.
 
 ```{r}
-library(TraMineR)
-data(mvad)
-seqstatl(mvad[, 17:86])
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
 
-mvad.alphabet <- c("employment", "FE", "HE", "joblessness", "school", 
-    "training")
-mvad.labels <- c("employment", "further education", "higher education", 
-    "joblessness", "school", "training")
+library(TraMineR)
+
+data(mvad)
+
+mvad.alphabet <- c("employment", "FE", "HE", "joblessness", "school", "training")
+mvad.labels <- c("employment", "further education", "higher education", "joblessness", "school", "training")
 mvad.scodes <- c("EM", "FE", "HE", "JL", "SC", "TR")
-mvad.seq <- seqdef(mvad, 17:86, alphabet = mvad.alphabet, states = mvad.scodes, 
-    labels = mvad.labels, xtstep = 6)
+
+mvad.seq <- seqdef(mvad, 17:86, 
+                   alphabet = mvad.alphabet, 
+                   states = mvad.scodes, 
+                   labels = mvad.labels, 
+                   xtstep = 6)
 
 par(mfrow = c(2, 2))
 
-
 seqiplot(mvad.seq, with.legend = FALSE, border = NA, main = "The first 10 sequences in the mvad.seq sequence object")
-
 seqIplot(mvad.seq, sortv = "from.start", with.legend = FALSE, main = "All the sequences in the data set, sorted by states from start")
-
 seqfplot(mvad.seq, with.legend = FALSE, border = NA, main ="The 10 most frequent sequences.")
-
-#legend for the state colors
 seqlegend(mvad.seq)
 
 ```
 
 
 
-## [Heatmap]{.bigone} 
+## [*Carte* de chaleur]{.bigone} 
 
-### package `superheat` [@superheat]
+\
+
+### Package `superheat` [@superheat]
 
 ```{=html}
 <iframe width="1070" height="540" src="https://rlbarter.github.io/superheat/index.html" title="superheat"></iframe>
 ```
 
-### package `ComplexHeatmap`
+\
+
+### Package `ComplexHeatmap` [@ComplexHeatmap]
 
 ```{=html}
 <iframe width="1070" height="540" src="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html" title="ComplexHeatmap"></iframe>
@@ -1282,15 +1314,23 @@ seqlegend(mvad.seq)
 
 ## [Nuage de mots]{.bigone} 
 
+\
+
 ### Package `wordcoud` [@wordcloud]
+
+```{r}
+#| echo: false
+library(wordcloud2) 
+```
 
 
 ```{r}
- # library
-library(wordcloud2) 
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
 library(wordcloud) 
-# données en entrée (6 premières lignes)
-head(demoFreq)
+
 
 wordcloud(words = demoFreq$word, 
           freq = demoFreq$freq, 
@@ -1303,52 +1343,51 @@ wordcloud(words = demoFreq$word,
 ```
 
 
+\
 
 ### Package `wordcoud2` [@wordcloud2]
 
 ```{r}
- # library
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
 library(wordcloud2) 
 
-# données en entrée (6 premières lignes)
-head(demoFreq)
-
-# Nuage de mot
 wordcloud2(demoFreq, size = 0.7, shape = 'star')
 ```
 
-Mais aussi `ggwordcloud` et `ggwordcloud2``...
+
+\
+
+[Mais aussi `ggwordcloud` et `ggwordcloud2``...]{.bigone}
 
 
-## Slope graphs
 
-CGPfunctions
+## [Graphique circulaire]{.bigone} 
 
-## Graphique circulaire 
+\
 
-### package `circlize` [@10.1093/bioinformatics/btu393]
+### Package `circlize` [@10.1093/bioinformatics/btu393]
 
 ```{=html}
 <iframe width="1070" height="540" src="https://jokergoo.github.io/circlize_book/book/" title="circlize_book"></iframe>
 ```
 
 
-## Survival
-
-Survival plots
-
-## Visualisation spatiale
-
 
 
 ## [Graphique 3D]{.bigone}
 
+\
 
-### package `Scatterplot3D`
+### Package `Scatterplot3D`
 
 ```{r}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
 library(scatterplot3d)
-# Custom shapes/colors
 data(iris)
 
 shapes = c(16, 17, 18) 
@@ -1363,15 +1402,25 @@ legend("bottom", legend = levels(iris$Species),
       inset = -0.25, xpd = TRUE, horiz = TRUE)
 ```
 
+\
 
-### package `rgl`
+### Package `rgl`
 
 Create 3D Plots and Animation in R using RGL Package
 
-```{r}
+
+```{r setup}
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+```
+
+```{r rgl2 , webgl=TRUE}
+#| code-fold: TRUE
+#| echo: true
+#| eval: false
+#| out.width: 100%
 library(rgl)
 
-  
 # load the set
 data(iris)
   
@@ -1384,9 +1433,20 @@ play3d(spin3d(axis = c(0, 0, 1)), duration = 10)
 
 ```
 
-## Intéractivité (javascript link)
 
-htmlwidgets.org
+## Données géographiques
+
+
+# Intéractivité
+
+
+
+
+## htmlwidgets.org
+
+
+ (javascript link)
+
 
 ## leaflet/Mapview
 
@@ -1402,17 +1462,85 @@ htmlwidgets.org
 
 Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
 
-echarts4r
+## echarts4r
 
-robservable
+## robservable
+
+
 
 # Un graphique, et après ?
 
-## Export Classique
+\
 
-## notebook
+## Export statique (pdf, png, jpeg)
 
-## shiny
+En `R-base` : 
+
+```{r}
+#| eval: false
+#| echo: true
+
+pdf(file = "myplot.pdf")
+
+plot(mtcars$wt, mtcars$mpg)
+abline(v = 0) 
+text(x = 0, y = 1, labels = "Random text")
+
+# Run dev.off() to create the file!
+dev.off()
+
+```
+
+\
+
+Avec `ggplot2` :
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+
+ggsave("myplot.pdf")
+```
+
+\ 
+
+En clic-bouton avec Rstudio :
+
+![](images/export.png)
+
+## Export animé (gif, mp4)
+
+Possible  notemment ggplot2 et tmp
+
+
+
+## Notebook
+
+\
+
+```{=html}
+<iframe width="1070" height="540" src="https://rzine.fr/docs/20191125_ironcurtain/index.html" title="nb_rzine"></iframe>
+```
+
+## Application shiny 
+
+\
+
+```{=html}
+<iframe width="1070" height="540" src="https://gallery.shinyapps.io/082-word-cloud/" title="shiny_app1"></iframe>
+```
+
+
+\
+
+
+```{=html}
+<iframe width="1070" height="540" src="https://gallery.shinyapps.io/063-superzip-example/" title="shiny_app2"></iframe>
+```
+
 
 # [Ressources utiles]{.bigtwo}
 
@@ -1465,14 +1593,78 @@ robservable
 
 ## [Présentation du jeu de données]{.bigtwo}
 
-Réseau des relais de poste à 5 dates : 1632, 1708, 1733, 1758, 1783, 1810, 1833
+
+\
+
+:::{.bigone}
+
+:::{.center}
+
+**Le réseau des routes de poste en France de 1632 à 1833**
+
+:::
 
 > Nicolas Verdier, Anne Bretagnolle. L'extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩
 
-16 couches géographiques (données géoréférencées) :
+\
 
-- 8 couches de points (relais de poste). 1 pour chaque date. format shapefile.   
-- 8 couches de lignes (route postales). 1 pour chaque date. format shapefile.   
+
+->  **2 couches géographiques** au format *shapefile* (.shp) :
+
+- **Les relais de poste**. Couche de **points** géoréférencés.  
+- **Les route postales**. Couche de **ligne** géoréférencés.      
+
+-> A 8 dates : 1632, 1708, 1733, 1758, 1783, 1810 et 1833
+
+
+\
+
+16 couches géographiques caractérisées par des attributs, qui cartographie le réseau des routes de poste en France et son évolution de 1632 à 1833
+
+:::
+
+
+
+::: columns
+
+::: {.column width="50%"}
+![](images/carte_1632.png)
+:::
+::: {.column width="50%}
+![](images/carte_1708.png)
+:::
+
+:::
+
+::: columns
+
+::: {.column width="50%"}
+![](images/carte_1733.png)
+:::
+::: {.column width="50%"}
+![](images/carte_1758.png)
+:::
+
+:::
+
+::: columns
+::: {.column width="50%"}
+![](images/carte_1783.png)
+:::
+::: {.column width="50%"}
+![](images/carte_1810.png)
+:::
+
+:::
+
+:::{.center}
+![](images/carte_1833.png){width="100%"}
+:::
+
+
+
+
+
 
 
 
@@ -1574,6 +1766,36 @@ Une remarque ? Une question ? Une proposition d'amélioration pour `mapsf` ?
 ## [Exercice]{.bigtwo}
 
 
+
+
+
+
+## Sources & bibliographie
+
+\
+
+
+::: {.bigone}
+Plusieurs passages sont fortement inspirés de supports existant, mis gracieusement en ligne par leur auteurs. Trois supports de communication ont principalement été utilisés : 
+
+
+- **R dans l'univers de la Dataviz**, *Yan Holtz*, RencontresR 2023, Avignon, 2023 - [Disponible en ligne](https://github.com/holtzy/Talk/blob/master/2023/R_in_Dataviz_universe.pdf), Enregistrement [vidéo disponible sur Youtube](https://www.youtube.com/watch?v=RrRXcC4KOzc&list=PLC0_Y4EpEglVaDSXFiqn_lm1v_lcjMDki&index=8)
+
+- **Représentation graphique avec R, ggplot2 et la grammaire graphique**, *Robin Cura*, *Léa Cristophe*, Groupe ElementR, Aubervilliers, 2023 - [Disponible en ligne](https://elementr.gitpages.huma-num.fr/session_graphique/ggplot2/#/title-slide)
+
+- **L'écosystème spatial de R**, *Timothée Giraud*, RencontresR 2023, Avignon, 2023 - [Disponible en ligne](https://rcarto.github.io/RencontresR_2023/#/title-slide), Enregistrement [vidéo disponible sur Youtube](https://www.youtube.com/watch?v=rzARlulrVgQ)
+
+:::
+
+\
+
+### Références bibliographiques
+
+::: {#refs}
+:::
+
+
+
 ##
 
 \
@@ -1636,6 +1858,3 @@ hugues.pecout@cnrs.fr
 :::
 
 :::
-
-
-## Références bibliographiques

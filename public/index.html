@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Hugues Pecout (CNRS, UMR Géographie-Cités)">
-  <title>Visualisation de données avec R</title>
+  <title>Représentation graphique avec R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -423,8 +423,8 @@
 
 
 
-  <p class="title">Visualisation de données avec R</p>
-  <p class="subtitle">Tour d’horizon des fonctionnalités de représentation graphique</p>
+  <p class="title">Représentation graphique avec R</p>
+  <p class="subtitle">Tour d’horizon personnel des fonctionnalités graphiques disponibles</p>
 
   <img class="img" src="images/entete.png">
 
@@ -439,7 +439,7 @@
 
 </section>
 <section id="bonjour" class="slide level2">
-<h2><span class="bigtwo">Bonjour !</span></h2>
+<h2><span class="bigtwo">Bonjour</span></h2>
 <p><br>
 </p>
 <div class="columns">
@@ -457,8 +457,7 @@
 <p><img data-src="images/cnrs.png"></p>
 </div>
 </div>
-<p><span class="small2">Travail dans le domaine de la <strong>géographie quantitative</strong> : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, réseau, textuelle…), représentation graphique et cartographie de <strong>données géographiques hétérogénes</strong> (données conventionnelles, d’enquête, big data…).</span></p>
-<p><span class="small2">Principale mission actuelle : <strong>formation aux outils &amp; méthodes pour les données et protocoles dans les Humanités Numériques</strong></span></p>
+<p><span class="big3">Travail dans le domaine de la <strong>géographie humaine et quantitative</strong> : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, de réseau, textuelle…), représentation graphique et cartographie de <strong>données géographiques hétérogènes</strong> (données conventionnelles, données d’enquête, IGV, webscraping…).</span></p>
 <p><br>
 </p>
 <div class="columns">
@@ -471,6 +470,9 @@
 <p><img data-src="images/Rzine_logo.png" style="margin-right:25px;;width:25.0%"><img data-src="images/ElementR.png" style="margin-right:30px;;width:25.0%"><img data-src="images/notebook_logo.png" style="margin-bottom:25px;;width:30.0%"></p>
 </div>
 </div>
+<p><br>
+</p>
+<p><span class="big3">D’avantage spécialiste de la communauté R que du langage informatique. Plus formateur que développeur…</span></p>
 </section>
 <section>
 <section id="outils-de-représentation-de-données" class="title-slide slide level1 center">
@@ -1097,11 +1099,11 @@
 <section id="ggplot2-2007---2012" class="slide level2">
 <h2><span class="bigone">ggplot2 (2007 - 2012)</span></h2>
 <div style="margin-top:20px;">
-<p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="Rggplot2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
+<p><span class="bigtwo"><strong>le package <code>ggplot2</code> <span class="citation" data-cites="Rggplot2">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Wickham 2016</a>)</span> est une véritable révolution en matière de représentation graphique, qui dépasse le périmètre de la communauté R</strong>. Ce package :</span></p>
 </div>
 <div class="bigtwo">
 <ul>
-<li>Repose sur le concept de La <span class="elementR"><em>Grammar of Graphics</em></span> <span class="citation" data-cites="wilkinson:1999:TGOG">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wilkinson 1999</a>)</span></li>
+<li>Repose sur le concept de La <span class="elementR"><em>Grammar of Graphics</em></span> <span class="citation" data-cites="wilkinson:1999:TGOG">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Wilkinson 1999</a>)</span></li>
 <li>Produit des graphiques très élégants par défault</li>
 <li>Est adapté au développement d’extensions</li>
 <li>Ouvre la possibilité de construire des <strong>représentations graphiques variées et personnalisées</strong>.</li>
@@ -1111,7 +1113,7 @@
 <div class="column center" style="width:30%;">
 <div class="center">
 <p><img data-src="images/gglayers.png"></p>
-<p><span class="small2"><a href="https://www.uvm.edu/~ngotelli/Rscripts/wickham.2009.pdf"><strong>A Layered Grammar of Graphics</strong></a> <span class="citation" data-cites="doi:10.1198/jcgs.2009.07098">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Wickham 2010</a>)</span></span></p>
+<p><span class="small2"><a href="https://www.uvm.edu/~ngotelli/Rscripts/wickham.2009.pdf"><strong>A Layered Grammar of Graphics</strong></a> <span class="citation" data-cites="doi:10.1198/jcgs.2009.07098">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Wickham 2010</a>)</span></span></p>
 </div>
 </div><div class="column" style="width:70%;">
 <div class="center">
@@ -1257,7 +1259,7 @@
 </section>
 <section id="esquisse-lextension-à-connaître" class="slide level2">
 <h2><span class="bigone"><code>esquisse</code>, l’extension à connaître</span></h2>
-<p><span class="bigtwo"><code>esquisse</code> est un package français <span class="citation" data-cites="esquisse">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Meyer et Perrier 2022</a>)</span>. C’est l’une des extensions <code>ggplot2</code> les plus téléchargées. Il s’agit d’un <em>addin</em> (shiny) pour créer des graphiques <code>ggplot2</code> de manière interactive, puis récupérer le code R généré automatiquement.</span></p>
+<p><span class="bigtwo"><code>esquisse</code> est un package français <span class="citation" data-cites="esquisse">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Meyer et Perrier 2022</a>)</span>. C’est l’une des extensions <code>ggplot2</code> les plus téléchargées. Il s’agit d’un <em>addin</em> (shiny) pour créer des graphiques <code>ggplot2</code> de manière interactive, puis récupérer le code R généré automatiquement.</span></p>
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="codeXL" style="margin-top:22px;">
@@ -1341,8 +1343,8 @@
 <div class="center bold">
 <p><span class="bigtwo">Au cas où, près de 70 (!) packages proposent des palettes de couleurs</span></p>
 <ul>
-<li><code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes (compilation)</li>
-<li><code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span>, une application shiny pour les explorer</li>
+<li><code>paletteer</code> <span class="citation" data-cites="R-paletteer">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Hvitfeldt 2021</a>)</span> propose 2587 palettes (compilation)</li>
+<li><code>cols4all</code> <span class="citation" data-cites="R-cols4all">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Tennekes 2023</a>)</span>, une application shiny pour les explorer</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1355,17 +1357,21 @@
 </div>
 </section></section>
 <section>
-<section id="tour-dhorizon-des-packages-de-représentation-graphique-par-thématique" class="title-slide slide level1 center">
-<h1><span class="bigtwo">Tour d’horizon des packages de représentation graphique, par thématique</span></h1>
+<section id="quelques-packages-de-représentations-graphiques-spécifiques-à-connaître" class="title-slide slide level1 center">
+<h1><span class="bigtwo">Quelques packages de représentations graphiques spécifiques à connaître…</span></h1>
 
 </section>
-<section id="représentation-de-réseau" class="slide level2">
-<h2><span class="bigone">Représentation de réseau</span></h2>
-<h3 id="package-igraph-r-igraph">package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span></h3>
+<section id="visualisation-de-réseau" class="slide level2">
+<h2><span class="bigone">Visualisation de réseau</span></h2>
+<p><br>
+</p>
+<h3 id="package-igraph-r-igraph">Package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span></h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Chargement jeu de données exemple</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a><span class="fu">library</span>(igraphdata)</span>
 <span id="cb33-3"><a href="#cb33-3"></a><span class="fu">data</span>(karate)</span>
@@ -1373,14 +1379,17 @@
 <span id="cb33-5"><a href="#cb33-5"></a><span class="co"># Affichage d'un objet igraph (réseau)</span></span>
 <span id="cb33-6"><a href="#cb33-6"></a><span class="fu">library</span>(igraph)</span>
 <span id="cb33-7"><a href="#cb33-7"></a><span class="fu">plot</span>(karate)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Mise en page  d</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="fu">plot</span>(karate, </span>
 <span id="cb34-3"><a href="#cb34-3"></a>     <span class="at">vertex.color =</span> <span class="fu">V</span>(karate)<span class="sc">$</span>Faction,      <span class="co"># couleur des sommets</span></span>
@@ -1399,40 +1408,45 @@
 <span id="cb34-16"><a href="#cb34-16"></a>     <span class="at">main =</span> <span class="fu">graph_attr</span>(karate, <span class="st">"name"</span>),      <span class="co"># titre principal</span></span>
 <span id="cb34-17"><a href="#cb34-17"></a>     <span class="at">sub =</span> <span class="fu">graph_attr</span>(karate, <span class="st">"Author"</span>),     <span class="co"># sous-titre</span></span>
 <span id="cb34-18"><a href="#cb34-18"></a>     <span class="at">layout =</span> <span class="fu">layout_</span>(karate, <span class="fu">with_lgl</span>()))             <span class="co"># sous-titre                   </span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/mouahahah-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/mouahahah-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<h3 id="ggraph-extension-ggplot2-ggraph"><code>ggraph</code> (extension ggplot2) <span class="citation" data-cites="ggraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Pedersen 2022</a>)</span></h3>
+<p><br>
+</p>
+<h3 id="package-ggraph-ggraph">Package <code>ggraph</code> <span class="citation" data-cites="ggraph">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Pedersen 2022</a>)</span></h3>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggraph)</span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="co">#&gt; Loading required package: ggplot2</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb35-4"><a href="#cb35-4"></a></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb35-6"><a href="#cb35-6"></a></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="co"># Create graph of highschool friendships</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>graph <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(highschool) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="fu">mutate</span>(<span class="at">Popularity =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">'in'</span>))</span>
-<span id="cb35-10"><a href="#cb35-10"></a></span>
-<span id="cb35-11"><a href="#cb35-11"></a><span class="co"># plot using ggraph</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a><span class="fu">ggraph</span>(graph, <span class="at">layout =</span> <span class="st">'kk'</span>) <span class="sc">+</span> </span>
-<span id="cb35-13"><a href="#cb35-13"></a>    <span class="fu">geom_edge_fan</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> <span class="fu">after_stat</span>(index)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb35-14"><a href="#cb35-14"></a>    <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Popularity)) <span class="sc">+</span> </span>
-<span id="cb35-15"><a href="#cb35-15"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
-<span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">'steelblue'</span>, <span class="at">fg_text_colour =</span> <span class="st">'white'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="co"># Create graph of highschool friendships</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a>graph <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(highschool) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-7"><a href="#cb35-7"></a>    <span class="fu">mutate</span>(<span class="at">Popularity =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">'in'</span>))</span>
+<span id="cb35-8"><a href="#cb35-8"></a></span>
+<span id="cb35-9"><a href="#cb35-9"></a><span class="co"># plot using ggraph</span></span>
+<span id="cb35-10"><a href="#cb35-10"></a><span class="fu">ggraph</span>(graph, <span class="at">layout =</span> <span class="st">'kk'</span>) <span class="sc">+</span> </span>
+<span id="cb35-11"><a href="#cb35-11"></a>    <span class="fu">geom_edge_fan</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> <span class="fu">after_stat</span>(index)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb35-12"><a href="#cb35-12"></a>    <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Popularity)) <span class="sc">+</span> </span>
+<span id="cb35-13"><a href="#cb35-13"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
+<span id="cb35-14"><a href="#cb35-14"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">'steelblue'</span>, <span class="at">fg_text_colour =</span> <span class="st">'white'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
-</div>
-<h3 id="package-networkd3-networkd3">package <code>networkD3</code> <span class="citation" data-cites="networkD3">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Allaire et al. 2017</a>)</span></h3>
+<p><br>
+</p>
+<h3 id="package-networkd3-networkd3">Package <code>networkD3</code> <span class="citation" data-cites="networkD3">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Allaire et al. 2017</a>)</span></h3>
 <div class="codeXL" style="margin-top:10px;">
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="at">from=</span><span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"K"</span>, <span class="st">"A"</span>, <span class="st">"M"</span>),</span>
 <span id="cb36-3"><a href="#cb36-3"></a>  <span class="at">to=</span><span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"Z"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"K"</span>)</span>
@@ -1451,94 +1465,168 @@
 <span id="cb36-16"><a href="#cb36-16"></a>              <span class="at">opacity =</span> <span class="fl">0.9</span>,              <span class="co"># opacity of nodes. 0=transparent. 1=no transparency</span></span>
 <span id="cb36-17"><a href="#cb36-17"></a>              <span class="at">zoom =</span> T                    <span class="co"># Can you zoom on the figure?</span></span>
 <span id="cb36-18"><a href="#cb36-18"></a>              )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40e8e1dd76303959ee4e" style="width:100%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-40e8e1dd76303959ee4e">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
+<div class="forceNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f98f11e60b399b0b68fb" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f98f11e60b399b0b68fb">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#69b3a2'])","fontSize":14,"fontFamily":"serif","clickTextSize":35,"linkDistance":10,"linkWidth":"'1.5px'.toString()","charge":-900,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<h3 id="package-visnetwork">package <code>visNetwork</code></h3>
+<p><br>
+</p>
+<h3 id="package-visnetwork">Package <code>visNetwork</code></h3>
+<p><br>
+</p>
+<h3 id="package-sfnetwork">Package <code>sfnetwork</code></h3>
 </section>
-<section id="représentation-de-séquence" class="slide level2">
-<h2><span class="bigone">Représentation de séquence</span></h2>
-<h3 id="package-traminer">package <code>TraMineR</code></h3>
+<section id="visualisation-de-séquence" class="slide level2">
+<h2><span class="bigone">Visualisation de séquence</span></h2>
+<p><br>
+</p>
+<h3 id="package-traminer">Package <code>TraMineR</code></h3>
 <p>Gabadinho, A. &amp; Ritschard, G. (2013), Searching for typical life trajectories applied to child birth histories, In R. Lévy &amp; E. Widmer (eds.), Gendered life courses. pp.&nbsp;287-312. Vienna: LIT</p>
 <p>Gabadinho, A., Ritschard, G., Müller, N. S., &amp; Studer, M. (2011). Analyzing and Visualizing State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI https://doi.org/10.18637/jss.v040.i04.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "employment"  "FE"          "HE"          "joblessness" "school"     
-[6] "training"   </code></pre>
-</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">library</span>(TraMineR)</span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">data</span>(mvad)</span>
+<span id="cb37-4"><a href="#cb37-4"></a></span>
+<span id="cb37-5"><a href="#cb37-5"></a>mvad.alphabet <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"employment"</span>, <span class="st">"FE"</span>, <span class="st">"HE"</span>, <span class="st">"joblessness"</span>, <span class="st">"school"</span>, <span class="st">"training"</span>)</span>
+<span id="cb37-6"><a href="#cb37-6"></a>mvad.labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"employment"</span>, <span class="st">"further education"</span>, <span class="st">"higher education"</span>, <span class="st">"joblessness"</span>, <span class="st">"school"</span>, <span class="st">"training"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a>mvad.scodes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"EM"</span>, <span class="st">"FE"</span>, <span class="st">"HE"</span>, <span class="st">"JL"</span>, <span class="st">"SC"</span>, <span class="st">"TR"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8"></a></span>
+<span id="cb37-9"><a href="#cb37-9"></a>mvad.seq <span class="ot">&lt;-</span> <span class="fu">seqdef</span>(mvad, <span class="dv">17</span><span class="sc">:</span><span class="dv">86</span>, </span>
+<span id="cb37-10"><a href="#cb37-10"></a>                   <span class="at">alphabet =</span> mvad.alphabet, </span>
+<span id="cb37-11"><a href="#cb37-11"></a>                   <span class="at">states =</span> mvad.scodes, </span>
+<span id="cb37-12"><a href="#cb37-12"></a>                   <span class="at">labels =</span> mvad.labels, </span>
+<span id="cb37-13"><a href="#cb37-13"></a>                   <span class="at">xtstep =</span> <span class="dv">6</span>)</span>
+<span id="cb37-14"><a href="#cb37-14"></a></span>
+<span id="cb37-15"><a href="#cb37-15"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb37-16"><a href="#cb37-16"></a></span>
+<span id="cb37-17"><a href="#cb37-17"></a><span class="fu">seqiplot</span>(mvad.seq, <span class="at">with.legend =</span> <span class="cn">FALSE</span>, <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span> <span class="st">"The first 10 sequences in the mvad.seq sequence object"</span>)</span>
+<span id="cb37-18"><a href="#cb37-18"></a><span class="fu">seqIplot</span>(mvad.seq, <span class="at">sortv =</span> <span class="st">"from.start"</span>, <span class="at">with.legend =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">"All the sequences in the data set, sorted by states from start"</span>)</span>
+<span id="cb37-19"><a href="#cb37-19"></a><span class="fu">seqfplot</span>(mvad.seq, <span class="at">with.legend =</span> <span class="cn">FALSE</span>, <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span><span class="st">"The 10 most frequent sequences."</span>)</span>
+<span id="cb37-20"><a href="#cb37-20"></a><span class="fu">seqlegend</span>(mvad.seq)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
-<section id="heatmap" class="slide level2">
-<h2><span class="bigone">Heatmap</span></h2>
-<h3 id="package-superheat-superheat">package <code>superheat</code> <span class="citation" data-cites="superheat">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Barter et Yu 2017</a>)</span></h3>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" style="width:100.0%" class="r-stretch"></section>
+<section id="carte-de-chaleur" class="slide level2">
+<h2><span class="bigone"><em>Carte</em> de chaleur</span></h2>
+<p><br>
+</p>
+<h3 id="package-superheat-superheat">Package <code>superheat</code> <span class="citation" data-cites="superheat">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Barter et Yu 2017</a>)</span></h3>
 <iframe width="1070" height="540" src="https://rlbarter.github.io/superheat/index.html" title="superheat"></iframe>
-<h3 id="package-complexheatmap">package <code>ComplexHeatmap</code></h3>
+<p><br>
+</p>
+<h3 id="package-complexheatmap-complexheatmap">Package <code>ComplexHeatmap</code> <span class="citation" data-cites="ComplexHeatmap">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Gu 2022</a>)</span></h3>
 <iframe width="1070" height="540" src="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html" title="ComplexHeatmap"></iframe>
 </section>
 <section id="nuage-de-mots" class="slide level2">
 <h2><span class="bigone">Nuage de mots</span></h2>
-<h3 id="package-wordcoud-wordcloud">Package <code>wordcoud</code> <span class="citation" data-cites="wordcloud">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Fellows 2018</a>)</span></h3>
+<p><br>
+</p>
+<h3 id="package-wordcoud-wordcloud">Package <code>wordcoud</code> <span class="citation" data-cites="wordcloud">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Fellows 2018</a>)</span></h3>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>         word freq
-oil       oil   85
-said     said   73
-prices prices   48
-opec     opec   42
-mln       mln   31
-the       the   26</code></pre>
-</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">library</span>(wordcloud) </span>
+<span id="cb38-2"><a href="#cb38-2"></a></span>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">wordcloud</span>(<span class="at">words =</span> demoFreq<span class="sc">$</span>word, </span>
+<span id="cb38-5"><a href="#cb38-5"></a>          <span class="at">freq =</span> demoFreq<span class="sc">$</span>freq, </span>
+<span id="cb38-6"><a href="#cb38-6"></a>          <span class="at">min.freq =</span> <span class="dv">1</span>,</span>
+<span id="cb38-7"><a href="#cb38-7"></a>          <span class="at">max.words=</span><span class="dv">200</span>, </span>
+<span id="cb38-8"><a href="#cb38-8"></a>          <span class="at">random.order=</span><span class="cn">FALSE</span>, </span>
+<span id="cb38-9"><a href="#cb38-9"></a>          <span class="at">rot.per=</span><span class="fl">0.35</span>,            </span>
+<span id="cb38-10"><a href="#cb38-10"></a>          <span class="at">colors=</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Dark2"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"><h3 id="package-wordcoud2-wordcloud2">Package <code>wordcoud2</code> <span class="citation" data-cites="wordcloud2">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Lang et Chien 2018</a>)</span></h3>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" style="width:100.0%" class="r-stretch"><p><br>
+</p>
+<h3 id="package-wordcoud2-wordcloud2">Package <code>wordcoud2</code> <span class="citation" data-cites="wordcloud2">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Lang et Chien 2018</a>)</span></h3>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>         word freq
-oil       oil   85
-said     said   73
-prices prices   48
-opec     opec   42
-mln       mln   31
-the       the   26</code></pre>
-</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">library</span>(wordcloud2) </span>
+<span id="cb39-2"><a href="#cb39-2"></a></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="fu">wordcloud2</span>(demoFreq, <span class="at">size =</span> <span class="fl">0.7</span>, <span class="at">shape =</span> <span class="st">'star'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 
-<div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d47355ebc5b5f98e1ea7" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d47355ebc5b5f98e1ea7">{"x":{"word":["oil","said","prices","opec","mln","the","last","bpd","dlrs","crude","market","reuter","saudi","will","one","barrel","kuwait","new","official","pct","price","barrels","government","production","sheikh","industry","meeting","minister","world","also","billion","futures","month","output","petroleum","quota","sources","accord","analysts","but","group","gulf","january","markets","report","today","december","demand","economic","economy","energy","help","international","may","nazer","nymex","posted","present","they","traders","158","ability","agreement","ali","april","arabia","budget","emergency","exchange","hold","imports","members","recent","riyals","says","sell","years","abdulaziz","agency","arab","ceiling","company","contract","daily","emirates","expected","expenditure","exports","growth","now","opecs","plans","qatar","quoted","research","reserve","reserves","states","study","united","way","week","west","year","150","according","added","among","asked","brings","buyers","can","change","corp","cut","day","development","effective","exploration","fall","february","fell","free","higher","increase","levels","meet","must","never","per","policy","power","problem","producing","protect","pumping","reduced","revenue","revenues","rise","saying","set","since","spa","strategic","texas","this","total","transaction","weak","yesterday","13nation","1985","198586","1986","1987","198788","address","agreed","alkhalifa","alqabas","alsabah","announced","appears","arabian","arabias","around","average","back","bank","bbl","boost","called","commitment","companies","compared","countrys","current","decrease","denied","dollars","domestic","due","efp","estimate","estimates","export","fixed","foreign","four","future","grade","guard","high","hisham","however","inc","indonesia","indonesias","intermediate","kingdoms","kuwaits","local","low","lower","lowered","made","main","march","mckiernan","measures","mizrahi","moves","much","named","next","officials","plant","position","president","pressure","producer","projected","published","real","refinery","reiterated","remain","rule","say","sector","several","sharp","ship","six","slightly","smaller","spokeswoman","state","sweet","texaco","three","trading","two","weeks","york","1518","198687","20s","285000","500","725","750","948000","activity","adhering","agriculture","along","apparently","appeared","approved","architect","areas","aspen","bankers","based","benchmark","benefits","canada","canadian","cash","changed","changes","circumstance","clearly","closed","coast","come","committee","commodity","consumption","countries","country","crossroads","crucial","cubic","currently","customers","deal","decembers","decline","deficit","deposits","deputy","diamond","differentials","difficulties","direction","discounted","dlr","early","ecuador","effect","embargo","embassy","entering","even","falling","feb","first","fiscal","fiscales","forced","fully","gcc","general","given","grades","halt","hit","hope","humanistic","impact","import","increased","increasing","instead","institute","interview","investment","jersey","june","keep","late","light","limit","limits","line","lost","louisiana","lowest","major","marketing","member","mid","million","ministers","mitigate","months","nearing","net","neutral","none","nuclear","organisation","organization","outlook","overseas","pact","pay","petroliferos","planned","port","positive","postings","predicted","press","pricing","private","probably","problems","pronounced","protected","public","put","quotes","raise","rate","reduction","referring","remarks","reports","return","review","risks","riyal","selfimposed","selling","share","shortfall","spot","steady","stick","strongly","studies","support","take","taken","techniques","throughput","trade","trust","trying","uncertainty","union","value","wam","wanted","weakness","winter","yacimientos","yanbu","zero","zone","100000","108","111","115","12217","1232","1381","13member","156","1600","1635","1650","1667","168","1685","1752","180000","200000","200foot","2226","24hour","2766","300","3749598","3750003","4133","534","5472","614","658","6745","678","718","738","able","abroad","accept","across","add","addressed","adherence","advantage","advisers","after","agricultural","aground","allocated","allocations","allow","almost","already","althani","although","alvite","amidst","analysis","analyst","annual","anything","apparent","aramco","argentine","arrangement","asia","asian","assesses","assign","assigned","associates","attract","available","averaging","aware","bahrain","bahrains","balance","baseless","basic","basis","because","beginning","bijan","bin","bit","bodys","briefly","broadened","brothers","buildings","burden","buy","buyer","calendar","cambridge","capacity","capozza","carrying","center","century","cera","certain","cftc","chairman","challenge","characterized","charging","cheap","cheating","chevron","chv","cited","citing","clever","close","closer","closes","coming","commission","communications","companys","completed","complex","condition","conditions","considered","construction","contacts","continuation","continue","continued","continues","contracted","contributed","control","cooperation","coordination","copany","corps","council","counter","coupled","covered","creek","critical","cts","currency","custom","cuts","cutting","cypriot","daniel","david","days","debtburdened","debut","decided","declared","declines","deemed","defence","delaware","delivered","delivering","departments","deregulate","deregulation","determination","devalue","device","differential","difficulty","dillard","director","discuss","discussing","distribution","distributions","divided","doha","dollar","drawbacks","drop","dropped","earlier","earnings","eastern","easy","ecuadors","editor","edmontonswann","education","eight","either","elaborate","elections","electricity","end","engineers","entitlements","environment","equally","estimated","european","exceed","exceeding","excess","excesses","excessive","exerted","exist","expanded","expansion","expartners","expectations","expects","explained","exporting","exxon","face","faced","faces","facilities","facing","failed","fallen","favours","fee","fernando","figure","figures","finance","firmer","floating","followed","for","forces","foremost","fourth","frank","full","fundamentals","gas","generally","geneva","get","globalization","glut","guaranteed","halting","harvard","heads","health","hedge","hedged","helped","hemisphere","highly","hills","hitting","hoped","housing","houston","immediately","implementation","improve","improvement","include","including","independent","indications","initiate","initiative","institutions","interbank","interest","investments","issue","jamaica","jan","juaymah","jubail","jump","just","khalifa","lack","largest","later","latest","launched","lead","leading","learn","least","lending","less","lesson","level","liberalised","lift","liftings","like","lines","liquidity","little","loan","lodged","longterm","ltd","lukman","lull","maintain","make","manager","manipulate","many","marathon","marathons","marker","mcfadden","means","mercantile","metrers","metres","mid1960s","mid1986","mideast","minus","mlotok","mob","mobil","momentum","money","monopolies","monthend","moussavarrahmani","movement","nation","natural","need","needs","negative","negotiate","neither","network","news","newspaper","nigerian","nine","nonoil","northern","notes","offset","onetwelfth","oneweek","open","opens","operations","opposite","optimism","optimistic","option","order","organiaation","our","outlining","outside","overproducing","part","parties","partly","party","past","paths","paul","paulsboro","payments","pegged","performance","period","pertains","pessimistic","philadelphia","physical","placed","plastics","platinum","point","policies","political","population","positions","postponed","pressures","previous","primarily","primary","principal","procedure","produce","produced","producers","product","products","program","projection","projects","prompted","proposed","proved","providing","provision","publish","purposes","quarter","quiet","quietly","quotas","rallied","ran","ranging","ras","rates","rationalise","readdress","reaffirmed","reasonable","recommending","recovering","recurrent","reference","refineries","refining","reflect","refloat","reform","reforms","regain","regard","regarding","region","regional","reiterate","relaxation","relieve","reluctant","remainder","remained","reported","request","resistance","resisting","resources","respectively","responsibilites","restored","restraint","restrictions","result","reuters","revealed","reviews","right","rilwanu","rising","river","rocks","rosemary","rumour","rushing","sales","salomon","santos","satisfied","saw","scheduled","scheme","seapride","season","secretary","security","seeing","seek","september","series","serve","services","session","sets","seven","severely","shamrock","sharply","shoulder","show","showed","shown","signed","signs","situation","sixmonth","slackens","slide","slump","social","sold","soon","sort","sour","south","southeast","spend","spill","spoke","spokesman","spotnext","spriggs","stabilise","stabilize","stable","start","statement","steel","steering","steps","stiff","storage","strong","subsequently","substitution","succeed","suffer","suffering","suhartos","sunday","sundays","supply","supporting","suppose","surrounding","swift","talks","tanker","tanurah","tapers","teach","telephone","terminals","test","there","third","thomas","though","thought","threemonth","tide","together","told","totalled","tower","trader","trades","traditional","traditionally","transacted","transmission","transport","trends","trusts","try","turmoil","twofold","uae","uncertain","unchanged","under","unions","unitholders","universitys","unlikely","unocal","unusually","urged","use","virtual","wants","water","wealth","wednesday","weekend","welcomed","when","whether","wishes","worldwide","xon","yergin","yesterdays"],"freq":[85,73,48,42,31,26,24,23,23,21,20,20,18,18,17,15,14,14,14,14,13,11,11,11,11,10,10,10,10,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.48235294117647,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"star","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+<div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-21cde15f915f681d55e7" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-21cde15f915f681d55e7">{"x":{"word":["oil","said","prices","opec","mln","the","last","bpd","dlrs","crude","market","reuter","saudi","will","one","barrel","kuwait","new","official","pct","price","barrels","government","production","sheikh","industry","meeting","minister","world","also","billion","futures","month","output","petroleum","quota","sources","accord","analysts","but","group","gulf","january","markets","report","today","december","demand","economic","economy","energy","help","international","may","nazer","nymex","posted","present","they","traders","158","ability","agreement","ali","april","arabia","budget","emergency","exchange","hold","imports","members","recent","riyals","says","sell","years","abdulaziz","agency","arab","ceiling","company","contract","daily","emirates","expected","expenditure","exports","growth","now","opecs","plans","qatar","quoted","research","reserve","reserves","states","study","united","way","week","west","year","150","according","added","among","asked","brings","buyers","can","change","corp","cut","day","development","effective","exploration","fall","february","fell","free","higher","increase","levels","meet","must","never","per","policy","power","problem","producing","protect","pumping","reduced","revenue","revenues","rise","saying","set","since","spa","strategic","texas","this","total","transaction","weak","yesterday","13nation","1985","198586","1986","1987","198788","address","agreed","alkhalifa","alqabas","alsabah","announced","appears","arabian","arabias","around","average","back","bank","bbl","boost","called","commitment","companies","compared","countrys","current","decrease","denied","dollars","domestic","due","efp","estimate","estimates","export","fixed","foreign","four","future","grade","guard","high","hisham","however","inc","indonesia","indonesias","intermediate","kingdoms","kuwaits","local","low","lower","lowered","made","main","march","mckiernan","measures","mizrahi","moves","much","named","next","officials","plant","position","president","pressure","producer","projected","published","real","refinery","reiterated","remain","rule","say","sector","several","sharp","ship","six","slightly","smaller","spokeswoman","state","sweet","texaco","three","trading","two","weeks","york","1518","198687","20s","285000","500","725","750","948000","activity","adhering","agriculture","along","apparently","appeared","approved","architect","areas","aspen","bankers","based","benchmark","benefits","canada","canadian","cash","changed","changes","circumstance","clearly","closed","coast","come","committee","commodity","consumption","countries","country","crossroads","crucial","cubic","currently","customers","deal","decembers","decline","deficit","deposits","deputy","diamond","differentials","difficulties","direction","discounted","dlr","early","ecuador","effect","embargo","embassy","entering","even","falling","feb","first","fiscal","fiscales","forced","fully","gcc","general","given","grades","halt","hit","hope","humanistic","impact","import","increased","increasing","instead","institute","interview","investment","jersey","june","keep","late","light","limit","limits","line","lost","louisiana","lowest","major","marketing","member","mid","million","ministers","mitigate","months","nearing","net","neutral","none","nuclear","organisation","organization","outlook","overseas","pact","pay","petroliferos","planned","port","positive","postings","predicted","press","pricing","private","probably","problems","pronounced","protected","public","put","quotes","raise","rate","reduction","referring","remarks","reports","return","review","risks","riyal","selfimposed","selling","share","shortfall","spot","steady","stick","strongly","studies","support","take","taken","techniques","throughput","trade","trust","trying","uncertainty","union","value","wam","wanted","weakness","winter","yacimientos","yanbu","zero","zone","100000","108","111","115","12217","1232","1381","13member","156","1600","1635","1650","1667","168","1685","1752","180000","200000","200foot","2226","24hour","2766","300","3749598","3750003","4133","534","5472","614","658","6745","678","718","738","able","abroad","accept","across","add","addressed","adherence","advantage","advisers","after","agricultural","aground","allocated","allocations","allow","almost","already","althani","although","alvite","amidst","analysis","analyst","annual","anything","apparent","aramco","argentine","arrangement","asia","asian","assesses","assign","assigned","associates","attract","available","averaging","aware","bahrain","bahrains","balance","baseless","basic","basis","because","beginning","bijan","bin","bit","bodys","briefly","broadened","brothers","buildings","burden","buy","buyer","calendar","cambridge","capacity","capozza","carrying","center","century","cera","certain","cftc","chairman","challenge","characterized","charging","cheap","cheating","chevron","chv","cited","citing","clever","close","closer","closes","coming","commission","communications","companys","completed","complex","condition","conditions","considered","construction","contacts","continuation","continue","continued","continues","contracted","contributed","control","cooperation","coordination","copany","corps","council","counter","coupled","covered","creek","critical","cts","currency","custom","cuts","cutting","cypriot","daniel","david","days","debtburdened","debut","decided","declared","declines","deemed","defence","delaware","delivered","delivering","departments","deregulate","deregulation","determination","devalue","device","differential","difficulty","dillard","director","discuss","discussing","distribution","distributions","divided","doha","dollar","drawbacks","drop","dropped","earlier","earnings","eastern","easy","ecuadors","editor","edmontonswann","education","eight","either","elaborate","elections","electricity","end","engineers","entitlements","environment","equally","estimated","european","exceed","exceeding","excess","excesses","excessive","exerted","exist","expanded","expansion","expartners","expectations","expects","explained","exporting","exxon","face","faced","faces","facilities","facing","failed","fallen","favours","fee","fernando","figure","figures","finance","firmer","floating","followed","for","forces","foremost","fourth","frank","full","fundamentals","gas","generally","geneva","get","globalization","glut","guaranteed","halting","harvard","heads","health","hedge","hedged","helped","hemisphere","highly","hills","hitting","hoped","housing","houston","immediately","implementation","improve","improvement","include","including","independent","indications","initiate","initiative","institutions","interbank","interest","investments","issue","jamaica","jan","juaymah","jubail","jump","just","khalifa","lack","largest","later","latest","launched","lead","leading","learn","least","lending","less","lesson","level","liberalised","lift","liftings","like","lines","liquidity","little","loan","lodged","longterm","ltd","lukman","lull","maintain","make","manager","manipulate","many","marathon","marathons","marker","mcfadden","means","mercantile","metrers","metres","mid1960s","mid1986","mideast","minus","mlotok","mob","mobil","momentum","money","monopolies","monthend","moussavarrahmani","movement","nation","natural","need","needs","negative","negotiate","neither","network","news","newspaper","nigerian","nine","nonoil","northern","notes","offset","onetwelfth","oneweek","open","opens","operations","opposite","optimism","optimistic","option","order","organiaation","our","outlining","outside","overproducing","part","parties","partly","party","past","paths","paul","paulsboro","payments","pegged","performance","period","pertains","pessimistic","philadelphia","physical","placed","plastics","platinum","point","policies","political","population","positions","postponed","pressures","previous","primarily","primary","principal","procedure","produce","produced","producers","product","products","program","projection","projects","prompted","proposed","proved","providing","provision","publish","purposes","quarter","quiet","quietly","quotas","rallied","ran","ranging","ras","rates","rationalise","readdress","reaffirmed","reasonable","recommending","recovering","recurrent","reference","refineries","refining","reflect","refloat","reform","reforms","regain","regard","regarding","region","regional","reiterate","relaxation","relieve","reluctant","remainder","remained","reported","request","resistance","resisting","resources","respectively","responsibilites","restored","restraint","restrictions","result","reuters","revealed","reviews","right","rilwanu","rising","river","rocks","rosemary","rumour","rushing","sales","salomon","santos","satisfied","saw","scheduled","scheme","seapride","season","secretary","security","seeing","seek","september","series","serve","services","session","sets","seven","severely","shamrock","sharply","shoulder","show","showed","shown","signed","signs","situation","sixmonth","slackens","slide","slump","social","sold","soon","sort","sour","south","southeast","spend","spill","spoke","spokesman","spotnext","spriggs","stabilise","stabilize","stable","start","statement","steel","steering","steps","stiff","storage","strong","subsequently","substitution","succeed","suffer","suffering","suhartos","sunday","sundays","supply","supporting","suppose","surrounding","swift","talks","tanker","tanurah","tapers","teach","telephone","terminals","test","there","third","thomas","though","thought","threemonth","tide","together","told","totalled","tower","trader","trades","traditional","traditionally","transacted","transmission","transport","trends","trusts","try","turmoil","twofold","uae","uncertain","unchanged","under","unions","unitholders","universitys","unlikely","unocal","unusually","urged","use","virtual","wants","water","wealth","wednesday","weekend","welcomed","when","whether","wishes","worldwide","xon","yergin","yesterdays"],"freq":[85,73,48,42,31,26,24,23,23,21,20,20,18,18,17,15,14,14,14,14,13,11,11,11,11,10,10,10,10,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.48235294117647,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"star","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
 </div>
 </div>
-<p>Mais aussi <code>ggwordcloud</code> et `ggwordcloud2``…</p>
-</section>
-<section id="slope-graphs" class="slide level2">
-<h2>Slope graphs</h2>
-<p>CGPfunctions</p>
+<p><br>
+</p>
+<p><span class="bigone">Mais aussi <code>ggwordcloud</code> et `ggwordcloud2``…</span></p>
 </section>
 <section id="graphique-circulaire" class="slide level2">
-<h2>Graphique circulaire</h2>
-<h3 id="package-circlize-10.1093bioinformaticsbtu393">package <code>circlize</code> <span class="citation" data-cites="10.1093/bioinformatics/btu393">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Gu et al. 2014</a>)</span></h3>
+<h2><span class="bigone">Graphique circulaire</span></h2>
+<p><br>
+</p>
+<h3 id="package-circlize-10.1093bioinformaticsbtu393">Package <code>circlize</code> <span class="citation" data-cites="10.1093/bioinformatics/btu393">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Gu et al. 2014</a>)</span></h3>
 <iframe width="1070" height="540" src="https://jokergoo.github.io/circlize_book/book/" title="circlize_book"></iframe>
-</section>
-<section id="survival" class="slide level2">
-<h2>Survival</h2>
-<p>Survival plots</p>
-</section>
-<section id="visualisation-spatiale" class="slide level2">
-<h2>Visualisation spatiale</h2>
 </section>
 <section id="graphique-3d" class="slide level2">
 <h2><span class="bigone">Graphique 3D</span></h2>
-<h3 id="package-scatterplot3d">package <code>Scatterplot3D</code></h3>
+<p><br>
+</p>
+<h3 id="package-scatterplot3d">Package <code>Scatterplot3D</code></h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">library</span>(scatterplot3d)</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">data</span>(iris)</span>
+<span id="cb40-3"><a href="#cb40-3"></a></span>
+<span id="cb40-4"><a href="#cb40-4"></a>shapes <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">18</span>) </span>
+<span id="cb40-5"><a href="#cb40-5"></a>shapes <span class="ot">&lt;-</span> shapes[<span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species)]</span>
+<span id="cb40-6"><a href="#cb40-6"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#999999"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#56B4E9"</span>)</span>
+<span id="cb40-7"><a href="#cb40-7"></a>colors <span class="ot">&lt;-</span> colors[<span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species)]</span>
+<span id="cb40-8"><a href="#cb40-8"></a></span>
+<span id="cb40-9"><a href="#cb40-9"></a>s3d <span class="ot">&lt;-</span> <span class="fu">scatterplot3d</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">pch =</span> shapes, <span class="at">color=</span> colors )</span>
+<span id="cb40-10"><a href="#cb40-10"></a><span class="fu">legend</span>(<span class="st">"bottom"</span>, <span class="at">legend =</span> <span class="fu">levels</span>(iris<span class="sc">$</span>Species),</span>
+<span id="cb40-11"><a href="#cb40-11"></a>      <span class="at">col =</span>  <span class="fu">c</span>(<span class="st">"#999999"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#56B4E9"</span>), </span>
+<span id="cb40-12"><a href="#cb40-12"></a>      <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">18</span>), </span>
+<span id="cb40-13"><a href="#cb40-13"></a>      <span class="at">inset =</span> <span class="sc">-</span><span class="fl">0.25</span>, <span class="at">xpd =</span> <span class="cn">TRUE</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"><h3 id="package-rgl">package <code>rgl</code></h3>
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:100.0%" class="r-stretch"><p><br>
+</p>
+<h3 id="package-rgl">Package <code>rgl</code></h3>
 <p>Create 3D Plots and Animation in R using RGL Package</p>
+<div class="cell" data-webgl="true">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">library</span>(rgl)</span>
+<span id="cb41-2"><a href="#cb41-2"></a></span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="co"># load the set</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="fu">data</span>(iris)</span>
+<span id="cb41-5"><a href="#cb41-5"></a>  </span>
+<span id="cb41-6"><a href="#cb41-6"></a><span class="co"># plot the 3D graph</span></span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="fu">plot3d</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Length, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">type =</span> <span class="st">"s"</span>)</span>
+<span id="cb41-8"><a href="#cb41-8"></a>  </span>
+<span id="cb41-9"><a href="#cb41-9"></a><span class="co"># add animations</span></span>
+<span id="cb41-10"><a href="#cb41-10"></a><span class="fu">play3d</span>(<span class="fu">spin3d</span>(<span class="at">axis =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)), <span class="at">duration =</span> <span class="dv">10</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
-<section id="intéractivité-javascript-link" class="slide level2">
-<h2>Intéractivité (javascript link)</h2>
-<p>htmlwidgets.org</p>
+<section id="données-géographiques" class="slide level2">
+<h2>Données géographiques</h2>
+</section></section>
+<section>
+<section id="intéractivité" class="title-slide slide level1 center">
+<h1>Intéractivité</h1>
+
+</section>
+<section id="htmlwidgets.org" class="slide level2">
+<h2>htmlwidgets.org</h2>
+<p>(javascript link)</p>
 </section>
 <section id="leafletmapview" class="slide level2">
 <h2>leaflet/Mapview</h2>
@@ -1558,22 +1646,63 @@ the       the   26</code></pre>
 <section id="autre-plotly-et-cie" class="slide level2">
 <h2>Autre (plotly et cie)</h2>
 <p>Plotly &gt; ggplot2 &gt; Plotly.js &gt; D3.js &gt; Javascript</p>
-<p>echarts4r</p>
-<p>robservable</p>
+</section>
+<section id="echarts4r" class="slide level2">
+<h2>echarts4r</h2>
+</section>
+<section id="robservable" class="slide level2">
+<h2>robservable</h2>
 </section></section>
 <section>
 <section id="un-graphique-et-après" class="title-slide slide level1 center">
 <h1>Un graphique, et après ?</h1>
-
+<p><br>
+</p>
 </section>
-<section id="export-classique" class="slide level2">
-<h2>Export Classique</h2>
+<section id="export-statique-pdf-png-jpeg" class="slide level2">
+<h2>Export statique (pdf, png, jpeg)</h2>
+<p>En <code>R-base</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">"myplot.pdf"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2"></a></span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>) </span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="fu">text</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">labels =</span> <span class="st">"Random text"</span>)</span>
+<span id="cb42-6"><a href="#cb42-6"></a></span>
+<span id="cb42-7"><a href="#cb42-7"></a><span class="co"># Run dev.off() to create the file!</span></span>
+<span id="cb42-8"><a href="#cb42-8"></a><span class="fu">dev.off</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br>
+</p>
+<p>Avec <code>ggplot2</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="fu">ggsave</span>(<span class="st">"myplot.pdf"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<p>En clic-bouton avec Rstudio :</p>
+
+<img data-src="images/export.png" class="r-stretch"></section>
+<section id="export-animé-gif-mp4" class="slide level2">
+<h2>Export animé (gif, mp4)</h2>
+<p>Possible notemment ggplot2 et tmp</p>
 </section>
 <section id="notebook" class="slide level2">
-<h2>notebook</h2>
+<h2>Notebook</h2>
+<p><br>
+</p>
+<iframe width="1070" height="540" src="https://rzine.fr/docs/20191125_ironcurtain/index.html" title="nb_rzine"></iframe>
 </section>
-<section id="shiny-1" class="slide level2">
-<h2>shiny</h2>
+<section id="application-shiny" class="slide level2">
+<h2>Application shiny</h2>
+<p><br>
+</p>
+<iframe width="1070" height="540" src="https://gallery.shinyapps.io/082-word-cloud/" title="shiny_app1"></iframe>
+<p><br>
+</p>
+<iframe width="1070" height="540" src="https://gallery.shinyapps.io/063-superzip-example/" title="shiny_app2"></iframe>
 </section></section>
 <section>
 <section id="ressources-utiles" class="title-slide slide level1 center">
@@ -1609,16 +1738,52 @@ the       the   26</code></pre>
 </section>
 <section id="présentation-du-jeu-de-données" class="slide level2">
 <h2><span class="bigtwo">Présentation du jeu de données</span></h2>
-<p>Réseau des relais de poste à 5 dates : 1632, 1708, 1733, 1758, 1783, 1810, 1833</p>
+<p><br>
+</p>
+<div class="bigone">
+<div class="center">
+<p><strong>Le réseau des routes de poste en France de 1632 à 1833</strong></p>
+</div>
 <blockquote>
 <p>Nicolas Verdier, Anne Bretagnolle. L’extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩</p>
 </blockquote>
-<p>16 couches géographiques (données géoréférencées) :</p>
+<p><br>
+</p>
+<p>-&gt; <strong>2 couches géographiques</strong> au format <em>shapefile</em> (.shp) :</p>
 <ul>
-<li>8 couches de points (relais de poste). 1 pour chaque date. format shapefile.<br>
+<li><strong>Les relais de poste</strong>. Couche de <strong>points</strong> géoréférencés.<br>
 </li>
-<li>8 couches de lignes (route postales). 1 pour chaque date. format shapefile.</li>
+<li><strong>Les route postales</strong>. Couche de <strong>ligne</strong> géoréférencés.</li>
 </ul>
+<p>-&gt; A 8 dates : 1632, 1708, 1733, 1758, 1783, 1810 et 1833</p>
+<p><br>
+</p>
+<p>16 couches géographiques caractérisées par des attributs, qui cartographie le réseau des routes de poste en France et son évolution de 1632 à 1833</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/carte_1632.png"></p>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="images/carte_1708.png"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/carte_1733.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/carte_1758.png"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/carte_1783.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/carte_1810.png"></p>
+</div>
+</div>
+<div class="center">
+<p><img data-src="images/carte_1833.png" style="width:100.0%"></p>
+</div>
 </section></section>
 <section>
 <section id="représentation-de-réseau-avec-igraph" class="title-slide slide level1 center">
@@ -1654,7 +1819,7 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 </li>
 <p>&nbsp;<br>
 </p>
-<p>Documentation du package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span> :</p>
+<p>Documentation du package <code>igraph</code> <span class="citation" data-cites="R-igraph">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Csárdi et al. 2023</a>)</span> :</p>
 <ul>
 <li><a href="https://r.igraph.org/">Site web</a><br>
 </li>
@@ -1696,11 +1861,11 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 </p>
 <p>Pour aller plus loin :</p>
 <ul>
-<li><a href="https://rcarto.github.io/cartographie_avec_r/">Cartographie avec R</a> <span class="citation" data-cites="Giraud_Cartographie_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023a</a>)</span><br>
+<li><a href="https://rcarto.github.io/cartographie_avec_r/">Cartographie avec R</a> <span class="citation" data-cites="Giraud_Cartographie_avec_R_2023">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Giraud et Pecout 2023a</a>)</span><br>
 </li>
-<li><a href="https://rcarto.github.io/geomatique_avec_r/">Geomatique avec R</a> <span class="citation" data-cites="Giraud_Geomatique_avec_R_2023">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud et Pecout 2023b</a>)</span></li>
+<li><a href="https://rcarto.github.io/geomatique_avec_r/">Geomatique avec R</a> <span class="citation" data-cites="Giraud_Geomatique_avec_R_2023">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Giraud et Pecout 2023b</a>)</span></li>
 </ul>
-<p>Documentation du package <code>mapsf</code> <span class="citation" data-cites="R-mapsf">(<a href="#/références-bibliographiques" role="doc-biblioref" onclick="">Giraud 2022</a>)</span> :</p>
+<p>Documentation du package <code>mapsf</code> <span class="citation" data-cites="R-mapsf">(<a href="#/sources-bibliographie" role="doc-biblioref" onclick="">Giraud 2022</a>)</span> :</p>
 <ul>
 <li><a href="https://riatelab.github.io/mapsf/">Site web</a><br>
 </li>
@@ -1718,6 +1883,75 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 </section>
 <section id="exercice-1" class="slide level2">
 <h2><span class="bigtwo">Exercice</span></h2>
+</section>
+<section id="sources-bibliographie" class="slide level2 smaller scrollable">
+<h2>Sources &amp; bibliographie</h2>
+<p><br>
+</p>
+<div class="bigone">
+<p>Plusieurs passages sont fortement inspirés de supports existant, mis gracieusement en ligne par leur auteurs. Trois supports de communication ont principalement été utilisés :</p>
+<ul>
+<li><p><strong>R dans l’univers de la Dataviz</strong>, <em>Yan Holtz</em>, RencontresR 2023, Avignon, 2023 - <a href="https://github.com/holtzy/Talk/blob/master/2023/R_in_Dataviz_universe.pdf">Disponible en ligne</a>, Enregistrement <a href="https://www.youtube.com/watch?v=RrRXcC4KOzc&amp;list=PLC0_Y4EpEglVaDSXFiqn_lm1v_lcjMDki&amp;index=8">vidéo disponible sur Youtube</a></p></li>
+<li><p><strong>Représentation graphique avec R, ggplot2 et la grammaire graphique</strong>, <em>Robin Cura</em>, <em>Léa Cristophe</em>, Groupe ElementR, Aubervilliers, 2023 - <a href="https://elementr.gitpages.huma-num.fr/session_graphique/ggplot2/#/title-slide">Disponible en ligne</a></p></li>
+<li><p><strong>L’écosystème spatial de R</strong>, <em>Timothée Giraud</em>, RencontresR 2023, Avignon, 2023 - <a href="https://rcarto.github.io/RencontresR_2023/#/title-slide">Disponible en ligne</a>, Enregistrement <a href="https://www.youtube.com/watch?v=rzARlulrVgQ">vidéo disponible sur Youtube</a></p></li>
+</ul>
+</div>
+<p><br>
+</p>
+<h3 id="références-bibliographiques">Références bibliographiques</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-networkD3" class="csl-entry" role="listitem">
+Allaire, J. J., Christopher Gandrud, Kenton Russell, et CJ Yetman. 2017. <em>networkD3: D3 JavaScript Network Graphs from R</em>. <a href="https://CRAN.R-project.org/package=networkD3">https://CRAN.R-project.org/package=networkD3</a>.
+</div>
+<div id="ref-superheat" class="csl-entry" role="listitem">
+Barter, Rebecca, et Bin Yu. 2017. <em>superheat: A Graphical Tool for Exploring Complex Datasets Using Heatmaps</em>. <a href="https://CRAN.R-project.org/package=superheat">https://CRAN.R-project.org/package=superheat</a>.
+</div>
+<div id="ref-R-igraph" class="csl-entry" role="listitem">
+Csárdi, Gábor, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, et Kirill Müller. 2023. <em><span>igraph</span>: Network Analysis and Visualization in R</em>. <a href="https://doi.org/10.5281/zenodo.7682609">https://doi.org/10.5281/zenodo.7682609</a>.
+</div>
+<div id="ref-wordcloud" class="csl-entry" role="listitem">
+Fellows, Ian. 2018. <em>wordcloud: Word Clouds</em>. <a href="https://CRAN.R-project.org/package=wordcloud">https://CRAN.R-project.org/package=wordcloud</a>.
+</div>
+<div id="ref-R-mapsf" class="csl-entry" role="listitem">
+Giraud, Timothée. 2022. <em>mapsf: Thematic Cartography</em>. <a href="https://CRAN.R-project.org/package=mapsf">https://CRAN.R-project.org/package=mapsf</a>.
+</div>
+<div id="ref-Giraud_Cartographie_avec_R_2023" class="csl-entry" role="listitem">
+Giraud, Timothée, et Hugues Pecout. 2023a. <span>«&nbsp;<span>Cartographie avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528161">https://doi.org/10.5281/zenodo.7528161</a>.
+</div>
+<div id="ref-Giraud_Geomatique_avec_R_2023" class="csl-entry" role="listitem">
+———. 2023b. <span>«&nbsp;<span>Géomatique avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528145">https://doi.org/10.5281/zenodo.7528145</a>.
+</div>
+<div id="ref-ComplexHeatmap" class="csl-entry" role="listitem">
+Gu, Zuguang. 2022. <span>«&nbsp;Complex Heatmap Visualization&nbsp;»</span>. <em>iMeta</em>. <a href="https://doi.org/10.1002/imt2.43">https://doi.org/10.1002/imt2.43</a>.
+</div>
+<div id="ref-10.1093/bioinformatics/btu393" class="csl-entry" role="listitem">
+Gu, Zuguang, Lei Gu, Roland Eils, Matthias Schlesner, et Benedikt Brors. 2014. <span>«&nbsp;<span>circlize implements and enhances circular visualization in R </span>&nbsp;»</span>. <em>Bioinformatics</em> 30 (19): 2811‑12. <a href="https://doi.org/10.1093/bioinformatics/btu393">https://doi.org/10.1093/bioinformatics/btu393</a>.
+</div>
+<div id="ref-R-paletteer" class="csl-entry" role="listitem">
+Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
+</div>
+<div id="ref-wordcloud2" class="csl-entry" role="listitem">
+Lang, Dawei, et Guan-tin Chien. 2018. <em>wordcloud2: Create Word Cloud by ’htmlwidget’</em>. <a href="https://CRAN.R-project.org/package=wordcloud2">https://CRAN.R-project.org/package=wordcloud2</a>.
+</div>
+<div id="ref-esquisse" class="csl-entry" role="listitem">
+Meyer, Fanny, et Victor Perrier. 2022. <em>esquisse: Explore and Visualize Your Data Interactively</em>. <a href="https://CRAN.R-project.org/package=esquisse">https://CRAN.R-project.org/package=esquisse</a>.
+</div>
+<div id="ref-ggraph" class="csl-entry" role="listitem">
+Pedersen, Thomas Lin. 2022. <em>ggraph: An Implementation of Grammar of Graphics for Graphs and Networks</em>. <a href="https://CRAN.R-project.org/package=ggraph">https://CRAN.R-project.org/package=ggraph</a>.
+</div>
+<div id="ref-R-cols4all" class="csl-entry" role="listitem">
+Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
+</div>
+<div id="ref-doi:10.1198/jcgs.2009.07098" class="csl-entry" role="listitem">
+Wickham, Hadley. 2010. <span>«&nbsp;A Layered Grammar of Graphics&nbsp;»</span>. <em>Journal of Computational and Graphical Statistics</em> 19 (1): 3‑28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.
+</div>
+<div id="ref-Rggplot2" class="csl-entry" role="listitem">
+———. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-wilkinson:1999:TGOG" class="csl-entry" role="listitem">
+Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New York, Inc.
+</div>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -1763,62 +1997,9 @@ Jesse Sadle, 2017, <a href="https://www.jessesadler.com/post/network-analysis-wi
 <strong>Code source</strong> : <a href="https://github.com/HuguesPecout/SO_MATE_2023">https://github.com/HuguesPecout/SO_MATE_2023</a></p>
 </div>
 </div>
-</section>
-<section id="références-bibliographiques" class="slide level2 smaller scrollable">
-<h2>Références bibliographiques</h2>
-
-<img src="images/logo_mate_shs_0.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="images/logo_mate_shs_0.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p>Journée annuelle SO-MATE 2023 - Représentations graphiques avec R</p>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-networkD3" class="csl-entry" role="listitem">
-Allaire, J. J., Christopher Gandrud, Kenton Russell, et CJ Yetman. 2017. <em>networkD3: D3 JavaScript Network Graphs from R</em>. <a href="https://CRAN.R-project.org/package=networkD3">https://CRAN.R-project.org/package=networkD3</a>.
-</div>
-<div id="ref-superheat" class="csl-entry" role="listitem">
-Barter, Rebecca, et Bin Yu. 2017. <em>superheat: A Graphical Tool for Exploring Complex Datasets Using Heatmaps</em>. <a href="https://CRAN.R-project.org/package=superheat">https://CRAN.R-project.org/package=superheat</a>.
-</div>
-<div id="ref-R-igraph" class="csl-entry" role="listitem">
-Csárdi, Gábor, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, et Kirill Müller. 2023. <em><span>igraph</span>: Network Analysis and Visualization in R</em>. <a href="https://doi.org/10.5281/zenodo.7682609">https://doi.org/10.5281/zenodo.7682609</a>.
-</div>
-<div id="ref-wordcloud" class="csl-entry" role="listitem">
-Fellows, Ian. 2018. <em>wordcloud: Word Clouds</em>. <a href="https://CRAN.R-project.org/package=wordcloud">https://CRAN.R-project.org/package=wordcloud</a>.
-</div>
-<div id="ref-R-mapsf" class="csl-entry" role="listitem">
-Giraud, Timothée. 2022. <em>mapsf: Thematic Cartography</em>. <a href="https://CRAN.R-project.org/package=mapsf">https://CRAN.R-project.org/package=mapsf</a>.
-</div>
-<div id="ref-Giraud_Cartographie_avec_R_2023" class="csl-entry" role="listitem">
-Giraud, Timothée, et Hugues Pecout. 2023a. <span>«&nbsp;<span>Cartographie avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528161">https://doi.org/10.5281/zenodo.7528161</a>.
-</div>
-<div id="ref-Giraud_Geomatique_avec_R_2023" class="csl-entry" role="listitem">
-———. 2023b. <span>«&nbsp;<span>Géomatique avec R</span>&nbsp;»</span>. <a href="https://doi.org/10.5281/zenodo.7528145">https://doi.org/10.5281/zenodo.7528145</a>.
-</div>
-<div id="ref-10.1093/bioinformatics/btu393" class="csl-entry" role="listitem">
-Gu, Zuguang, Lei Gu, Roland Eils, Matthias Schlesner, et Benedikt Brors. 2014. <span>«&nbsp;<span>circlize implements and enhances circular visualization in R </span>&nbsp;»</span>. <em>Bioinformatics</em> 30 (19): 2811‑12. <a href="https://doi.org/10.1093/bioinformatics/btu393">https://doi.org/10.1093/bioinformatics/btu393</a>.
-</div>
-<div id="ref-R-paletteer" class="csl-entry" role="listitem">
-Hvitfeldt, Emil. 2021. <em>paletteer: Comprehensive Collection of Color Palettes</em>. <a href="https://github.com/EmilHvitfeldt/paletteer">https://github.com/EmilHvitfeldt/paletteer</a>.
-</div>
-<div id="ref-wordcloud2" class="csl-entry" role="listitem">
-Lang, Dawei, et Guan-tin Chien. 2018. <em>wordcloud2: Create Word Cloud by ’htmlwidget’</em>. <a href="https://CRAN.R-project.org/package=wordcloud2">https://CRAN.R-project.org/package=wordcloud2</a>.
-</div>
-<div id="ref-esquisse" class="csl-entry" role="listitem">
-Meyer, Fanny, et Victor Perrier. 2022. <em>esquisse: Explore and Visualize Your Data Interactively</em>. <a href="https://CRAN.R-project.org/package=esquisse">https://CRAN.R-project.org/package=esquisse</a>.
-</div>
-<div id="ref-ggraph" class="csl-entry" role="listitem">
-Pedersen, Thomas Lin. 2022. <em>ggraph: An Implementation of Grammar of Graphics for Graphs and Networks</em>. <a href="https://CRAN.R-project.org/package=ggraph">https://CRAN.R-project.org/package=ggraph</a>.
-</div>
-<div id="ref-R-cols4all" class="csl-entry" role="listitem">
-Tennekes, Martijn. 2023. <em>cols4all: Colors for all</em>. <a href="https://CRAN.R-project.org/package=cols4all">https://CRAN.R-project.org/package=cols4all</a>.
-</div>
-<div id="ref-doi:10.1198/jcgs.2009.07098" class="csl-entry" role="listitem">
-Wickham, Hadley. 2010. <span>«&nbsp;A Layered Grammar of Graphics&nbsp;»</span>. <em>Journal of Computational and Graphical Statistics</em> 19 (1): 3‑28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.
-</div>
-<div id="ref-Rggplot2" class="csl-entry" role="listitem">
-———. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
-</div>
-<div id="ref-wilkinson:1999:TGOG" class="csl-entry" role="listitem">
-Wilkinson, Leland. 1999. <em>The Grammar of Graphics</em>. Springer-Verlag New York, Inc.
-</div>
 </div>
 </section></section>
     </div>
