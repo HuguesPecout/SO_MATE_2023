@@ -57,7 +57,7 @@ revealjs-plugins:
 :::
 
 
-[Travail dans le domaine de la **géographie humaine et quantitative**  : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, de réseau, textuelle...), représentation graphique et cartographie de **données géographiques hétérogènes** (données conventionnelles, données d'enquête, IGV, webscraping...).]{.big3}
+[Travail dans le domaine de la **géographie humaine et quantitative (et un peu quali !)**  : collecte, gestion, traitement, enrichissement, analyse (statistique, spatiale, de réseau, textuelle...), représentation graphique et cartographie de **données géographiques hétérogènes** (données conventionnelles, données d'enquête, IGV, webscraping...).]{.big3}
 
 
 \
@@ -68,7 +68,7 @@ revealjs-plugins:
 [Spécialisé dans l'utilisation de R depuis 2015]{.big3}
 
 [Depuis 2018 : Coordination du [projet Rzine](https://rzine.fr/)]{.small2}     
-[Depuis 2022 : Animateur du groupe d'utilisateur·rices [ElementR](https://elementr.netlify.app/)]{.small2}     
+[Depuis 2022 : Co-animateur du groupe d'utilisateur·rices [ElementR](https://elementr.netlify.app/)]{.small2}     
 [Depuis 2021 : Membre du [Groupe de travail Notebook](https://gt-notebook.gitpages.huma-num.fr/site_quarto/)]{.small2}   
 
 :::
@@ -81,9 +81,7 @@ revealjs-plugins:
 
 :::
 
-\
 
-[D'avantage spécialiste de la communauté R que du langage informatique. Plus formateur que développeur...]{.big3}
 
 
 
@@ -764,6 +762,7 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
 ::: {.center}
 ```{r eval = TRUE, fig.align='center'}
 #| echo: false
+#| eval: false
 #| out.width: 80%
 
 library(packageRank)
@@ -973,7 +972,7 @@ Plot.plot({
 
 
 
-## [`esquisse`, l'extension à connaître]{.bigone}
+## [`esquisse`, pour se lancer !]{.bigone}
 
 [`esquisse` est un package français [@esquisse]. C'est l'une des extensions `ggplot2` les plus téléchargées. Il s'agit d'un *addin* (shiny) pour créer des graphiques `ggplot2` de manière interactive, puis récupérer le code R généré automatiquement.]{.bigtwo}
 
@@ -1115,10 +1114,73 @@ esquisser()
 
 
 
-# [Quelques packages de représentations graphiques spécifiques à connaître...]{.bigtwo}
+# [Quelques packages spécifiques à certaines thématiques...]{.bigtwo}
 
 
-## [Visualisation de réseau]{.bigone}
+## [Analyse statistique]{.bigone}
+
+
+## [Analyse textuelle - Nuage de mots]{.bigone} 
+
+\
+
+### Package `wordcoud` [@wordcloud]
+
+
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: false
+#| echo: true
+#| out.width: 100%
+
+library(wordcloud) 
+
+
+wordcloud(words = demoFreq$word, 
+          freq = demoFreq$freq, 
+          min.freq = 1,
+          max.words=200, 
+          random.order=FALSE, 
+          rot.per=0.35,            
+          colors=brewer.pal(8, "Dark2"))
+
+```
+:::
+
+
+![](images/wordcloud.png){width="65%"}
+
+
+
+\
+
+### Package `wordcoud2` [@wordcloud2]
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: false
+#| echo: true
+#| out.width: 100%
+
+library(wordcloud2) 
+
+wordcloud2(demoFreq, size = 0.7, shape = 'star')
+```
+:::
+
+![](images/wordcloud2.png){width="65%"}
+
+\
+
+[Ou `ggwordcloud` et `ggwordcloud2` si vous préférez la syntaxe ggplot.]{.bigone}
+
+
+
+
+## [Analyse de réseaux]{.bigone}
 
 \
 
@@ -1126,6 +1188,13 @@ esquisser()
 
 ::: columns
 ::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+par(mar = c(0,0,0,0))
+```
+
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
@@ -1243,26 +1312,14 @@ simpleNetwork(data , height="100px", width="100px",
 ###  Package `visNetwork`
 
 
-\
 
-###  Package `sfnetwork` 
-
-
-
-## [Visualisation de séquence]{.bigone}
+## [Analyse de séquence]{.bigone}
 
 \
 
 ###  Package `TraMineR`
 
-  Gabadinho, A. & Ritschard, G. (2013), Searching for typical life trajectories applied to
-  child birth histories, In R. Lévy & E. Widmer (eds.), Gendered life courses.  pp. 287-312.
-  Vienna: LIT
-  
-  Gabadinho, A., Ritschard, G., Müller, N. S., & Studer, M. (2011). Analyzing and Visualizing
-  State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI
-  https://doi.org/10.18637/jss.v040.i04.
-
+::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| code-fold: TRUE
 #| echo: true
@@ -1290,8 +1347,15 @@ seqfplot(mvad.seq, with.legend = FALSE, border = NA, main ="The 10 most frequent
 seqlegend(mvad.seq)
 
 ```
+:::
+
+\
+
+- Gabadinho, A. & Ritschard, G. (2013), Searching for typical life trajectories applied to child birth histories, In R. Lévy & E. Widmer (eds.), Gendered life courses.  pp. 287-312. Vienna: LIT    
+- Gabadinho, A., Ritschard, G., Müller, N. S., & Studer, M. (2011). Analyzing and Visualizing State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI https://doi.org/10.18637/jss.v040.i04.   s
 
 
+# Des packages intérréssants du coté des sciences dures
 
 ## [*Carte* de chaleur]{.bigone} 
 
@@ -1312,57 +1376,6 @@ seqlegend(mvad.seq)
 ```
 
 
-## [Nuage de mots]{.bigone} 
-
-\
-
-### Package `wordcoud` [@wordcloud]
-
-```{r}
-#| echo: false
-library(wordcloud2) 
-```
-
-
-```{r}
-#| code-fold: TRUE
-#| echo: true
-#| out.width: 100%
-
-library(wordcloud) 
-
-
-wordcloud(words = demoFreq$word, 
-          freq = demoFreq$freq, 
-          min.freq = 1,
-          max.words=200, 
-          random.order=FALSE, 
-          rot.per=0.35,            
-          colors=brewer.pal(8, "Dark2"))
-
-```
-
-
-\
-
-### Package `wordcoud2` [@wordcloud2]
-
-```{r}
-#| code-fold: TRUE
-#| echo: true
-#| out.width: 100%
-
-library(wordcloud2) 
-
-wordcloud2(demoFreq, size = 0.7, shape = 'star')
-```
-
-
-\
-
-[Mais aussi `ggwordcloud` et `ggwordcloud2``...]{.bigone}
-
-
 
 ## [Graphique circulaire]{.bigone} 
 
@@ -1381,32 +1394,42 @@ wordcloud2(demoFreq, size = 0.7, shape = 'star')
 
 \
 
-### Package `Scatterplot3D`
+### Package `Scatterplot3D` [@Scatterplot3d]
 
+```{r}
+#| echo: false
+data(iris)
+```
+
+
+::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| code-fold: TRUE
 #| echo: true
 #| out.width: 100%
 library(scatterplot3d)
-data(iris)
 
 shapes = c(16, 17, 18) 
 shapes <- shapes[as.numeric(iris$Species)]
 colors <- c("#999999", "#E69F00", "#56B4E9")
 colors <- colors[as.numeric(iris$Species)]
 
-s3d <- scatterplot3d(iris[,1:3], pch = shapes, color= colors )
+
+s3d <- scatterplot3d(iris[,1:3], 
+                     pch = shapes, 
+                     color= colors )
+
 legend("bottom", legend = levels(iris$Species),
       col =  c("#999999", "#E69F00", "#56B4E9"), 
       pch = c(16, 17, 18), 
       inset = -0.25, xpd = TRUE, horiz = TRUE)
 ```
+:::
 
 \
 
-### Package `rgl`
+### Package `rgl` [@rgl]
 
-Create 3D Plots and Animation in R using RGL Package
 
 
 ```{r setup}
@@ -1414,32 +1437,247 @@ library(rgl)
 knitr::knit_hooks$set(webgl = hook_webgl)
 ```
 
-```{r rgl2 , webgl=TRUE}
+::: {.codeXL style="margin-top:10px;"}
+```{r, test-rgl2, webgl=TRUE}
 #| code-fold: TRUE
 #| echo: true
-#| eval: false
 #| out.width: 100%
 library(rgl)
 
-# load the set
-data(iris)
-  
-# plot the 3D graph
-plot3d(iris$Sepal.Length, iris$Sepal.Width, iris$Petal.Length, col = "red", size = 3, type = "s")
-  
-# add animations
-play3d(spin3d(axis = c(0, 0, 1)), duration = 10)
+x <- sort(rnorm(1000))
+y <- rnorm(1000)
+z <- rnorm(1000) + atan2(x,y)
 
+plot3d(x, y, z, col = rainbow(1000))
+```
+:::
+
+
+
+## [Cartographie]{.bigone} `r emo::ji("smile")`
+
+\
+
+
+
+### Package `sf` [@R-sf]
+
+[Pour importer, manipuler, traiter et afficher des données géographiques vectorielles.]{.bigbis}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+#| message: false
+
+library(sf)
+
+mtq <- st_read(dsn = "data/mtq.gpkg", layer = "mtq")
 
 ```
 
+:::
 
-## Données géographiques
+::: {.codeXL style="margin-top:20px;"}
+
+```{r}
+#| echo: true
+#| out.width: 100%
+#| message: false
+
+plot(mtq)
+
+```
+
+:::
+
+::: {.codeXL style="margin-top:10px;"}
+
+```{r}
+#| echo: true
+#| out.width: 100%
+#| message: false
+
+plot(st_geometry(mtq))
+
+```
+
+:::
+
+\
+
+### Package `terra` [@R-terra]
+
+[Pour importer, manipuler, traiter et afficher des données géographiques raster (avec vecteur).]{.bigbis}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+
+library(terra)
+
+# Couche raster
+alt_raw <- rast("data/altitude.tif") 
+
+plot(alt_raw)
 
 
-# Intéractivité
+# Couche vecteur
+mtq_terra <- vect("data/mtq.gpkg", layer="mtq")
+
+plot(mtq_terra)
+
+```
+:::
+
+\
+
+### Package `mapsf` [@R-mapsf]
+
+[Pour produire des cartes thématiques.]{.bigbis}
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| fig-height: 7
+
+library(mapsf)
+
+mf_map(x = mtq)
+
+mf_map(x = mtq, var = "POP", type = "prop", leg_title = "Population")
+
+mf_layout(title = "Population in Martinique",
+          credits = "H. Pecout; Sources: INSEE & IGN, 2018")
+
+```
+:::
+
+:::
 
 
+:::{.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: true
+#| echo: true
+#| eval: false
+#| out.width: 100%
+
+mf_theme("agolalight", bg = "ivory1")
+
+mf_export(
+  x = mtq, filename = "images/mtq.png",
+  width = 600, res = 120,
+  expandBB = c(0, 0, 0, .3)
+)
+
+mf_shadow(mtq, col = "grey90", add = TRUE)
+
+mf_map(
+  x = mtq, var = "MED", type = "choro",
+  pal = "Dark Mint",
+  breaks = "quantile",
+  nbreaks = 6,
+  leg_title = "Median Income\n(euros)",
+  leg_val_rnd = -2,
+  add = TRUE
+)
+
+mf_inset_on(x = "worldmap", pos = "right")
+
+mf_worldmap(mtq, col = "#0E3F5C")
+
+mf_inset_off()
+
+mf_title("Wealth in Martinique, 2015")
+
+mf_credits("T. Giraud\nSources: INSEE & IGN, 2018")
+
+mf_scale(size = 5)
+
+mf_arrow("topleft")
+
+dev.off()
+
+
+
+
+```
+:::
+
+![](images/mtq.png)
+
+:::
+
+:::
+
+\
+
+### Package `tmap` [@R-tmap]
+
+[Pour produire des cartes thématiques statique ou intéractive avec la syntaxe ggplot.]{.bigbis}
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 70%
+#| fig-height: 12
+
+library(tmap)
+
+tm_shape(mtq) +
+    tm_polygons("STATUS")
+
+```
+:::
+
+:::
+
+
+:::{.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;margin-bottom:10px;"}
+```{r}
+#| echo: true
+#| out.width: 100%
+
+tmap_mode("view")
+
+tm_shape(mtq) +
+    tm_polygons("STATUS")
+
+```
+:::
+
+:::
+
+:::
+
+\
+
+[Ou encore `ggplot2` & `ggmap` [@R-ggmap]]{.bigbis}
+
+
+
+
+
+# [animation]{.bigone} 
+
+
+# [Intéractivité]{.bigone} 
+
+## [Cartographie intéractive]{.bigone} 
 
 
 ## htmlwidgets.org
@@ -1468,7 +1706,7 @@ Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
 
 
 
-# Un graphique, et après ?
+# Un graphique avec R, et après ?
 
 \
 
@@ -1511,13 +1749,14 @@ En clic-bouton avec Rstudio :
 
 ![](images/export.png)
 
-## Export animé (gif, mp4)
+## Export animé (gif, mp4, HTML)
 
 Possible  notemment ggplot2 et tmp
 
 
 
-## Notebook
+## Notebook / document computationnel
+
 
 \
 
@@ -1525,7 +1764,8 @@ Possible  notemment ggplot2 et tmp
 <iframe width="1070" height="540" src="https://rzine.fr/docs/20191125_ironcurtain/index.html" title="nb_rzine"></iframe>
 ```
 
-## Application shiny 
+
+## Application intéractive `shiny` 
 
 \
 
@@ -1542,9 +1782,10 @@ Possible  notemment ggplot2 et tmp
 ```
 
 
+
 # [Ressources utiles]{.bigtwo}
 
-## <img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> r-graph-gallery.com
+## <img src="images/overview_RGG.png" width="53" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> [r-graph-gallery.com](https://r-graph-gallery.com)
 
 
 ```{=html}
@@ -1558,7 +1799,7 @@ Possible  notemment ggplot2 et tmp
 
 
 
-## <img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"/> r-charts.com
+## <img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"/> [r-charts.com](https://r-charts.com
 
 
 
@@ -1573,7 +1814,7 @@ Possible  notemment ggplot2 et tmp
 :::
 
 
-##  <img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> rzine.fr
+##  <img src="images/Rzine_logo.png" width="40" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> [rzine.fr](https://rzine.fr)
 
 
 ```{=html}
@@ -1582,16 +1823,23 @@ Possible  notemment ggplot2 et tmp
 
 
 
-## <img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> ggplot2.tidyverse.org
+## <img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> [ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)
 
 ```{=html}
-<iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="rzine.fr"></iframe>
+<iframe width="1070" height="600" src="https://ggplot2.tidyverse.org/" title="ggplot2"></iframe>
 ```
 
 
-# [Atelier pratique]{.bigtwo}
+## <img src="images/ggplot2.png" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:13px;"/> [https://exts.ggplot2.tidyverse.org/gallery/](https://exts.ggplot2.tidyverse.org/gallery/)
 
-## [Présentation du jeu de données]{.bigtwo}
+```{=html}
+<iframe width="1070" height="600" src="https://exts.ggplot2.tidyverse.org/gallery/" title="ggextension"></iframe>
+```
+
+
+# [Ateliers pratiques]{.bigtwo} {background-color="white"}
+
+## [Le jeu de données]{.bigtwo} {background-color="white"}
 
 
 \
@@ -1600,26 +1848,35 @@ Possible  notemment ggplot2 et tmp
 
 :::{.center}
 
-**Le réseau des routes de poste en France de 1632 à 1833**
+[**Le réseau des routes de poste en France de 1632 à 1833**]{.bigbis .elementR}
 
 :::
 
+:::{.black}
+
 > Nicolas Verdier, Anne Bretagnolle. L'extension du réseau des routes de poste en France, de 1708 à 1833. Histoire des réseaux postaux en Europe du XVIIIe au XXIe siècle, May 2007, Paris, France. pp.155-193. ⟨halshs-00144693⟩
 
-\
-
-
-->  **2 couches géographiques** au format *shapefile* (.shp) :
-
-- **Les relais de poste**. Couche de **points** géoréférencés.  
-- **Les route postales**. Couche de **ligne** géoréférencés.      
-
--> A 8 dates : 1632, 1708, 1733, 1758, 1783, 1810 et 1833
-
+:::
 
 \
 
-16 couches géographiques caractérisées par des attributs, qui cartographie le réseau des routes de poste en France et son évolution de 1632 à 1833
+
+
+::: {.bisbis}
+[**2 couches géographiques**]{.elementR} au format [*shapefile*]{.elementR} (.shp) :]
+
+- **Les relais de poste** : couche de **points** géoréférencés 
+- **Les route postales** : couche de **lignes** géoréférencés    
+
+[**À 8 dates**]{.elementR} : 1632, 1708, 1733, 1758, 1783, 1810 et 1833
+:::
+
+
+\
+
+
+
+[Soit **8 cartographie du réseau** des routes de poste en France **entre 1632 et 1833**.]{.big3}
 
 :::
 
@@ -1663,14 +1920,64 @@ Possible  notemment ggplot2 et tmp
 
 
 
+\
+
+::: bigone
+
+[**Des relais caractérisés par des variables (attributs)**]{.bigbis}
+
+[Ex: Relais de 1833]{.big3}
+
+```{r}
+#| echo: false
+
+# Import des points relais
+relais <-  st_read(dsn = "data/RELAIS_1833.shp", quiet = TRUE)
 
 
 
+library(DT)
+datatable(relais, filter = 'top', options = list(
+  pageLength = 6, autoWidth = TRUE
+))
+
+```
 
 
-# [Représentation de réseau avec `igraph`]{.bigtwo}
+\
+\
 
-## [Supports pédagogiques]{.bigtwo}
+[**Des routes caractérisées par des variables (attributs)**]{.bigbis}
+
+[Ex: Routes de 1833]{.big3}
+
+```{r}
+#| echo: false
+
+# Import des routes postales
+routes <-  st_read(dsn = "data/ROUTES_1833.shp", quiet = TRUE)
+
+
+library(DT)
+datatable(routes, filter = 'top', options = list(
+  pageLength = 6, autoWidth = TRUE
+))
+
+```
+
+:::
+
+## [Un projet Rstudio pour deux TD]{.bigtwo} {background-color="white"}
+
+
+[1. Représentation de réseau avec `igraph`]{.bigtwo}  
+[2. Cartographie avec `mapsf`]{.bigtwo}
+
+1 projets à télécharger
+
+
+
+## [I. Atelier `igraph`]{.bigtwo} {background-color="white"}
 
 ::: columns
 
@@ -1712,11 +2019,8 @@ Documentation du package `igraph` [@R-igraph] :
 
 :::
 
-## [Exercice]{.bigtwo}
 
-# [Cartographie avec `mapsf`]{.bigtwo}
-
-## [Supports pédagogiques]{.bigtwo}
+## [II. Atelier `mapsf`]{.bigtwo} {background-color="white"}
 
 ::: columns
 
@@ -1759,13 +2063,6 @@ Une remarque ? Une question ? Une proposition d'amélioration pour `mapsf` ?
 
 
 :::
-
-
-
-
-## [Exercice]{.bigtwo}
-
-
 
 
 
