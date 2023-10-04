@@ -1,5 +1,5 @@
 project:
-  output-dir: public
+  output-dir: docs
   type: default
 
 

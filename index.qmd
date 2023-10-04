@@ -1866,21 +1866,21 @@ Il est possible de créer des [*htmlwidgets*](http://www.htmlwidgets.org), des p
 
 
 ```{=html}
-<iframe width="1070" height="540" src="http://gallery.htmlwidgets.org/" title="htmlwidgets"></iframe>
+<iframe width="1070" height="540" src="http://www.htmlwidgets.org/" title="htmlwidgets"></iframe>
 ```
 
 \
 \
+\
 
+::: {.center}
 
-::: {.cennter}
-
-[Quelques exemples :]{.bigtwo}
+[**Quelques exemples :**]{.bigtwo}
 
 :::
 
 
-### `leaflet` [@R-leaflet]
+### Package `leaflet` [@R-leaflet]
 
 \
 
@@ -1923,7 +1923,7 @@ simpleNetwork(data , height="100px", width="100px",
 
 \
 
-###  Package `visNetwork` [@visnetwork]
+###  Package `visNetwork` [@visNetwork]
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
@@ -1981,6 +1981,8 @@ plot3d(x, y, z, col = rainbow(1000))
 ```
 :::
 
+\
+\
 \
 
 
