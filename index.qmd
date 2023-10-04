@@ -170,7 +170,9 @@ revealjs-plugins:
 :::
 
 
-# [Graphiques avec R-base]{.bigtwo}
+# [Graphiques avec R ?]{.bigtwo}
+
+# [I. Représentation graphique en R-base]{.bigtwo}
 
 ## [Fonctions graphiques R-base (1995)]{.bigone}
 
@@ -670,7 +672,7 @@ Il existe de nombreux packages qui offrent une palette importante de fonctionnal
 :::
 
 
-# [La révolution `ggplot2`]{.bigtwo}
+# [II. La révolution `ggplot2`]{.bigtwo}
 
 
 ## [lattice (2001)]{.bigone}
@@ -1080,7 +1082,6 @@ esquisser()
 :::
 
 
-
 ## [Palettes de couleurs]{.bigone}
 
 ::: columns
@@ -1114,7 +1115,7 @@ esquisser()
 
 
 
-# [Quelques packages spécifiques à certaines thématiques...]{.bigtwo}
+# [III. Packages thématiques et représentation graphique]{.bigtwo}
 
 
 ## [Analyse statistique multivariée]{.bigone}
@@ -1123,7 +1124,7 @@ esquisser()
 
 ### Package `FactoMineR` [@FactoMineR]
 
-Et ses packages d'exploration et de visualisation associés : `FactoInvestigate`, `factoextra`, `Factoshiny`) [@ade4]
+[Et ses packages d'exploration et de visualisation associés : `FactoInvestigate`, `factoextra`, `Factoshiny`]{.bigone}
 
 :::: columns
 
@@ -1456,70 +1457,6 @@ ggraph(graph, layout = 'kk') +
 ```
 :::
 
-\
-
-###  Package `networkD3` [@networkD3]
-
-::: {.codeXL style="margin-top:10px;"}
-```{r toto}
-#| code-fold: TRUE
-#| echo: true
-#| out.width: 100%
-
-data <- data.frame(
-  from=c("A", "A", "B", "D", "C", "D", "E", "B", "C", "D", "K", "A", "M"),
-  to=c("B", "E", "F", "A", "C", "A", "B", "Z", "A", "C", "A", "B", "K")
-)
-
-library(networkD3)
-simpleNetwork(data , height="100px", width="100px",        
-              Source = 1,                 # column number of source
-              Target = 2,                 # column number of target
-              linkDistance = 10,          # distance between node. Increase this value to have more space between nodes
-              charge = -900,              # numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value)
-              fontSize = 14,              # size of the node names
-              fontFamily = "serif",       # font og node names
-              linkColour = "#666",        # colour of edges, MUST be a common colour for the whole graph
-              nodeColour = "#69b3a2",     # colour of nodes, MUST be a common colour for the whole graph
-              opacity = 0.9,              # opacity of nodes. 0=transparent. 1=no transparency
-              zoom = T                    # Can you zoom on the figure?
-              )
-```
-:::
-
-\
-
-###  Package `visNetwork`
-
-::: {.codeXL style="margin-top:10px;"}
-```{r}
-#| code-fold: TRUE
-#| echo: true
-#| eval: false
-#| out.width: 100%
-library(visNetwork)
-
-data <- toVisNetworkData(karate)
-
-visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
-
-```
-:::
-
-```{r}
-#| code-fold: TRUE
-#| echo: false
-#| out.width: 100%
-#| eval: false
-library(visNetwork)
-vn <- visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
-visSave(vn, file = "images/visnetwork.html")
-```
-
-
-```{=html}
-<iframe width="1000" height="540" src="images/visnetwork.html" title="visnetwork"></iframe>
-```
 
 
 
@@ -1565,7 +1502,8 @@ seqlegend(mvad.seq)
 - Gabadinho, A., Ritschard, G., Müller, N. S., & Studer, M. (2011). Analyzing and Visualizing State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI https://doi.org/10.18637/jss.v040.i04.   s
 
 
-# Des packages intérréssants du coté des sciences dures
+# [Du coté des sciences dures...]{.bigone} 
+
 
 ## [*Carte* de chaleur]{.bigone} 
 
@@ -1600,7 +1538,7 @@ seqlegend(mvad.seq)
 
 
 
-## [Graphique 3D]{.bigone}
+## [Graphique "3D"]{.bigone}
 
 \
 
@@ -1636,31 +1574,6 @@ legend("bottom", legend = levels(iris$Species),
 ```
 :::
 
-\
-
-### Package `rgl` [@rgl]
-
-
-
-```{r setup}
-library(rgl)
-knitr::knit_hooks$set(webgl = hook_webgl)
-```
-
-::: {.codeXL style="margin-top:10px;"}
-```{r, test-rgl2, webgl=TRUE}
-#| code-fold: TRUE
-#| echo: true
-#| out.width: 100%
-library(rgl)
-
-x <- sort(rnorm(1000))
-y <- rnorm(1000)
-z <- rnorm(1000) + atan2(x,y)
-
-plot3d(x, y, z, col = rainbow(1000))
-```
-:::
 
 
 ## [Cartographie]{.bigone} `r emo::ji("smile")`
@@ -1757,7 +1670,9 @@ library(mapsf)
 
 mf_map(x = mtq)
 
-mf_map(x = mtq, var = "POP", type = "prop", leg_title = "Population")
+mf_map(x = mtq, 
+       var = "POP", 
+       type = "prop")
 
 mf_layout(title = "Population in Martinique",
           credits = "H. Pecout; Sources: INSEE & IGN, 2018")
@@ -1876,56 +1791,275 @@ tm_shape(mtq) +
 [Ou encore `ggplot2` & `ggmap` [@R-ggmap]]{.bigbis}
 
 
-# [Animation, dynamisme & intéractivité]{.bigone} 
+# [IV. Animation & intéractivité]{.bigone}
+
+## [Représentation animée]{.bigone} 
+
+Il est possible de crée un GIF ou une vidéo à partir de plusieurs images. L'étendue des possibilités est donc large. 
+
+Plusieurs packages facilite la création de représentations graphiques animées en mettant des fonctions simple d'utilisation à disposition.
 
 
-## [Graphique animé]{.bigone} 
+::: columns
 
-ggmpa tamp
+::: {.column width="50%}
 
-
-## [Graphique dynamique]{.bigone} 
-
-Autre (plotly et cie)
-
-Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
+L'extension ggplot2 : `gganimate` [@gganimate]
 
 
-## [Graphique intéractif{.bigone} 
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 70%
+#| fig-height: 12
 
-### htmlwidgets.org
-
- (javascript link)
-
-### rbokeh
-
-### rCharts
-
-### highcharter
-
-### echarts4r
-
-### robservable
+library(ggplot2)
+# library(gganimate)
 
 
-## [Cartographie intéractive]{.bigone} 
+```
+:::
+
+:::
 
 
-leaflet/Mapview
+::: {.column width="50%}
+
+Le package de cartographie `t_map` [@R-tmap]
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 70%
+#| fig-height: 12
+
+library(tmap)
 
 
+```
+:::
+
+:::
+
+:::
+
+\
+\
+
+::: {.center}
+
+[Exemple personnel `ggplot2` + `gganimate`]{.bigtwo}
+
+![](images/velo.gif){width=75%"}
+
+https://gitlab.huma-num.fr/hpecout/courbe_rotative
+
+:::
 
 
+## [Représentation dynamique ou intéractive]{.bigone} 
+
+Par défaut, le langage R seul ne peut pas produire de représentation interactive. 
+Cette caractéristique s'obtient avec le langage javascript + un navigateur web (html).
+
+Il est possible de créer des [*htmlwidgets*](http://www.htmlwidgets.org), des packages qui permettent de faire un lien avec des librairies javascript.
 
 
-# [Un graphique avec R, et après ?]{.bigone} 
+```{=html}
+<iframe width="1070" height="540" src="http://gallery.htmlwidgets.org/" title="htmlwidgets"></iframe>
+```
+
+\
+\
+
+
+::: {.cennter}
+
+[Quelques exemples :]{.bigtwo}
+
+:::
+
+
+### `leaflet` [@R-leaflet]
 
 \
 
-## [Export d'image (pdf, png, jpeg)]{.bigone} 
+### Package `mapview` [@R-mapview]
 
-En `R-base` : 
+\
 
+### Package `mapdeck` [@R-mapdeck]
+
+\
+
+###  Package `networkD3` [@networkD3]
+
+::: {.codeXL style="margin-top:10px;"}
+```{r toto}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+
+data <- data.frame(
+  from=c("A", "A", "B", "D", "C", "D", "E", "B", "C", "D", "K", "A", "M"),
+  to=c("B", "E", "F", "A", "C", "A", "B", "Z", "A", "C", "A", "B", "K")
+)
+
+library(networkD3)
+simpleNetwork(data , height="100px", width="100px",        
+              Source = 1,                 # column number of source
+              Target = 2,                 # column number of target
+              linkDistance = 10,          # distance between node. Increase this value to have more space between nodes
+              charge = -900,              # numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value)
+              fontSize = 14,              # size of the node names
+              fontFamily = "serif",       # font og node names
+              linkColour = "#666",        # colour of edges, MUST be a common colour for the whole graph
+              nodeColour = "#69b3a2",     # colour of nodes, MUST be a common colour for the whole graph
+              opacity = 0.9,              # opacity of nodes. 0=transparent. 1=no transparency
+              zoom = T                    # Can you zoom on the figure?
+              )
+```
+:::
+
+\
+
+###  Package `visNetwork` [@visnetwork]
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| echo: true
+#| eval: false
+#| out.width: 100%
+library(visNetwork)
+
+data <- toVisNetworkData(karate)
+
+visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
+
+```
+:::
+
+```{r}
+#| code-fold: TRUE
+#| echo: false
+#| out.width: 100%
+#| eval: false
+library(visNetwork)
+vn <- visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
+visSave(vn, file = "images/visnetwork.html")
+```
+
+
+```{=html}
+<iframe width="1000" height="540" src="images/visnetwork.html" title="visnetwork"></iframe>
+```
+
+\
+
+
+### Package `rgl` [@rgl]
+
+
+```{r setup}
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+```
+
+::: {.codeXL style="margin-top:10px;"}
+```{r, test-rgl2, webgl=TRUE}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
+library(rgl)
+
+x <- sort(rnorm(1000))
+y <- rnorm(1000)
+z <- rnorm(1000) + atan2(x,y)
+
+plot3d(x, y, z, col = rainbow(1000))
+```
+:::
+
+\
+
+
+###  Package `plotly` [@plotly]
+
+```{r}
+#| eval: false
+
+# Création d'une palette de couleurs 
+getPalette <- colorRampPalette(brewer.pal(9, "Set1"))
+
+
+plot_ly(x = unlist(x = map(Merimee$geometry,1)), 
+               y = unlist(map(Merimee$geometry,2)), 
+               z = as.numeric(Merimee$chpdate),
+               color= as.factor(Merimee$cluster),
+                colors = getPalette(length(unique(Merimee$cluster))),
+               size=0.6) %>% 
+add_markers() %>% 
+layout(scene = list(xaxis = list(title = 'Longitude'),
+       yaxis = list(title = 'Latitude'),
+       zaxis = list(title = 'Année de construction')))
+
+```
+
+
+
+
+\
+
+###  Package `rbokeh` [@rbokeh]
+
+
+
+\
+
+###  Package `highcharter` [@highcharter]
+
+
+
+
+\
+
+###  Package `echarts4r` [@echarts4r]
+
+
+
+
+\
+
+
+###  Package `robservable` [@robservable]
+
+
+
+
+# [Valoriser un graphique fait avec R]{.bigone} 
+
+\
+
+## [Export classique]{.bigone} 
+
+eps, ps, tex, pdf, jpeg, tiff, png, bmp, svg, wmf
+
+\
+
+
+
+::: columns
+
+::: {.column width="50%"}
+
+::: {.center}
+
+[En `R-base` :]{.bigone}
+
+:::
+
+::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| eval: false
 #| echo: true
@@ -1933,41 +2067,59 @@ En `R-base` :
 pdf(file = "myplot.pdf")
 
 plot(mtcars$wt, mtcars$mpg)
-abline(v = 0) 
-text(x = 0, y = 1, labels = "Random text")
 
-# Run dev.off() to create the file!
 dev.off()
 
 ```
+:::
 
-\
+:::
 
-Avec `ggplot2` :
 
+::: {.column width="50%"}
+
+::: {.center}
+
+[Avec `ggplot2` :]{.bigone}
+
+:::
+
+::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| eval: false
 #| echo: true
 
 library(ggplot2)
+
 ggplot(mtcars, aes(wt, mpg)) + geom_point()
 
 ggsave("myplot.pdf")
 ```
+:::
+
+:::
+
+:::
 
 \ 
+\ 
 
-En clic-bouton avec Rstudio :
+::: {.center}
 
-![](images/export.png)
-
-## [Export d'une représentation animée (gif, mp4, HTML)){.bigone}
-
-Possible  notamment ggplot2 et tmp
+[En clic-bouton avec Rstudio :]{.bigtwo}
 
 
+![](images/export.png){width="70%"}
 
-## [Représentation graphique & *notebook*){.bigone}
+:::
+
+
+L'export de GIF, de mp4, html... pour les représentations animées s'effectue automatiquement via des fonctions mis à disposition pas des packages.
+
+
+
+
+## [Représentation graphique & *notebook*]{.bigone}
 
 
 \
@@ -1977,7 +2129,7 @@ Possible  notamment ggplot2 et tmp
 ```
 
 
-## [Représentation graphique & `shiny`){.bigone}
+## [Représentation graphique & `shiny`]{.bigone}
 
 \
 
@@ -2011,7 +2163,7 @@ Possible  notamment ggplot2 et tmp
 
 
 
-## <img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"/> [r-charts.com](https://r-charts.com
+## <img src="images/favicon.webp" width="43" style="margin-top:0px;margin-bottom:-10px;margin-right:10px;"/> [r-charts.com](https://r-charts.com)
 
 
 
@@ -2075,12 +2227,67 @@ Possible  notamment ggplot2 et tmp
 
 
 ::: {.bisbis}
-[**2 couches géographiques**]{.elementR} au format [*shapefile*]{.elementR} (.shp) :]
+- [**16 couches géographiques**]{.elementR} au format [*shapefile*]{.elementR} (.shp) :
 
-- **Les relais de poste** : couche de **points** géoréférencés 
-- **Les route postales** : couche de **lignes** géoréférencés    
+::: columns
 
-[**À 8 dates**]{.elementR} : 1632, 1708, 1733, 1758, 1783, 1810 et 1833
+::: {.column width="50%"}
+
+::: {.center}
+
+**Les relais de poste**
+
+[Couche de **points** géoréférencés x 8]{.small2}
+
+:::
+
+```{r}
+#| echo: false
+#| fig-height: 10
+library(sf)
+# Import des points relais
+relais <-  st_read(dsn = "data/RELAIS_1833.shp", quiet = TRUE)
+
+
+library(mapsf)
+mf_map(relais)
+
+```
+
+:::
+
+
+::: {.column width="50%"}
+
+::: {.center}
+
+**Les routes postales**
+
+[Couche de **lignes** géoréférencées x 8]{.small2} 
+
+:::
+
+```{r}
+#| echo: false
+#| #| fig-height: 10
+
+# Import des points relais
+routes <-  st_read(dsn = "data/ROUTES_1833.shp", quiet = TRUE)
+
+
+library(mapsf)
+mf_map(routes)
+
+```
+
+:::
+
+:::
+
+\
+
+- [**À 8 dates**]{.elementR} : 1632, 1708, 1733, 1758, 1783, 1810 et 1833
+
 :::
 
 
@@ -2143,10 +2350,6 @@ Possible  notamment ggplot2 et tmp
 ```{r}
 #| echo: false
 
-# Import des points relais
-relais <-  st_read(dsn = "data/RELAIS_1833.shp", quiet = TRUE)
-
-
 
 library(DT)
 datatable(relais, filter = 'top', options = list(
@@ -2166,10 +2369,6 @@ datatable(relais, filter = 'top', options = list(
 ```{r}
 #| echo: false
 
-# Import des routes postales
-routes <-  st_read(dsn = "data/ROUTES_1833.shp", quiet = TRUE)
-
-
 library(DT)
 datatable(routes, filter = 'top', options = list(
   pageLength = 6, autoWidth = TRUE
@@ -2182,11 +2381,29 @@ datatable(routes, filter = 'top', options = list(
 ## [Un projet Rstudio pour deux TD]{.bigtwo} {background-color="white"}
 
 
-[1. Représentation de réseau avec `igraph`]{.bigtwo}  
-[2. Cartographie avec `mapsf`]{.bigtwo}
+\
 
-1 projets à télécharger
+::: {.bigone}
 
+[1. **Représentation de réseau avec `igraph`**]{.bigone}  
+[2. **Cartographie avec `mapsf`**]{.bigone}
+
+:::
+
+\
+\
+
+::: {.center .bigone}
+
+::: {.bigtwo}
+
+![](images/folder.png)
+
+[**Télécharger le projet**]() **Rstudio** (.zip)
+
+:::
+
+:::
 
 
 ## [I. Atelier `igraph`]{.bigtwo} {background-color="white"}
