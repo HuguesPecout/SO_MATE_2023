@@ -1117,10 +1117,190 @@ esquisser()
 # [Quelques packages spécifiques à certaines thématiques...]{.bigtwo}
 
 
-## [Analyse statistique]{.bigone}
+## [Analyse statistique multivariée]{.bigone}
+
+\
+
+### Package `FactoMineR` [@FactoMineR]
+
+Et ses packages d'exploration et de visualisation associés : `FactoInvestigate`, `factoextra`, `Factoshiny`) [@ade4]
+
+:::: columns
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+
+par(mfrow = c(2, 3))
+
+library("factoextra")
+data("decathlon2")
+
+df <- decathlon2[1:23, 1:10]
+
+library("FactoMineR")
+res.pca <- PCA(df,  graph = FALSE)
+
+# Visualize eigenvalues/variances
+fviz_screeplot(res.pca, addlabels = TRUE, ylim = c(0, 50))
+
+```
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+
+fviz_pca_var(res.pca, col.var="contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE # Avoid text overlapping
+             )
 
 
-## [Analyse textuelle - Nuage de mots]{.bigone} 
+
+```
+:::
+
+:::
+
+::::
+
+::: columns
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+# Contributions of variables to PC1
+fviz_contrib(res.pca, choice = "var", axes = 1, top = 10)
+
+
+```
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+
+
+# Contributions of variables to PC2
+fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
+
+
+```
+:::
+
+:::
+
+:::
+
+::: columns
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+fviz_pca_ind(res.pca, col.ind = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE # Avoid text overlapping (slow if many points)
+             )
+
+
+
+```
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+
+
+# Biplot of individuals and variables
+fviz_pca_biplot(res.pca, repel = TRUE)
+
+
+
+```
+:::
+
+:::
+
+:::
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| eval: true
+#| echo: true
+
+# Compute PCA on the iris data set
+# The variable Species (index = 5) is removed
+# before PCA analysis
+iris.pca <- PCA(iris[,-5], graph = FALSE)
+
+# Visualize
+# Use habillage to specify groups for coloring
+fviz_pca_ind(iris.pca,
+             label = "none", # hide individual labels
+             habillage = iris$Species, # color by groups
+             palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+             addEllipses = TRUE # Concentration ellipses
+             )
+
+```
+:::
+
+
+
+\
+
+### Package `explor` [@explor]
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| eval: false
+#| echo: true
+library(FactoMineR)
+data(hobbies)
+res.mca <- MCA(hobbies,quali.sup=19:22,quanti.sup=23)
+
+library(explor)
+explor(res.mca)
+```
+:::
+
+![](images/explor.gif)
+  
+
+## [Textométrie - Nuage de mots]{.bigone} 
 
 \
 
@@ -1311,6 +1491,36 @@ simpleNetwork(data , height="100px", width="100px",
 
 ###  Package `visNetwork`
 
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| echo: true
+#| eval: false
+#| out.width: 100%
+library(visNetwork)
+
+data <- toVisNetworkData(karate)
+
+visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
+
+```
+:::
+
+```{r}
+#| code-fold: TRUE
+#| echo: false
+#| out.width: 100%
+#| eval: false
+library(visNetwork)
+vn <- visNetwork(nodes = data$nodes, edges = data$edges, height = "500px") 
+visSave(vn, file = "images/visnetwork.html")
+```
+
+
+```{=html}
+<iframe width="1000" height="540" src="images/visnetwork.html" title="visnetwork"></iframe>
+```
+
 
 
 ## [Analyse de séquence]{.bigone}
@@ -1453,12 +1663,9 @@ plot3d(x, y, z, col = rainbow(1000))
 :::
 
 
-
 ## [Cartographie]{.bigone} `r emo::ji("smile")`
 
 \
-
-
 
 ### Package `sf` [@R-sf]
 
@@ -1669,48 +1876,53 @@ tm_shape(mtq) +
 [Ou encore `ggplot2` & `ggmap` [@R-ggmap]]{.bigbis}
 
 
+# [Animation, dynamisme & intéractivité]{.bigone} 
 
 
+## [Graphique animé]{.bigone} 
 
-# [animation]{.bigone} 
+ggmpa tamp
 
 
-# [Intéractivité]{.bigone} 
+## [Graphique dynamique]{.bigone} 
+
+Autre (plotly et cie)
+
+Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
+
+
+## [Graphique intéractif{.bigone} 
+
+### htmlwidgets.org
+
+ (javascript link)
+
+### rbokeh
+
+### rCharts
+
+### highcharter
+
+### echarts4r
+
+### robservable
+
 
 ## [Cartographie intéractive]{.bigone} 
 
 
-## htmlwidgets.org
-
-
- (javascript link)
-
-
-## leaflet/Mapview
-
-## rbokeh
-
-## rCharts
-
-## highcharter
-
-## Shiny
-
-## Autre (plotly et cie)
-
-Plotly \> ggplot2 \> Plotly.js \> D3.js \> Javascript
-
-## echarts4r
-
-## robservable
+leaflet/Mapview
 
 
 
-# Un graphique avec R, et après ?
+
+
+
+# [Un graphique avec R, et après ?]{.bigone} 
 
 \
 
-## Export statique (pdf, png, jpeg)
+## [Export d'image (pdf, png, jpeg)]{.bigone} 
 
 En `R-base` : 
 
@@ -1749,13 +1961,13 @@ En clic-bouton avec Rstudio :
 
 ![](images/export.png)
 
-## Export animé (gif, mp4, HTML)
+## [Export d'une représentation animée (gif, mp4, HTML)){.bigone}
 
-Possible  notemment ggplot2 et tmp
+Possible  notamment ggplot2 et tmp
 
 
 
-## Notebook / document computationnel
+## [Représentation graphique & *notebook*){.bigone}
 
 
 \
@@ -1765,7 +1977,7 @@ Possible  notemment ggplot2 et tmp
 ```
 
 
-## Application intéractive `shiny` 
+## [Représentation graphique & `shiny`){.bigone}
 
 \
 
