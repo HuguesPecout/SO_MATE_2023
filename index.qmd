@@ -2551,7 +2551,7 @@ datatable(routes, filter = 'top', options = list(
 :::{.column width="40%"}
 
 :::{.center}
-<button type="submit" class="btn btn btn-succes">[[ **Consulter le support en plein écran** ](https://elementr.gitpages.huma-num.fr/session_cartographie/tutoriel/){target="_blank"}]{.bigtwo}</button>
+<button type="submit" class="btn btn btn-succes">[[ **Consulter le support en plein écran** ](https://elementr.gitpages.huma-num.fr/session_reseau/intro_reseau_igraph/){target="_blank"}]{.bigtwo}</button>
 :::
 
 \
