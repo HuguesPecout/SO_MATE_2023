@@ -2531,7 +2531,7 @@ datatable(routes, filter = 'top', options = list(
 
 ![](images/folder.png)
 
-[**Télécharger le projet**]() **Rstudio** (.zip)
+[**Télécharger le projet**](https://gitlab.huma-num.fr/hpecout/somate_igraph/-/raw/master/somate_ateliers_R.zip?ref_type=heads) **Rstudio** (.zip)
 
 :::
 
