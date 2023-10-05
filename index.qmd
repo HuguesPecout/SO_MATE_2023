@@ -4,7 +4,7 @@ subtitle: "Tour d'horizon personnel des fonctionnalités graphiques disponibles"
 img: images/entete.png
 # date: 
 author: Hugues Pecout (CNRS, UMR Géographie-Cités)
-institute: "Journée annuelle SO-MATE 2023, Limoges"
+institute: "Journées annuelles SO-MATE 2023, Limoges"
 affiliation: <img src="images/cnrs.png" width="60" style="margin-right:320px;"/><img src="images/somate.png" width="260" style="margin-right:320px;"/><img src="images/geocite.jpeg" width="60" />
 lang: fr
 editor: source
@@ -14,7 +14,7 @@ format:
       - title-slide.html
     theme: [dark, styles.scss]
     logo: images/logo_mate_shs_0.png
-    footer: "Journée annuelle SO-MATE 2023 - Représentations graphiques avec R"
+    footer: "Journées annuelles SO-MATE 2023 - Représentations graphiques avec R"
     scrollable: TRUE
     smaller: TRUE
     overview: TRUE
@@ -674,10 +674,9 @@ Il existe de nombreux packages qui offrent une palette importante de fonctionnal
 
 # [II. La révolution `ggplot2`]{.bigtwo}
 
+## [L'avant `ggplot2`]{.bigone}
 
-## [lattice (2001)]{.bigone}
-
-[Le package `lattice` vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.]{.bigtwo} 
+[Le package `lattice` [@Lattice], sortie en 2001, vise à améliorer les graphiques de base de R en fournissant des valeurs par défaut améliorées et une visualisation simplifiée des relations multivariées.]{.bigtwo} 
 
 ::: {.codeXL style="margin-top:30px;"}   
 ```{r eval = TRUE, fig.align='center'}
@@ -731,7 +730,7 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
   
 
   
-## [ggplot2 (2007 - 2012)]{.bigone}
+## [`ggplot2` (2007 - 2012)]{.bigone}
 
 
 ::: {style="margin-top:20px;"}   
@@ -764,7 +763,7 @@ Ce package apporte des fonctionnalités supplémentaires aux fonctions graphique
 ::: {.center}
 ```{r eval = TRUE, fig.align='center'}
 #| echo: false
-#| eval: false
+#| eval: true
 #| out.width: 80%
 
 library(packageRank)
@@ -797,7 +796,7 @@ ggplot(data = tabdown, mapping = aes(x = date, y = count)) +
 
 ![](images/switzerland.png)
 
-## [ggplot2, au delà de R...]{.bigone}
+## [`ggplot2`, au delà de R...]{.bigone}
 
 ::: {style="margin-top:20px;"}  
 [**La syntaxe de la [*grammaire des graphiques*]{.elementR}, implementée dans un premier temps en langage R, a été reprise et adaptée dans plusieurs langages de programmation.**]{.bigone}
@@ -1124,7 +1123,7 @@ esquisser()
 
 ### Package `FactoMineR` [@FactoMineR]
 
-[Et ses packages d'exploration et de visualisation associés : `FactoInvestigate`, `factoextra`, `Factoshiny`]{.bigone}
+[Et ses packages d'exploration et de visualisation associés : `FactoInvestigate`, `factoextra`, `Factoshiny`]{.bigtwo}
 
 :::: columns
 
@@ -1437,7 +1436,7 @@ plot(karate,
 ```{r}
 #| code-fold: TRUE
 #| echo: true
-#| eval: false
+#| eval: true
 #| out.width: 100%
 
 library(ggraph)
@@ -1502,7 +1501,7 @@ seqlegend(mvad.seq)
 - Gabadinho, A., Ritschard, G., Müller, N. S., & Studer, M. (2011). Analyzing and Visualizing State Sequences in R with TraMineR. Journal of Statistical Software, 40(4), 1-37. DOI https://doi.org/10.18637/jss.v040.i04.   s
 
 
-# [Du coté des sciences dures...]{.bigone} 
+# [Du coté des sciences dures...]{.bigtwo} 
 
 
 ## [*Carte* de chaleur]{.bigone} 
@@ -1582,7 +1581,7 @@ legend("bottom", legend = levels(iris$Species),
 
 ### Package `sf` [@R-sf]
 
-[Pour importer, manipuler, traiter et afficher des données géographiques vectorielles.]{.bigbis}
+[Pour importer, manipuler, traiter et afficher des données géographiques vectorielles.]{.bigtwo}
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
@@ -1628,7 +1627,7 @@ plot(st_geometry(mtq))
 
 ### Package `terra` [@R-terra]
 
-[Pour importer, manipuler, traiter et afficher des données géographiques raster (avec vecteur).]{.bigbis}
+[Pour importer, manipuler, traiter et afficher des données géographiques raster (avec vecteur).]{.bigtwo}
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
@@ -1655,7 +1654,7 @@ plot(mtq_terra)
 
 ### Package `mapsf` [@R-mapsf]
 
-[Pour produire des cartes thématiques.]{.bigbis}
+[Pour produire des cartes thématiques.]{.bigtwo}
 
 ::: columns
 
@@ -1744,7 +1743,7 @@ dev.off()
 
 ### Package `tmap` [@R-tmap]
 
-[Pour produire des cartes thématiques statique ou intéractive avec la syntaxe ggplot.]{.bigbis}
+[Pour produire des cartes thématiques statique ou intéractive avec la syntaxe ggplot.]{.bigtwo}
 
 ::: columns
 
@@ -1788,60 +1787,94 @@ tm_shape(mtq) +
 
 \
 
-[Ou encore `ggplot2` & `ggmap` [@R-ggmap]]{.bigbis}
+[Ou encore `ggplot2` & `ggmap` [@R-ggmap]]{.bigtwo}
 
 
 # [IV. Animation & intéractivité]{.bigone}
 
 ## [Représentation animée]{.bigone} 
 
-Il est possible de crée un GIF ou une vidéo à partir de plusieurs images. L'étendue des possibilités est donc large. 
+::: {.bigtwo}
 
-Plusieurs packages facilite la création de représentations graphiques animées en mettant des fonctions simple d'utilisation à disposition.
+Il est possible de crée un GIF ou une vidéo à partir de plusieurs images avec R. L'étendue des possibilités de réaliser des animation graphique est donc large... Mais il faut être prêt à bricoler ! 
+
+Heureusement, plusieurs packages facilitent la création de représentations graphiques animées, en mettant des fonctions simple d'utilisation à disposition.
+
+:::
 
 
-::: columns
+### L'extension `gganimate` [@gganimate]
 
-::: {.column width="50%}
 
-L'extension ggplot2 : `gganimate` [@gganimate]
-
+```{r}
+#| echo: false
+library(gapminder)
+library(ggplot2)
+```
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| echo: true
-#| out.width: 70%
-#| fig-height: 12
+#| out.width: 100%
+#| fig-height: 10
+#| code-fold: true
 
-library(ggplot2)
-# library(gganimate)
+
+library(gganimate)
+
+
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
 
 
 ```
 :::
 
-:::
+\
 
-
-::: {.column width="50%}
-
-Le package de cartographie `t_map` [@R-tmap]
+### Le package `t_map` [@R-tmap]
 
 ::: {.codeXL style="margin-top:10px;"}
 ```{r}
 #| echo: true
+#| eval: false
 #| out.width: 70%
 #| fig-height: 12
+#| code-fold: true
 
 library(tmap)
+data(World, metro)
+
+m4 <- tm_shape(World) +
+      	tm_polygons() +
+        tm_shape(metro) +
+      	tm_bubbles(col = "red") +
+      	tm_text("name", ymod = -1) +
+        tm_facets(by = "name", free.coords = F, nrow = 1, ncol = 1) +
+      	tm_layout(panel.show = FALSE, frame = FALSE)
+
+tmap_animation(m4,
+               filename = "World_cities.mp4", 
+               width=1200, 
+               height = 600, 
+               fps = 1, 
+               outer.margins = 0)
 
 
 ```
 :::
 
-:::
 
-:::
+{{< video images/World_cities.mp4 >}}
+
+
 
 \
 \
@@ -1857,13 +1890,14 @@ https://gitlab.huma-num.fr/hpecout/courbe_rotative
 :::
 
 
-## [Représentation dynamique ou intéractive]{.bigone} 
+## [Représentation intéractive]{.bigone} 
 
-Par défaut, le langage R seul ne peut pas produire de représentation interactive. 
-Cette caractéristique s'obtient avec le langage javascript + un navigateur web (html).
+::: {.bigtwo}
+Le langage R, seul, ne permet pas de produire de représentation graphique interactive. Cette fonctionnalité est accessible grâce au langage javascript (+ un navigateur web). Il est possible de créer des [*htmlwidgets*](http://www.htmlwidgets.org), des packages qui permettent de faire un lien avec des librairies javascript...
 
-Il est possible de créer des [*htmlwidgets*](http://www.htmlwidgets.org), des packages qui permettent de faire un lien avec des librairies javascript.
+:::
 
+\
 
 ```{=html}
 <iframe width="1070" height="540" src="http://www.htmlwidgets.org/" title="htmlwidgets"></iframe>
@@ -1879,16 +1913,70 @@ Il est possible de créer des [*htmlwidgets*](http://www.htmlwidgets.org), des p
 
 :::
 
+\
 
 ### Package `leaflet` [@R-leaflet]
+
+```{r}
+#| echo: false
+#| out.width: 100%
+#| fig-height: 10
+#| code-fold: true
+
+
+library(sf)
+library(leaflet)
+
+mtq <- st_read(dsn = "data/mtq.gpkg", layer = "mtq")
+```
+
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 75%
+#| fig-height: 7
+#| code-fold: true
+
+
+map <- leaflet(mtq)
+
+pal <- colorNumeric(palette = "Blues",
+                    domain = mtq$CHOM)
+
+map %>%
+  addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
+    color = ~pal(CHOM))
+
+```
+:::
 
 \
 
 ### Package `mapview` [@R-mapview]
 
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| echo: true
+#| out.width: 75%
+#| fig-height: 7
+#| code-fold: true
+
+library(mapview)
+
+mapview(mtq)
+
+```
+:::
 \
 
 ### Package `mapdeck` [@R-mapdeck]
+
+:::{.center}
+
+![](images/mapdeck.png)
+
+:::
 
 \
 
@@ -1984,31 +2072,62 @@ plot3d(x, y, z, col = rainbow(1000))
 \
 \
 \
+\
+\
 
 
 ###  Package `plotly` [@plotly]
 
+::: {.codeXL style="margin-top:10px;"}
 ```{r}
-#| eval: false
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
 
-# Création d'une palette de couleurs 
-getPalette <- colorRampPalette(brewer.pal(9, "Set1"))
+library(plotly)
 
-
-plot_ly(x = unlist(x = map(Merimee$geometry,1)), 
-               y = unlist(map(Merimee$geometry,2)), 
-               z = as.numeric(Merimee$chpdate),
-               color= as.factor(Merimee$cluster),
-                colors = getPalette(length(unique(Merimee$cluster))),
+plot_ly(x = mtq$POP, 
+               y = mtq$MED, 
+               z = mtq$ACT,
+               color= as.factor(mtq$STATUS),
+                colors = c("red", "orange", "grey"),
                size=0.6) %>% 
 add_markers() %>% 
-layout(scene = list(xaxis = list(title = 'Longitude'),
-       yaxis = list(title = 'Latitude'),
-       zaxis = list(title = 'Année de construction')))
+layout(scene = list(xaxis = list(title = 'POP'),
+       yaxis = list(title = 'MED'),
+       zaxis = list(title = 'ACT')))
 
 ```
+:::
+
+\
+
+[Ce package est également compatible avec les graphiques `ggplot2`, qu'il peut rendre intéractif.]{.bigtwo}
+
+::: {.codeXL style="margin-top:10px;"}
+```{r}
+#| code-fold: TRUE
+#| echo: true
+#| out.width: 100%
 
 
+mon_plot <- ggplot(mtcars, aes(x= hp, y =drat, fill = am)) + 
+               geom_point()
+
+
+library(plotly)
+
+ggplotly(mon_plot)
+```
+:::
+
+\
+
+::: {.center}
+
+[**Et aussi :**]{.bigtwo}
+
+:::
 
 
 \
@@ -2037,9 +2156,11 @@ layout(scene = list(xaxis = list(title = 'Longitude'),
 ###  Package `robservable` [@robservable]
 
 
+\
+\
 
 
-# [Valoriser un graphique fait avec R]{.bigone} 
+# [V. Valoriser un graphique fait avec R]{.bigone} 
 
 \
 
@@ -2121,7 +2242,9 @@ L'export de GIF, de mp4, html... pour les représentations animées s'effectue a
 
 
 
-## [Représentation graphique & *notebook*]{.bigone}
+## [Les documents computationnels]{.bigone}
+
+[Rmarkdown & Quarto]{.bigquat}
 
 
 \
@@ -2131,7 +2254,7 @@ L'export de GIF, de mp4, html... pour les représentations animées s'effectue a
 ```
 
 
-## [Représentation graphique & `shiny`]{.bigone}
+## [Les applications `shiny`]{.bigone}
 
 \
 
@@ -2203,6 +2326,13 @@ L'export de GIF, de mp4, html... pour les représentations animées s'effectue a
 ```
 
 
+## <img src="images/htmlwidget.png" width="133" style="margin-top:0px;margin-bottom:-5px;margin-right:13px;"/> [http://gallery.htmlwidgets.org/](http://gallery.htmlwidgets.org/)
+
+```{=html}
+<iframe width="1070" height="600" src="http://gallery.htmlwidgets.org/" title="ggextension"></iframe>
+```
+
+
 # [Ateliers pratiques]{.bigtwo} {background-color="white"}
 
 ## [Le jeu de données]{.bigtwo} {background-color="white"}
@@ -2271,7 +2401,7 @@ mf_map(relais)
 
 ```{r}
 #| echo: false
-#| #| fig-height: 10
+#| fig-height: 10
 
 # Import des points relais
 routes <-  st_read(dsn = "data/ROUTES_1833.shp", quiet = TRUE)
